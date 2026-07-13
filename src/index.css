@@ -1,0 +1,14 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-neutral-bg text-neutral-dark font-sans antialiased scroll-smooth;
+  }
+}
+
+/* Custom scrollbars or smooth transitions can go here */
+.transition-all-300 {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
