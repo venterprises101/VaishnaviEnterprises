@@ -30,7 +30,7 @@ export default function Services() {
 
         {/* Services Cards Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-          {items.map((service) => {
+          {items.map((service, idx) => {
             const serviceLinkMap = {
               "warehousing": "#services-details-3pl-warehousing",
               "supply-chain": "#services-details-dispatch-logistics",
@@ -38,20 +38,27 @@ export default function Services() {
               "job-work": "#services-details-contract-mfg",
             };
             const linkHref = serviceLinkMap[service.id] || "#services-details";
+            const colorMap = [
+              "text-amber-600 bg-amber-50 border border-amber-100/70",
+              "text-blue-600 bg-blue-50 border border-blue-100/70",
+              "text-emerald-600 bg-emerald-50 border border-emerald-100/70",
+              "text-indigo-600 bg-indigo-50 border border-indigo-100/70",
+            ];
+            const colorClass = colorMap[idx % colorMap.length];
 
             return (
               <Card 
                 key={service.id} 
-                className="border border-slate-100 hover:border-blue-100 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col h-full group"
+                className="border border-slate-100 hover:border-blue-100 hover:shadow-xl hover:-translate-y-1.5 transform-gpu transition duration-300 flex flex-col h-full group cursor-default"
               >
                 <CardContent className="p-8 flex flex-col h-full">
                   {/* Icon wrapper */}
-                  <div className="w-12 h-12 rounded-xl bg-slate-50 text-primary group-hover:bg-accent-muted group-hover:text-accent flex items-center justify-center mb-6 transition-colors duration-300">
-                    {renderIcon(service.iconName)}
+                  <div className={`w-12 h-12 rounded-xl flex items-center justify-center mb-6 transition-transform duration-300 group-hover:scale-110 ${colorClass}`}>
+                    {renderIcon(service.iconName, "text-current")}
                   </div>
 
                   {/* Content */}
-                  <h3 className="text-xl font-bold text-primary mb-3">
+                  <h3 className="text-xl font-bold text-slate-800 mb-3 group-hover:text-primary transition-colors">
                     {service.title}
                   </h3>
                   <p className="text-slate-600 text-sm leading-relaxed mb-6 flex-grow">

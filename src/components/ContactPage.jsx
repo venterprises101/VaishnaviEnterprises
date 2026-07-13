@@ -20,7 +20,6 @@ const {
   Map, 
   AlertTriangle, 
   ChevronDown, 
-  ChevronUp, 
   Info, 
   PhoneCall, 
   MessageSquare,
@@ -141,12 +140,12 @@ export default function ContactPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             
             {/* Card 1: Head Office */}
-            <div className="bg-white p-6 rounded-2xl border border-slate-200/80 shadow-sm flex flex-col justify-between text-left space-y-5">
+            <div className="bg-white p-6 rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-md hover:-translate-y-1.5 transform-gpu transition duration-300 flex flex-col justify-between text-left space-y-5 group cursor-default h-full">
               <div className="space-y-3">
-                <div className="w-10 h-10 rounded-xl bg-blue-50 text-accent flex items-center justify-center border border-blue-100/50">
+                <div className="w-10 h-10 rounded-xl bg-blue-50 text-accent flex items-center justify-center border border-blue-100/50 transition-transform group-hover:scale-105">
                   {renderIcon("MapPin", "text-accent")}
                 </div>
-                <h3 className="text-lg font-bold text-primary tracking-tight">
+                <h3 className="text-lg font-bold text-slate-800 tracking-tight group-hover:text-primary transition-colors">
                   {cards[0].title}
                 </h3>
                 <p className="text-slate-500 text-xs sm:text-sm leading-relaxed">
@@ -156,19 +155,19 @@ export default function ContactPage() {
               <Button 
                 variant="outline" 
                 onClick={() => window.open("https://maps.google.com", "_blank")}
-                className="w-full bg-white border-slate-300 text-primary hover:bg-slate-50 text-xs py-2 rounded-lg font-bold"
+                className="w-full bg-white border-slate-300 text-primary hover:bg-primary hover:text-white hover:border-primary text-xs py-2 rounded-lg font-bold hover:-translate-y-0.5 hover:shadow-md transform-gpu transition duration-300"
               >
                 {cards[0].buttonText}
               </Button>
             </div>
 
             {/* Card 2: Call Us */}
-            <div className="bg-white p-6 rounded-2xl border border-slate-200/80 shadow-sm flex flex-col justify-between text-left space-y-5">
+            <div className="bg-white p-6 rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-md hover:-translate-y-1.5 transform-gpu transition duration-300 flex flex-col justify-between text-left space-y-5 group cursor-default h-full">
               <div className="space-y-3">
-                <div className="w-10 h-10 rounded-xl bg-blue-50 text-accent flex items-center justify-center border border-blue-100/50">
+                <div className="w-10 h-10 rounded-xl bg-blue-50 text-accent flex items-center justify-center border border-blue-100/50 transition-transform group-hover:scale-105">
                   {renderIcon("Phone", "text-accent")}
                 </div>
-                <h3 className="text-lg font-bold text-primary tracking-tight">
+                <h3 className="text-lg font-bold text-slate-800 tracking-tight group-hover:text-primary transition-colors">
                   {cards[1].title}
                 </h3>
                 <div className="space-y-1.5">
@@ -184,14 +183,14 @@ export default function ContactPage() {
                 <Button 
                   variant="outline" 
                   onClick={() => window.open(cards[1].buttons[0].href, "_self")}
-                  className="bg-white border-slate-300 text-primary hover:bg-slate-50 text-[10px] sm:text-xs py-2 rounded-lg font-bold px-1"
+                  className="bg-white border-slate-300 text-primary hover:bg-primary hover:text-white hover:border-primary text-[10px] sm:text-xs py-2 rounded-lg font-bold px-1 hover:-translate-y-0.5 hover:shadow-md transform-gpu transition duration-300"
                 >
                   {cards[1].buttons[0].label}
                 </Button>
                 <Button 
                   variant="outline" 
                   onClick={() => window.open(cards[1].buttons[1].href, "_self")}
-                  className="bg-white border-slate-300 text-primary hover:bg-slate-50 text-[10px] sm:text-xs py-2 rounded-lg font-bold px-1"
+                  className="bg-white border-slate-300 text-primary hover:bg-primary hover:text-white hover:border-primary text-[10px] sm:text-xs py-2 rounded-lg font-bold px-1 hover:-translate-y-0.5 hover:shadow-md transform-gpu transition duration-300"
                 >
                   {cards[1].buttons[1].label}
                 </Button>
@@ -199,12 +198,12 @@ export default function ContactPage() {
             </div>
 
             {/* Card 3: Email Us */}
-            <div className="bg-white p-6 rounded-2xl border border-slate-200/80 shadow-sm flex flex-col justify-between text-left space-y-5">
+            <div className="bg-white p-6 rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-md hover:-translate-y-1.5 transform-gpu transition duration-300 flex flex-col justify-between text-left space-y-5 group cursor-default h-full">
               <div className="space-y-3">
-                <div className="w-10 h-10 rounded-xl bg-blue-50 text-accent flex items-center justify-center border border-blue-100/50">
+                <div className="w-10 h-10 rounded-xl bg-blue-50 text-accent flex items-center justify-center border border-blue-100/50 transition-transform group-hover:scale-105">
                   {renderIcon("Mail", "text-accent")}
                 </div>
-                <h3 className="text-lg font-bold text-primary tracking-tight">
+                <h3 className="text-lg font-bold text-slate-800 tracking-tight group-hover:text-primary transition-colors">
                   {cards[2].title}
                 </h3>
                 <div className="space-y-1 text-slate-500 text-xs sm:text-sm font-medium">
@@ -218,19 +217,19 @@ export default function ContactPage() {
               <Button 
                 variant="primary" 
                 onClick={() => window.open(cards[2].buttonHref, "_self")}
-                className="w-full py-2 text-xs rounded-lg font-bold"
+                className="w-full py-2 text-xs rounded-lg font-bold hover:-translate-y-0.5 hover:shadow-md transform-gpu transition duration-300"
               >
                 {cards[2].buttonText}
               </Button>
             </div>
 
             {/* Card 4: Working Hours */}
-            <div className="bg-white p-6 rounded-2xl border border-slate-200/80 shadow-sm flex flex-col justify-between text-left space-y-5">
+            <div className="bg-white p-6 rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-md hover:-translate-y-1.5 transform-gpu transition duration-300 flex flex-col justify-between text-left space-y-5 group cursor-default h-full">
               <div className="space-y-3">
-                <div className="w-10 h-10 rounded-xl bg-blue-50 text-accent flex items-center justify-center border border-blue-100/50">
+                <div className="w-10 h-10 rounded-xl bg-blue-50 text-accent flex items-center justify-center border border-blue-100/50 transition-transform group-hover:scale-105">
                   {renderIcon("Clock", "text-accent")}
                 </div>
-                <h3 className="text-lg font-bold text-primary tracking-tight">
+                <h3 className="text-lg font-bold text-slate-800 tracking-tight group-hover:text-primary transition-colors">
                   {cards[3].title}
                 </h3>
                 <div className="space-y-1.5 text-xs sm:text-sm">
@@ -278,12 +277,12 @@ export default function ContactPage() {
               {/* Form Bullet Checklist */}
               <div className="space-y-4 pt-2">
                 {form.features.map((feature, i) => (
-                  <div key={i} className="flex gap-3.5 items-start">
-                    <div className="w-8 h-8 rounded-lg bg-blue-50 text-accent flex items-center justify-center shrink-0 border border-blue-100/50 shadow-sm mt-0.5">
+                  <div key={i} className="flex gap-3.5 items-start group cursor-default">
+                    <div className="w-8 h-8 rounded-lg bg-blue-50 text-accent flex items-center justify-center shrink-0 border border-blue-100/50 shadow-sm mt-0.5 transition-transform group-hover:scale-105">
                       {renderIcon(feature.iconName, "text-accent")}
                     </div>
                     <div className="space-y-0.5">
-                      <h4 className="text-sm sm:text-base font-bold text-primary tracking-tight">
+                      <h4 className="text-sm sm:text-base font-bold text-slate-800 tracking-tight group-hover:text-primary transition-colors">
                         {feature.title}
                       </h4>
                       <p className="text-slate-500 text-xs sm:text-sm leading-relaxed max-w-sm">
@@ -383,10 +382,9 @@ export default function ContactPage() {
                       className="w-full border border-slate-200 rounded-lg px-4 py-2.5 text-sm outline-none focus:border-accent bg-slate-50/50 focus:bg-white transition-all font-medium text-slate-600 appearance-none"
                     >
                       <option value="">Select Industry</option>
-                      <option value="automotive">Automotive & Aerospace</option>
+                      <option value="contract_mfg">Contract Manufacturing & Job Work</option>
                       <option value="fmcg">FMCG & Retail</option>
                       <option value="pharma">Pharma & Healthcare</option>
-                      <option value="electronics">Electronics</option>
                       <option value="engineering">Heavy Engineering</option>
                     </select>
                   </div>
@@ -487,7 +485,7 @@ export default function ContactPage() {
                 <div className="flex flex-col sm:flex-row gap-4 pt-4">
                   <Button 
                     type="submit" 
-                    className="w-full sm:w-auto px-8 py-3 rounded-lg font-bold bg-primary text-white hover:bg-primary/95 shadow-md"
+                    className="w-full sm:w-auto px-8 py-3 rounded-lg font-bold bg-primary text-white hover:bg-primary/90 shadow-md hover:shadow-lg hover:-translate-y-0.5 transform-gpu transition duration-300"
                   >
                     Send Enquiry
                   </Button>
@@ -495,7 +493,7 @@ export default function ContactPage() {
                     variant="outline"
                     type="button"
                     onClick={() => alert("Redirecting to comprehensive proposal questionnaire...")}
-                    className="w-full sm:w-auto bg-white border-slate-300 text-primary hover:bg-slate-50 px-8 py-3 rounded-lg font-bold"
+                    className="w-full sm:w-auto bg-white border-slate-300 text-primary hover:bg-primary hover:text-white hover:border-primary px-8 py-3 rounded-lg font-bold hover:-translate-y-0.5 hover:shadow-md transform-gpu transition duration-300"
                   >
                     Request a Proposal
                   </Button>
@@ -528,17 +526,16 @@ export default function ContactPage() {
             <div className="hidden md:block absolute top-[28px] left-[10%] right-[10%] h-0.5 bg-slate-200 z-0" />
 
             {process.steps.map((step) => (
-              <div key={step.number} className="relative z-10 flex flex-col items-center space-y-4">
+              <div key={step.number} className="relative z-10 flex flex-col items-center space-y-4 group cursor-default">
                 {/* Circle step badge */}
-                <div className="w-14 h-14 rounded-full bg-slate-100 flex items-center justify-center text-primary font-bold border-4 border-white shadow-md text-sm select-none">
+                <div className="w-14 h-14 rounded-full bg-primary flex items-center justify-center text-white font-bold border-4 border-white shadow-md text-sm select-none transition-all duration-300 group-hover:scale-110 group-hover:shadow-lg transform-gpu">
                   {step.number < 10 ? `0${step.number}` : step.number}
                 </div>
                 <div className="space-y-1 max-w-[200px]">
-                  <h4 className="text-base font-bold text-primary tracking-tight">
+                  <h4 className="text-base font-bold text-slate-800 tracking-tight group-hover:text-primary transition-colors">
                     {step.label}
                   </h4>
                   <p className="text-slate-500 text-xs leading-relaxed font-normal">
-                    {/* Maps matching label text values */}
                     {step.number === 1 && "Submit your high-level project requirements."}
                     {step.number === 2 && "Our solution engineers analyze operational feasibility."}
                     {step.number === 3 && "Detailed scope mapping with your stakeholders."}
@@ -571,24 +568,35 @@ export default function ContactPage() {
 
           {/* 6-grid partners layout */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {partnerships.cards.map((card, idx) => (
-              <div 
-                key={idx}
-                className="bg-white/[0.03] border border-white/10 hover:border-white/20 p-6 rounded-2xl hover:bg-white/[0.05] transition-all duration-300 text-left space-y-4"
-              >
-                <div className="w-10 h-10 rounded-xl bg-white/10 text-accent-muted flex items-center justify-center shadow-sm">
-                  {renderIcon(card.iconName, "text-accent-muted")}
+            {partnerships.cards.map((card, idx) => {
+              const colorMap = [
+                "text-amber-300 bg-amber-500/10 border-amber-400/20",
+                "text-blue-300 bg-blue-500/10 border-blue-400/20",
+                "text-emerald-300 bg-emerald-500/10 border-emerald-400/20",
+                "text-indigo-300 bg-indigo-500/10 border-indigo-400/20",
+                "text-rose-300 bg-rose-500/10 border-rose-400/20",
+                "text-purple-300 bg-purple-500/10 border-purple-400/20",
+              ];
+              const colorClass = colorMap[idx % colorMap.length];
+              return (
+                <div 
+                  key={idx}
+                  className="bg-white/[0.03] border border-white/10 hover:border-accent/30 p-6 rounded-2xl hover:bg-white/[0.07] hover:-translate-y-1.5 transform-gpu transition duration-300 text-left space-y-4 group cursor-default"
+                >
+                  <div className={`w-10 h-10 rounded-xl border flex items-center justify-center shadow-sm transition-transform group-hover:scale-110 ${colorClass}`}>
+                    {renderIcon(card.iconName, "text-current")}
+                  </div>
+                  <div className="space-y-1.5">
+                    <h3 className="text-base sm:text-lg font-bold tracking-tight text-slate-200 group-hover:text-white transition-colors">
+                      {card.title}
+                    </h3>
+                    <p className="text-slate-400 text-xs sm:text-sm leading-relaxed font-normal">
+                      {card.description}
+                    </p>
+                  </div>
                 </div>
-                <div className="space-y-1.5">
-                  <h3 className="text-base sm:text-lg font-bold tracking-tight text-white">
-                    {card.title}
-                  </h3>
-                  <p className="text-slate-300 text-xs sm:text-sm leading-relaxed font-normal">
-                    {card.description}
-                  </p>
-                </div>
-              </div>
-            ))}
+              );
+            })}
           </div>
 
         </div>
@@ -613,7 +621,7 @@ export default function ContactPage() {
             <Button 
               variant="primary" 
               onClick={() => window.open("https://maps.google.com", "_blank")}
-              className="px-6 py-2.5 rounded-lg text-xs font-bold"
+              className="px-6 py-2.5 rounded-lg text-xs font-bold hover:-translate-y-0.5 hover:shadow-md transform-gpu transition duration-300"
             >
               {mapDetails.buttonText}
             </Button>
@@ -633,29 +641,38 @@ export default function ContactPage() {
           </div>
 
           {/* FAQ accordion stack */}
-          <div className="space-y-4">
+          <div className="space-y-3">
             {faqs.items.map((faq, idx) => {
               const isOpen = openFaqIndex === idx;
               return (
                 <div 
                   key={idx} 
-                  className="border border-slate-200 rounded-xl bg-white overflow-hidden shadow-sm hover:shadow-md transition-all duration-300"
+                  className={`border rounded-xl bg-white overflow-hidden shadow-sm transition duration-300 ${
+                    isOpen
+                      ? "border-accent/30 shadow-md"
+                      : "border-slate-200 hover:border-slate-300 hover:shadow-md"
+                  }`}
                 >
                   <button 
                     onClick={() => toggleFaq(idx)}
-                    className="w-full px-6 py-4 flex items-center justify-between gap-4 font-bold text-primary text-left text-sm sm:text-base focus:outline-none"
+                    className="w-full px-6 py-4 flex items-center justify-between gap-4 font-bold text-left text-sm sm:text-base focus:outline-none group"
                   >
-                    <span>{faq.question}</span>
-                    {isOpen 
-                      ? <ChevronUp size={18} className="text-slate-400 shrink-0" /> 
-                      : <ChevronDown size={18} className="text-slate-400 shrink-0" />
-                    }
+                    <span className={`transition-colors ${isOpen ? "text-primary" : "text-slate-800 group-hover:text-primary"}`}>
+                      {faq.question}
+                    </span>
+                    <div className={`w-7 h-7 rounded-full flex items-center justify-center shrink-0 transition-all duration-300 ${
+                      isOpen ? "bg-primary text-white rotate-180" : "bg-slate-100 text-slate-400"
+                    }`}>
+                      <ChevronDown size={16} />
+                    </div>
                   </button>
-                  {isOpen && (
-                    <div className="px-6 pb-5 pt-1 text-slate-500 text-xs sm:text-sm leading-relaxed border-t border-slate-100/60 animate-in fade-in duration-300">
+                  <div className={`overflow-hidden transition-all duration-300 ease-in-out ${
+                    isOpen ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
+                  }`}>
+                    <div className="px-6 pb-5 pt-1 text-slate-500 text-xs sm:text-sm leading-relaxed border-t border-slate-100">
                       {faq.answer}
                     </div>
-                  )}
+                  </div>
                 </div>
               );
             })}
@@ -680,14 +697,14 @@ export default function ContactPage() {
             <div className="flex flex-col sm:flex-row gap-3 shrink-0 relative z-10 w-full sm:w-auto">
               <Button 
                 onClick={() => window.open("tel:+18001234567", "_self")}
-                className="w-full sm:w-auto px-6 py-2.5 bg-white text-primary hover:bg-slate-50 text-xs font-bold rounded-lg flex items-center justify-center gap-2 shadow-sm"
+                className="w-full sm:w-auto px-6 py-2.5 bg-white text-primary hover:bg-slate-50 hover:shadow-md hover:-translate-y-0.5 text-xs font-bold rounded-lg flex items-center justify-center gap-2 shadow-sm transform-gpu transition duration-300"
               >
                 <PhoneCall size={14} />
                 <span>Call Now</span>
               </Button>
               <Button 
                 onClick={() => window.open("https://wa.me/18001234567", "_blank")}
-                className="w-full sm:w-auto px-6 py-2.5 border-white/20 bg-white/5 text-white hover:bg-white/10 border text-xs font-bold rounded-lg flex items-center justify-center gap-2"
+                className="w-full sm:w-auto px-6 py-2.5 border-white/30 bg-white/5 text-white hover:bg-white hover:text-primary border text-xs font-bold rounded-lg flex items-center justify-center gap-2 hover:-translate-y-0.5 hover:shadow-md transform-gpu transition duration-300"
               >
                 <MessageSquare size={14} />
                 <span>WhatsApp</span>
@@ -710,14 +727,14 @@ export default function ContactPage() {
                 const element = document.querySelector("form");
                 element?.scrollIntoView({ behavior: "smooth" });
               }}
-              className="w-full sm:w-auto px-8 py-3 rounded-lg font-bold shadow-md hover:shadow-lg transition-all"
+              className="w-full sm:w-auto px-8 py-3 rounded-lg font-bold shadow-md hover:shadow-lg hover:-translate-y-0.5 transform-gpu transition duration-300"
             >
               Request a Proposal
             </Button>
             <Button 
               variant="outline" 
               onClick={() => window.location.hash = "#services-details"}
-              className="w-full sm:w-auto bg-white border-slate-300 text-primary hover:bg-slate-50 px-8 py-3 rounded-lg font-bold shadow-sm hover:shadow-md transition-all"
+              className="w-full sm:w-auto bg-white border-slate-300 text-primary hover:bg-primary hover:text-white hover:border-primary px-8 py-3 rounded-lg font-bold shadow-sm hover:shadow-md hover:-translate-y-0.5 transform-gpu transition duration-300"
             >
               Explore Services
             </Button>

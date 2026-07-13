@@ -38,27 +38,36 @@ export default function WhyChooseUs() {
 
         {/* Features Columns Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {items.map((item) => (
-            <div 
-              key={item.id} 
-              className="bg-white p-6 rounded-xl border border-slate-100 shadow-sm hover:shadow-md transition-all duration-300 flex flex-col space-y-4"
-            >
-              {/* Icon & Title row */}
-              <div className="flex items-center gap-3">
-                <div className="w-9 h-9 rounded-lg bg-accent-muted text-accent flex items-center justify-center shrink-0">
-                  {renderIcon(item.iconName)}
+          {items.map((item, idx) => {
+            const colorMap = [
+              "text-amber-600 bg-amber-50 border-amber-100/50",
+              "text-blue-600 bg-blue-50 border-blue-100/50",
+              "text-emerald-600 bg-emerald-50 border-emerald-100/50",
+              "text-indigo-600 bg-indigo-50 border-indigo-100/50",
+            ];
+            const colorClass = colorMap[idx % colorMap.length];
+            return (
+              <div 
+                key={item.id} 
+                className="bg-white p-6 rounded-xl border border-slate-100 shadow-sm hover:shadow-md hover:-translate-y-1.5 transform-gpu transition duration-300 flex flex-col space-y-4 group cursor-default"
+              >
+                {/* Icon & Title row */}
+                <div className="flex items-center gap-3">
+                  <div className={`w-9 h-9 rounded-lg flex items-center justify-center shrink-0 border transition-transform group-hover:scale-110 ${colorClass}`}>
+                    {renderIcon(item.iconName, "text-current")}
+                  </div>
+                  <h3 className="text-base font-bold text-slate-800 leading-tight group-hover:text-primary transition-colors">
+                    {item.title}
+                  </h3>
                 </div>
-                <h3 className="text-base font-bold text-primary leading-tight">
-                  {item.title}
-                </h3>
-              </div>
 
-              {/* Description */}
-              <p className="text-slate-600 text-sm leading-relaxed">
-                {item.description}
-              </p>
-            </div>
-          ))}
+                {/* Description */}
+                <p className="text-slate-600 text-sm leading-relaxed">
+                  {item.description}
+                </p>
+              </div>
+            );
+          })}
         </div>
 
       </div>

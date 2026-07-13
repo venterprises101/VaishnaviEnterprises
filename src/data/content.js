@@ -314,86 +314,186 @@ export const content = {
     },
     services: [
       {
-        id: "contract-mfg",
+        id: "contract-manufacturing",
         iconName: "Settings",
         title: "Contract Manufacturing & Job Work",
         description: "End-to-end production support specializing in the transformation of raw materials or semi-finished goods into market-ready products with uncompromising quality control.",
         bullets: [
           "SFG to FG Conversion",
-          "Precision Product Assembly",
-          "Industrial Packaging Solutions",
-          "Rigorous Quality Inspection",
-          "Customized Job Work"
+          "SFG to SFG Processing",
+          "Secondary Packaging",
+          "Product Assembly",
+          "Kitting & Bundling",
+          "Repacking",
+          "Labeling & Price Coding",
+          "End-of-Line (EOL) Operations",
+          "Quality Inspection Support",
+          "Product Sorting & Staging"
+        ],
+        benefits: [
+          "Increased production efficiency",
+          "Reduced operational costs",
+          "Flexible workforce",
+          "Faster order completion"
         ],
         buttonText: "Request Specification",
         imageName: "why_choose_us.png",
         isDarkButton: true
       },
       {
-        id: "3pl-warehousing",
+        id: "in-plant-logistics",
+        iconName: "Layers",
+        title: "In-Plant Logistics",
+        description: "Efficient internal material movement to keep production running without interruptions.",
+        includedServices: [
+          "Raw Material Movement",
+          "Line Feeding",
+          "WIP (Work-in-Progress) Handling",
+          "Finished Goods Transfer",
+          "Dock Operations",
+          "Material Transportation",
+          "Internal Warehouse Support"
+        ],
+        benefits: [
+          "Continuous production flow",
+          "Reduced downtime",
+          "Improved operational efficiency",
+          "Safe material handling"
+        ],
+        buttonText: "Request Specification",
+        imageName: "pune_lab.png",
+        isDarkButton: false
+      },
+      {
+        id: "warehousing-depot-management",
         iconName: "Warehouse",
-        title: "3PL Warehousing & Depot Management",
-        description: "Scalable storage solutions and comprehensive facility management that prioritize inventory accuracy, safety, and streamlined throughput.",
-        bullets: [
-          "FIFO/FEFO Inventory Control",
-          "End-to-End Depot Operations",
-          "Real-time Stock Traceability",
-          "Damage & EOL Management",
-          "Safety & Compliance Audit",
-          "Asset Protection & Security"
+        title: "Warehousing & Depot Management",
+        description: "Complete warehouse operations from receiving to dispatch.",
+        includedServices: [
+          "Depot Management",
+          "Warehouse Operations",
+          "Storage Management",
+          "Pick & Pack",
+          "Inventory Management",
+          "Cycle Counting",
+          "Stock Audits",
+          "Batch Management",
+          "Cross Docking",
+          "Order Fulfillment"
+        ],
+        benefits: [
+          "Accurate inventory",
+          "Reduced stock loss",
+          "Optimized storage utilization",
+          "Faster order processing"
         ],
         buttonText: "Request Specification",
         imageName: "hero_bg.png",
-        isDarkButton: false
+        isDarkButton: true
       },
       {
-        id: "value-added-services",
-        iconName: "FileText",
-        title: "Value Added Services & Technology Integration",
-        description: "Enhancing supply chain intelligence through digitized documentation, precision scanning, and customized administrative support systems.",
-        bullets: [
-          "Advanced Barcode Scanning",
-          "Digital Inventory Reporting",
-          "Custom Labeling & Stickering",
-          "Automated Dispatch Support",
-          "Real-time Data Capture"
+        id: "inventory-control-traceability",
+        iconName: "Barcode",
+        title: "Inventory Control & Traceability",
+        description: "Technology-driven inventory management for complete visibility.",
+        includedServices: [
+          "Barcode Scanning",
+          "Batch Tracking",
+          "Expiry Management",
+          "FEFO/FIFO Compliance",
+          "Real-Time Inventory Tracking",
+          "Inventory Audits",
+          "Stock Reconciliation"
+        ],
+        benefits: [
+          "99%+ inventory accuracy",
+          "Complete product traceability",
+          "Compliance-ready operations",
+          "Reduced inventory errors"
         ],
         buttonText: "Request Specification",
         imageName: "control_room.png",
-        isDarkButton: true
-      },
-      {
-        id: "mhe-solutions",
-        iconName: "Users",
-        title: "MHE Solutions & Workforce Management",
-        description: "Empowering logistics with heavy-duty material handling equipment and highly trained operators who ensure safe and efficient floor movement.",
-        bullets: [
-          "Reach Truck & Forklift Ops",
-          "BOPT Maintenance & Supply",
-          "Skilled Technical Manpower",
-          "Managed Workforce Teams",
-          "Safety Training & Certs"
-        ],
-        buttonText: "Request Specification",
-        imageName: "workforce.png",
         isDarkButton: false
       },
       {
-        id: "dispatch-logistics",
+        id: "mhe-solutions",
+        iconName: "Layers",
+        title: "Material Handling Equipment (MHE) Solutions",
+        description: "Reliable equipment and certified operators for warehouse and factory operations.",
+        equipment: [
+          "Forklifts",
+          "Reach Trucks (RT)",
+          "Battery Operated Pallet Trucks (BOPT)",
+          "Hand Pallet Trucks",
+          "Stackers",
+          "Price Coding Machines"
+        ],
+        includedServices: [
+          "Equipment Supply",
+          "Certified Operators",
+          "Fleet Management",
+          "Shift-Based Deployment",
+          "Equipment Maintenance Coordination"
+        ],
+        benefits: [
+          "Reduced downtime",
+          "Improved warehouse productivity",
+          "Safe operations",
+          "Skilled manpower availability"
+        ],
+        buttonText: "Request Specification",
+        imageName: "workforce.png",
+        isDarkButton: true
+      },
+      {
+        id: "dispatch-logistics-execution",
         iconName: "Truck",
-        title: "Dispatch & Logistics Operations",
-        description: "Streamlining the outbound flow through systematic vehicle management, documentation accuracy, and optimized dispatch protocols.",
-        bullets: [
-          "Outbound Dispatch Planning",
-          "Vehicle Dock Management",
-          "Shipping Documentation",
-          "Dispatch Readiness Audit",
-          "Transit Monitoring Support"
+        title: "Dispatch & Logistics Execution",
+        description: "Complete outbound logistics and dispatch management.",
+        includedServices: [
+          "Order Processing",
+          "Order Picking",
+          "Dispatch Planning",
+          "Vehicle Coordination",
+          "Loading & Unloading",
+          "Dock Management",
+          "Delivery Challans",
+          "Sales Invoicing",
+          "Commercial Documentation"
+        ],
+        benefits: [
+          "Faster dispatches",
+          "Accurate documentation",
+          "Reduced turnaround time",
+          "On-time deliveries"
         ],
         buttonText: "Request Specification",
         imageName: "loading_docks.png",
-        isDarkButton: true
+        isDarkButton: false
       }
+    ],
+    industriesSupported: [
+      "FMCG",
+      "Food & Beverage",
+      "Consumer Goods",
+      "Automotive Components",
+      "Pharmaceuticals",
+      "Retail & Distribution",
+      "Manufacturing"
+    ],
+    whyChooseUs: [
+      "End-to-End 3PL Solutions",
+      "Factory Job Work Expertise",
+      "In-Plant Logistics Specialists",
+      "Skilled & Certified Workforce",
+      "Modern MHE Fleet",
+      "Barcode-Enabled Traceability",
+      "FEFO/FIFO Compliance",
+      "High-Volume Warehouse Operations",
+      "On-Time Dispatch Execution",
+      "Scalable Operations",
+      "Technology-Driven Inventory Management",
+      "Compliance & Safety Focus"
     ],
     cta: {
       title: "Ready to Optimize Your Operations?",
@@ -476,12 +576,12 @@ export const content = {
     missionVision: {
       mission: {
         title: "Our Mission",
-        description: "To become the preferred operational partner for manufacturing companies by delivering reliable, technology-driven, and scalable supply chain solutions.",
+        description: "To deliver reliable, efficient, and technology-driven manufacturing support and 3PL solutions that help businesses optimize operations, enhance productivity, and build resilient supply chains.",
         iconName: "Rocket"
       },
       vision: {
         title: "Our Vision",
-        description: "Building smarter supply chains through people, processes, and technology.",
+        description: "To become the preferred manufacturing support and logistics partner for organizations seeking operational excellence, innovation, and long-term value across the supply chain.",
         iconName: "Eye"
       }
     },
@@ -597,7 +697,61 @@ export const content = {
         label: "Average annual compliance audit score since 2018.",
         imageName: "certificate.png"
       }
-    }
+    },
+    story: [
+        "At **Vaishnavi Enterprises**, we specialize in delivering End-to-End (E2E) Third-Party Logistics (3PL) and manufacturing support solutions that help businesses streamline operations, improve productivity, and maintain complete supply chain visibility.",
+        "We work as an extension of our clients' operations, providing reliable factory job work, in-plant logistics, warehousing, inventory management, depot operations, and dispatch execution. By combining skilled manpower, modern equipment, and technology-driven processes, we enable manufacturers to focus on production while we efficiently manage the movement of materials and finished goods.",
+        "Our expertise spans every stage of the supply chain—from **Semi-Finished Goods (SFG) to Finished Goods (FG) conversion** and **warehouse management** to **barcode-enabled inventory control**, **Material Handling Equipment (MHE) operations**, and **order dispatch**. Every solution is designed to improve operational efficiency, reduce costs, and ensure timely product delivery.",
+        "With a strong commitment to safety, compliance, and operational excellence, we follow standardized processes that deliver consistent quality and complete traceability across manufacturing and logistics operations. Whether supporting production lines inside factories or managing high-volume distribution centers, our experienced team ensures smooth, accurate, and uninterrupted operations.",
+        "We proudly serve industries including **FMCG, Food & Beverage, Consumer Goods, Automotive Components, Electrical & Electronics, Pharmaceuticals, and Retail & Distribution**, providing scalable solutions tailored to each industry's unique operational requirements."
+      ],
+      coreValues: [
+        {
+          title: "Operational Excellence",
+          description: "We focus on efficiency, precision, and continuous improvement in every operation.",
+          iconName: "Award"
+        },
+        {
+          title: "Customer Partnership",
+          description: "We build long-term relationships by understanding our clients' business goals and delivering customized solutions.",
+          iconName: "Users"
+        },
+        {
+          title: "Safety & Compliance",
+          description: "We maintain the highest standards of workplace safety, regulatory compliance, and operational discipline.",
+          iconName: "ShieldCheck"
+        },
+        {
+          title: "Integrity",
+          description: "We conduct every project with honesty, transparency, and accountability.",
+          iconName: "Check"
+        },
+        {
+          title: "Innovation",
+          description: "We embrace technology and process improvements to deliver smarter, faster, and more accurate supply chain solutions.",
+          iconName: "Zap"
+        },
+        {
+          title: "Reliability",
+          description: "We are committed to delivering dependable services that keep our clients' operations running smoothly.",
+          iconName: "Clock"
+        }
+      ],
+      whyChooseUs: [
+        "End-to-End 3PL Supply Chain Solutions",
+        "Specialized Factory Job Work & Contract Manufacturing Support",
+        "Expertise in SFG to FG & SFG to SFG Conversion",
+        "In-Plant Logistics & Material Movement",
+        "Comprehensive Warehouse & Depot Management",
+        "Barcode-Based Inventory Tracking & Traceability",
+        "FEFO/FIFO Compliant Inventory Management",
+        "Material Handling Equipment (MHE) with Certified Operators",
+        "Skilled Workforce & Scalable Operations",
+        "Accurate Documentation, Invoicing & Dispatch Management",
+        "Technology-Driven Processes",
+        "Commitment to Safety, Quality & Customer Satisfaction"
+      ],
+      closingText: "At **Vaishnavi Enterprises**, we don't just provide logistics services—we become your trusted operational partner, ensuring your manufacturing, warehousing, and supply chain processes run efficiently, accurately, and on time."
   },
   industriesPage: {
     banner: {
@@ -606,46 +760,111 @@ export const content = {
     },
     sectors: [
       {
-        id: "automotive-aerospace",
-        title: "Automotive & Aerospace",
-        description: "Managing JIT (Just-In-Time) manufacturing cycles and high-value component logistics for critical assembly lines.",
-        challenge: "Zero-room-for-error delivery windows for aircraft engine components.",
-        caseStudy: "Reduced downtime by 24% for a Tier-1 aero manufacturer through integrated supply chain visibility.",
-        iconName: "Plane"
+        id: "fmcg",
+        iconName: "ShoppingBag",
+        title: "FMCG (Fast-Moving Consumer Goods)",
+        description: "High-volume production requires speed, precision, and complete traceability. We help FMCG manufacturers streamline operations through agile manufacturing support, efficient warehouse management, and technology-driven inventory control.",
+        howWeSupport: [
+          "Contract Manufacturing (SFG to FG)",
+          "Secondary Packaging",
+          "In-Plant Logistics",
+          "FEFO/FIFO Inventory Management",
+          "Barcode & Batch Traceability",
+          "Depot Management",
+          "Order Fulfillment",
+          "Dispatch Execution"
+        ]
       },
       {
-        id: "fmcg-retail",
-        title: "FMCG & Retail",
-        description: "Scalable warehousing and last-mile distribution networks designed for rapid consumer demand shifts and peak seasonality.",
-        challenge: "High-velocity SKU management during 300% demand spikes.",
-        caseStudy: "Deployed an AI-driven inventory system for a national retailer, cutting stock-outs by 40%.",
-        iconName: "ShoppingCart"
+        id: "food-beverage",
+        iconName: "Coffee",
+        title: "Food & Beverage",
+        description: "The food industry requires strict inventory rotation, hygiene standards, and efficient warehousing to protect product quality and shelf life.",
+        howWeSupport: [
+          "Inventory Control",
+          "Batch Tracking",
+          "FEFO Inventory Management",
+          "Warehouse Operations",
+          "Dispatch & Documentation"
+        ]
+      },
+      {
+        id: "automotive-components",
+        iconName: "Car",
+        title: "Automotive Components",
+        description: "Automotive manufacturing depends on uninterrupted production and just-in-time material movement. Our logistics solutions help maintain smooth factory operations and efficient inventory management.",
+        howWeSupport: [
+          "Material Movement",
+          "Line Feeding",
+          "In-Plant Logistics",
+          "Warehouse Operations",
+          "MHE Support"
+        ]
+      },
+      {
+        id: "electrical-electronics",
+        iconName: "Cpu",
+        title: "Electrical & Electronics",
+        description: "Electronic products require careful handling, accurate inventory tracking, and organized warehouse operations.",
+        howWeSupport: [
+          "Component Handling",
+          "Barcode Traceability",
+          "Inventory Management",
+          "Packaging Support",
+          "Dispatch Coordination"
+        ]
       },
       {
         id: "pharma-healthcare",
-        title: "Pharma & Healthcare",
-        description: "Cold-chain logistics and GXP-compliant storage solutions for temperature-sensitive medical supplies.",
-        challenge: "Maintaining strict -80°C temperature integrity across 3,000 miles.",
-        caseStudy: "Achieved 99.9% temperature compliance for a major vaccine distribution project.",
-        iconName: "Activity"
+        iconName: "PlusCircle",
+        title: "Pharmaceuticals & Healthcare",
+        description: "Compliance, traceability, and inventory accuracy are essential in pharmaceutical supply chains. We provide organized warehouse and logistics operations that support these requirements.",
+        howWeSupport: [
+          "Batch Tracking",
+          "Barcode Scanning",
+          "Inventory Management",
+          "Warehouse Operations",
+          "Dispatch Documentation"
+        ]
       },
       {
-        id: "electronics",
-        title: "Electronics",
-        description: "Secure, anti-static handling of high-sensitivity semiconductors and consumer electronic components.",
-        challenge: "Fragile component security and theft-prevention in transit.",
-        caseStudy: "Implemented GPS-locked containers, reducing transit shrinkage to nearly 0%.",
-        iconName: "Cpu"
+        id: "consumer-goods",
+        iconName: "Package",
+        title: "Consumer Goods",
+        description: "Consumer goods manufacturers need flexible logistics and warehouse support to meet changing market demand and maintain efficient distribution.",
+        howWeSupport: [
+          "Packaging & Repacking",
+          "Warehouse Management",
+          "Inventory Control",
+          "Order Fulfillment",
+          "Dispatch Operations"
+        ]
       },
       {
-        id: "heavy-engineering",
-        title: "Heavy Engineering",
-        description: "Expertise in ODC (Over Dimensional Cargo) and heavy lift operations for infrastructure and industrial projects.",
-        challenge: "Multimodal transport of 200-ton turbine units across mountainous terrain.",
-        caseStudy: "Managed the complete logistical rollout of a new thermal power plant, delivering 500+ ODC shipments on schedule.",
-        iconName: "Wrench",
-        imageName: "heavy_engineering.png"
+        id: "retail-distribution",
+        iconName: "TrendingUp",
+        title: "Retail & Distribution",
+        description: "We help retail and distribution businesses optimize warehouse operations, improve inventory visibility, and ensure timely order fulfillment.",
+        howWeSupport: [
+          "Depot Management",
+          "Pick & Pack Operations",
+          "Inventory Management",
+          "Dispatch Coordination",
+          "Warehouse Handling"
+        ]
       }
+    ],
+    whyChooseUs: [
+      "End-to-End 3PL Supply Chain Solutions",
+      "Contract Manufacturing Expertise",
+      "In-Plant Logistics Support",
+      "Skilled & Certified Workforce",
+      "Modern Material Handling Equipment (MHE)",
+      "Barcode-Enabled Inventory Accuracy",
+      "FEFO/FIFO Compliant Operations",
+      "Scalable Warehouse & Depot Management",
+      "Fast, Reliable Dispatch Execution",
+      "Technology-Driven Supply Chain Operations"
     ],
     beyond: {
       subtitle: "BEYOND TRANSPORT",
@@ -682,10 +901,10 @@ export const content = {
       ]
     },
     cta: {
-      title: "Partner with Industry Leaders",
-      subtitle: "Ready to optimize your sector-specific logistics? Our team is standing by to design your custom solution.",
-      primaryCta: "Consult Our Specialists",
-      secondaryCta: "View Service Portfolio"
+      title: "Let's Build a Smarter Supply Chain Together",
+      subtitle: "Whether you're a leading FMCG manufacturer, an automotive supplier, a food producer, or a growing distribution business, we provide reliable manufacturing support and integrated 3PL solutions that keep your operations running efficiently.",
+      primaryCta: "Contact Our Team",
+      secondaryCta: "Partner With Us"
     }
   },
   contactPage: {
@@ -804,7 +1023,7 @@ export const content = {
       items: [
         {
           question: "What industries do you specialize in for contract manufacturing?",
-          answer: "We specialize in Automotive, FMCG, Electronics, Pharmaceuticals, and Heavy Engineering. Our teams are fully trained in sector-specific assembly, GXP compliance, clean-room standards, and JIT dispatch."
+          answer: "We specialize in FMCG, Electronics, Pharmaceuticals, and Heavy Engineering. Our teams are fully trained in sector-specific assembly, GXP compliance, clean-room standards, and JIT dispatch."
         },
         {
           question: "How quickly can you mobilize a workforce for a new factory site?",

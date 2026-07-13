@@ -33,26 +33,36 @@ export default function Industries() {
 
         {/* Industries Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {items.map((industry) => (
+          {items.map((industry, idx) => {
+            const colorMap = [
+              "text-amber-300 bg-amber-500/10 border-amber-400/20",
+              "text-blue-300 bg-blue-500/10 border-blue-400/20",
+              "text-emerald-300 bg-emerald-500/10 border-emerald-400/20",
+              "text-indigo-300 bg-indigo-500/10 border-indigo-400/20",
+              "text-rose-300 bg-rose-500/10 border-rose-400/20",
+              "text-purple-300 bg-purple-500/10 border-purple-400/20",
+            ];
+            const colorClass = colorMap[idx % colorMap.length];
+            return (
             <div 
               key={industry.id} 
-              className="bg-white/[0.03] backdrop-blur-md border border-white/10 rounded-2xl p-8 hover:bg-white/[0.05] hover:border-white/20 transition-all duration-300 flex flex-col h-full group"
+              className="bg-white/[0.04] backdrop-blur-md border border-white/10 hover:border-accent/40 rounded-2xl p-8 hover:bg-white/[0.08] hover:-translate-y-1.5 transform-gpu transition duration-300 flex flex-col h-full group cursor-default"
             >
               {/* Header: Icon + Title */}
               <div className="flex items-center gap-4 mb-6">
-                <div className="w-11 h-11 rounded-xl bg-white/10 text-accent group-hover:bg-accent group-hover:text-white flex items-center justify-center transition-all duration-300 shrink-0">
-                  {renderIcon(industry.iconName)}
+                <div className={`w-11 h-11 rounded-xl border flex items-center justify-center transition duration-300 shrink-0 group-hover:scale-110 ${colorClass}`}>
+                  {renderIcon(industry.iconName, "text-current")}
                 </div>
-                <h3 className="text-xl font-bold tracking-tight text-white">
+                <h3 className="text-xl font-bold tracking-tight text-slate-200 group-hover:text-white transition-colors">
                   {industry.title}
                 </h3>
               </div>
 
               {/* Bullet Points List */}
               <ul className="space-y-3 flex-grow">
-                {industry.bullets.map((bullet, idx) => (
-                  <li key={idx} className="flex items-start gap-3 text-sm text-slate-300 leading-relaxed">
-                    <span className="w-5 h-5 rounded-full bg-accent/20 border border-accent/30 text-accent flex items-center justify-center shrink-0 mt-0.5">
+                {industry.bullets.map((bullet, bIdx) => (
+                  <li key={bIdx} className="flex items-start gap-3 text-sm text-slate-300 leading-relaxed">
+                    <span className="w-5 h-5 rounded-full bg-accent/20 border border-accent/30 text-accent flex items-center justify-center shrink-0 mt-0.5 transition-colors group-hover:bg-accent/30">
                       <Check size={12} className="stroke-[3]" />
                     </span>
                     <span>{bullet}</span>
@@ -60,7 +70,8 @@ export default function Industries() {
                 ))}
               </ul>
             </div>
-          ))}
+            );
+          })}
         </div>
 
       </div>
