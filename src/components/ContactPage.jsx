@@ -108,19 +108,19 @@ export default function ContactPage() {
     <div className="min-h-screen bg-slate-50 flex flex-col font-sans antialiased text-slate-800">
       
       {/* 1. Header Banner Section */}
-      <section className="relative pt-28 pb-20 bg-gradient-to-br from-primary via-[#00223A] to-primary text-white overflow-hidden border-b border-slate-900">
+      <section className="relative pt-36 pb-28 bg-gradient-to-br from-primary via-[#00223A] to-primary text-white overflow-hidden border-b border-slate-900">
         <div className="absolute inset-0 opacity-10 bg-[radial-gradient(#3b82f6_1px,transparent_1px)] [background-size:16px_16px] pointer-events-none" />
         
         {/* Backdrop image */}
         <div className="absolute inset-0 z-0 opacity-15">
           <img 
-            src={`/images/${banner.imageName}`} 
+            src="/images/hero_bg.png" 
             alt="Automated warehouse storage lanes" 
             className="w-full h-full object-cover"
           />
         </div>
 
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-left">
+        <div className="reveal-up max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-left">
           <span className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-white/10 text-[10px] sm:text-xs font-bold tracking-widest text-accent-muted uppercase mb-4 border border-white/10">
             <span className="w-1.5 h-1.5 rounded-full bg-accent animate-pulse" />
             Connect With Vaishnavi
@@ -137,10 +137,10 @@ export default function ContactPage() {
       {/* 2. Four Contact Cards Section */}
       <section className="py-12 bg-white border-b border-slate-100 -mt-6 relative z-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             
             {/* Card 1: Head Office */}
-            <div className="bg-white p-6 rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-md hover:-translate-y-1.5 transform-gpu transition duration-300 flex flex-col justify-between text-left space-y-5 group cursor-default h-full">
+            <div className="reveal-stagger-item hover-lift bg-white p-6 rounded-2xl border border-slate-200/80 flex flex-col justify-between text-left space-y-5 group cursor-default h-full">
               <div className="space-y-3">
                 <div className="w-10 h-10 rounded-xl bg-blue-50 text-accent flex items-center justify-center border border-blue-100/50 transition-transform group-hover:scale-105">
                   {renderIcon("MapPin", "text-accent")}
@@ -162,7 +162,7 @@ export default function ContactPage() {
             </div>
 
             {/* Card 2: Call Us */}
-            <div className="bg-white p-6 rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-md hover:-translate-y-1.5 transform-gpu transition duration-300 flex flex-col justify-between text-left space-y-5 group cursor-default h-full">
+            <div className="reveal-stagger-item hover-lift bg-white p-6 rounded-2xl border border-slate-200/80 flex flex-col justify-between text-left space-y-5 group cursor-default h-full">
               <div className="space-y-3">
                 <div className="w-10 h-10 rounded-xl bg-blue-50 text-accent flex items-center justify-center border border-blue-100/50 transition-transform group-hover:scale-105">
                   {renderIcon("Phone", "text-accent")}
@@ -198,7 +198,7 @@ export default function ContactPage() {
             </div>
 
             {/* Card 3: Email Us */}
-            <div className="bg-white p-6 rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-md hover:-translate-y-1.5 transform-gpu transition duration-300 flex flex-col justify-between text-left space-y-5 group cursor-default h-full">
+            <div className="reveal-stagger-item hover-lift bg-white p-6 rounded-2xl border border-slate-200/80 flex flex-col justify-between text-left space-y-5 group cursor-default h-full">
               <div className="space-y-3">
                 <div className="w-10 h-10 rounded-xl bg-blue-50 text-accent flex items-center justify-center border border-blue-100/50 transition-transform group-hover:scale-105">
                   {renderIcon("Mail", "text-accent")}
@@ -206,11 +206,14 @@ export default function ContactPage() {
                 <h3 className="text-lg font-bold text-slate-800 tracking-tight group-hover:text-primary transition-colors">
                   {cards[2].title}
                 </h3>
-                <div className="space-y-1 text-slate-500 text-xs sm:text-sm font-medium">
-                  {cards[2].emails.map((email, i) => (
-                    <a key={i} href={`mailto:${email}`} className="block hover:text-accent transition-colors">
-                      {email}
-                    </a>
+                <div className="space-y-2 text-slate-500 text-xs sm:text-sm font-medium">
+                  {cards[2].emails.map((item, i) => (
+                    <div key={i} className="flex flex-col border-b border-slate-100/60 pb-1">
+                      <span className="text-slate-400 text-[10px] font-bold uppercase tracking-wider">{item.label}</span>
+                      <a href={`mailto:${item.value}`} className="hover:text-accent transition-colors font-semibold text-primary">
+                        {item.value}
+                      </a>
+                    </div>
                   ))}
                 </div>
               </div>
@@ -223,33 +226,6 @@ export default function ContactPage() {
               </Button>
             </div>
 
-            {/* Card 4: Working Hours */}
-            <div className="bg-white p-6 rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-md hover:-translate-y-1.5 transform-gpu transition duration-300 flex flex-col justify-between text-left space-y-5 group cursor-default h-full">
-              <div className="space-y-3">
-                <div className="w-10 h-10 rounded-xl bg-blue-50 text-accent flex items-center justify-center border border-blue-100/50 transition-transform group-hover:scale-105">
-                  {renderIcon("Clock", "text-accent")}
-                </div>
-                <h3 className="text-lg font-bold text-slate-800 tracking-tight group-hover:text-primary transition-colors">
-                  {cards[3].title}
-                </h3>
-                <div className="space-y-1.5 text-xs sm:text-sm">
-                  {cards[3].schedule.map((item, i) => (
-                    <div key={i} className="flex justify-between border-b border-slate-100/60 pb-1">
-                      <span className="text-slate-500 font-medium">{item.days}</span>
-                      <span className={`font-bold ${item.hours === "Closed" ? "text-red-500" : "text-primary"}`}>{item.hours}</span>
-                    </div>
-                  ))}
-                </div>
-              </div>
-              {/* Emergency Alert badge */}
-              <div className="bg-blue-50/50 rounded-xl p-3 border border-blue-100/50 flex gap-2 items-start">
-                <Info size={14} className="text-accent shrink-0 mt-0.5" />
-                <span className="text-[10px] font-medium leading-tight text-slate-500">
-                  {cards[3].alertText}
-                </span>
-              </div>
-            </div>
-
           </div>
         </div>
       </section>
@@ -260,7 +236,7 @@ export default function ContactPage() {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
             
             {/* Left Content column (5 columns on lg) */}
-            <div className="lg:col-span-5 text-left space-y-6 lg:sticky lg:top-28">
+            <div className="reveal-left lg:col-span-5 text-left space-y-6 lg:sticky lg:top-28">
               <div className="space-y-2">
                 <span className="text-[10px] sm:text-xs font-bold tracking-widest text-accent uppercase">
                   {form.subtitle}
@@ -295,7 +271,7 @@ export default function ContactPage() {
             </div>
 
             {/* Right Form column (7 columns on lg) */}
-            <div className="lg:col-span-7 bg-white p-6 sm:p-10 rounded-2xl border border-slate-200/80 shadow-md">
+            <div className="reveal-right lg:col-span-7 bg-white p-6 sm:p-10 rounded-2xl border border-slate-200/80 shadow-md">
               <form onSubmit={handleSubmit} className="space-y-6 text-left">
                 
                 {/* 2-column input grid */}
@@ -605,7 +581,7 @@ export default function ContactPage() {
       {/* 6. Our Strategic Location Map Section */}
       <section className="py-20 bg-white border-b border-slate-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-4xl mx-auto bg-slate-100 rounded-3xl p-10 border border-slate-200/60 shadow-sm flex flex-col items-center justify-center text-center space-y-4 min-h-[220px]">
+          <div className="reveal-scale max-w-4xl mx-auto bg-slate-100 rounded-3xl p-10 border border-slate-200/60 shadow-sm flex flex-col items-center justify-center text-center space-y-4 min-h-[220px]">
             <Map size={36} className="text-accent" />
             <div className="space-y-1">
               <h3 className="text-lg sm:text-xl font-bold text-primary tracking-tight">
@@ -633,7 +609,7 @@ export default function ContactPage() {
       <section className="py-20 bg-slate-50 border-b border-slate-100">
         <div className="max-w-3xl mx-auto px-4 text-left">
           
-          <div className="text-center space-y-3 mb-12">
+          <div className="reveal-up text-center space-y-3 mb-12">
             <h2 className="text-3xl font-extrabold tracking-tight text-primary">
               {faqs.title}
             </h2>
@@ -647,7 +623,7 @@ export default function ContactPage() {
               return (
                 <div 
                   key={idx} 
-                  className={`border rounded-xl bg-white overflow-hidden shadow-sm transition duration-300 ${
+                  className={`reveal-stagger-item border rounded-xl bg-white overflow-hidden shadow-sm transition duration-300 ${
                     isOpen
                       ? "border-accent/30 shadow-md"
                       : "border-slate-200 hover:border-slate-300 hover:shadow-md"
@@ -684,7 +660,7 @@ export default function ContactPage() {
       {/* 8. Need Immediate Support floating row */}
       <section className="py-8 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="bg-primary text-white rounded-2xl p-6 sm:p-8 flex flex-col md:flex-row justify-between items-center gap-6 relative overflow-hidden shadow-md">
+          <div className="reveal-scale bg-primary text-white rounded-2xl p-6 sm:p-8 flex flex-col md:flex-row justify-between items-center gap-6 relative overflow-hidden shadow-md">
             <div className="absolute inset-0 opacity-[0.02] bg-[radial-gradient(#ffffff_1px,transparent_1px)] [background-size:16px_16px] pointer-events-none" />
             <div className="text-left space-y-2 relative z-10">
               <h3 className="text-lg sm:text-xl font-extrabold tracking-tight">
@@ -716,7 +692,7 @@ export default function ContactPage() {
 
       {/* 9. Ready to Optimize CTA Block */}
       <section className="bg-slate-100/60 py-16 border-t border-slate-200/85 text-center">
-        <div className="max-w-4xl mx-auto px-4 space-y-6">
+        <div className="reveal-up max-w-4xl mx-auto px-4 space-y-6">
           <h2 className="text-3xl font-extrabold tracking-tight text-primary">
             Ready to Optimize Your Supply Chain?
           </h2>

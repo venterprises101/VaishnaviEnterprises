@@ -15,7 +15,7 @@ export default function CTA({ onOpenQuoteModal }) {
         <div className="flex flex-col lg:flex-row items-center justify-between gap-10 text-center lg:text-left">
           
           {/* Text block */}
-          <div className="space-y-4 max-w-3xl">
+          <div className="reveal-left space-y-4 max-w-3xl">
             <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight leading-tight">
               {title}
             </h2>
@@ -25,7 +25,7 @@ export default function CTA({ onOpenQuoteModal }) {
           </div>
 
           {/* Action button */}
-          <div className="shrink-0">
+          <div className="reveal-right shrink-0">
             <Button 
               variant="white-navy" 
               size="lg"

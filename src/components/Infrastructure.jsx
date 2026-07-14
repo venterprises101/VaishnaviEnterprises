@@ -11,7 +11,7 @@ export default function Infrastructure({ onOpenQuoteModal }) {
   const [hub, lab, docks, cold] = items;
 
   const Tile = ({ item, className = "" }) => (
-    <div className={`relative overflow-hidden rounded-2xl shadow-lg group border border-slate-200/50 ${className}`}>
+    <div className={`reveal-stagger-item hover-lift relative overflow-hidden rounded-2xl shadow-lg group border border-slate-200/50 ${className}`}>
       {/* Background Image */}
       <img
         src={`/images/${item.imageName}`}
@@ -39,7 +39,7 @@ export default function Infrastructure({ onOpenQuoteModal }) {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
         {/* Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
+        <div className="reveal-up flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
           <div className="max-w-3xl space-y-4 text-left">
             <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-primary">
               {title}

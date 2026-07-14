@@ -52,19 +52,19 @@ export default function IndustriesPage() {
     <div className="min-h-screen bg-slate-50 flex flex-col font-sans antialiased text-slate-800">
 
       {/* 1. Header Banner Section */}
-      <section className="relative pt-28 pb-20 bg-gradient-to-br from-primary via-[#00223A] to-primary text-white overflow-hidden border-b border-slate-900">
+      <section className="relative pt-36 pb-28 bg-gradient-to-br from-primary via-[#00223A] to-primary text-white overflow-hidden border-b border-slate-900">
         <div className="absolute inset-0 opacity-10 bg-[radial-gradient(#3b82f6_1px,transparent_1px)] [background-size:16px_16px] pointer-events-none" />
 
         {/* Backdrop image */}
         <div className="absolute inset-0 z-0 opacity-15">
           <img
-            src="/images/why_choose_us.png"
+            src="/images/heavy_engineering.png"
             alt="Logistics container port backdrop"
             className="w-full h-full object-cover"
           />
         </div>
 
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-left">
+        <div className="reveal-up max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-left">
           <span className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-white/10 text-[10px] sm:text-xs font-bold tracking-widest text-accent-muted uppercase mb-4 border border-white/10">
             <span className="w-1.5 h-1.5 rounded-full bg-accent animate-pulse" />
             Global Sector Support
@@ -85,7 +85,7 @@ export default function IndustriesPage() {
              {sectors.map((sector) => (
               <div
                 key={sector.id}
-                className="bg-white p-6 sm:p-8 rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-md hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between text-left space-y-6 group cursor-default h-full"
+                className="reveal-stagger-item hover-lift bg-white p-6 sm:p-8 rounded-2xl border border-slate-200/80 flex flex-col justify-between text-left space-y-6 group cursor-default h-full"
               >
                 <div className="space-y-5">
                   {/* Icon + Title */}
@@ -135,7 +135,7 @@ export default function IndustriesPage() {
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           {/* Header */}
-          <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
+          <div className="reveal-up text-center max-w-3xl mx-auto mb-16 space-y-4">
             <span className="text-xs font-bold text-emerald-600 tracking-widest uppercase bg-emerald-50 border border-emerald-100/50 px-3 py-1 rounded-full">
               Value Proposition
             </span>
@@ -153,7 +153,7 @@ export default function IndustriesPage() {
             {whyChooseUs.map((reason, idx) => (
               <div 
                 key={idx}
-                className="bg-white border border-slate-100 hover:border-emerald-200/80 rounded-xl p-5 flex items-center gap-4 shadow-sm hover:shadow-md hover:-translate-y-1 transform-gpu transition duration-300 text-left group cursor-default border-l-4 border-l-slate-200 hover:border-l-emerald-500"
+                className="reveal-stagger-item hover-lift bg-white border border-slate-100 hover:border-emerald-200/80 rounded-xl p-5 flex items-center gap-4 text-left group cursor-default border-l-4 border-l-slate-200 hover:border-l-emerald-500"
               >
                 <div className="w-9 h-9 rounded-full bg-emerald-50 text-emerald-500 flex items-center justify-center shrink-0 border border-emerald-100 transition-colors group-hover:bg-emerald-500 group-hover:text-white">
                   <CheckCircle2 size={16} className="stroke-[3] transition-transform group-hover:scale-110" />
@@ -174,7 +174,7 @@ export default function IndustriesPage() {
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
           {/* Header */}
-          <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
+          <div className="reveal-up text-center max-w-3xl mx-auto mb-16 space-y-4">
             <span className="text-xs font-bold text-accent-muted tracking-widest uppercase bg-white/10 px-3 py-1 rounded-full border border-white/10">
               Beyond Transport
             </span>
@@ -187,8 +187,8 @@ export default function IndustriesPage() {
           {/* Grid Layout matching the image exactly */}
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
             {/* Left tall card: Real-time Visibility Engine */}
-            <div className="lg:col-span-6 flex">
-              <div className="w-full relative rounded-2xl overflow-hidden border border-slate-700/50 shadow-lg group min-h-[380px] lg:min-h-[450px] flex flex-col justify-end text-left">
+            <div className="reveal-stagger-item lg:col-span-6 flex">
+              <div className="w-full relative rounded-2xl overflow-hidden border border-slate-700/50 shadow-lg group min-h-[380px] lg:min-h-[450px] flex flex-col justify-end text-left hover-lift">
                 {/* Background Image */}
                 <img 
                   src="/images/visibility_engine.png" 
@@ -213,7 +213,7 @@ export default function IndustriesPage() {
             {/* Right container with top wide card and bottom twin cards */}
             <div className="lg:col-span-6 flex flex-col gap-8 justify-between">
               {/* Right Top Card: Regulatory Compliance */}
-              <div className="w-full relative rounded-2xl overflow-hidden border border-slate-700/50 shadow-lg group min-h-[210px] flex flex-col justify-center text-left p-8 sm:p-10">
+              <div className="reveal-stagger-item hover-lift w-full relative rounded-2xl overflow-hidden border border-slate-700/50 shadow-lg group min-h-[210px] flex flex-col justify-center text-left p-8 sm:p-10">
                 {/* Background Image */}
                 <img 
                   src="/images/regulatory_compliance.png" 
@@ -237,7 +237,7 @@ export default function IndustriesPage() {
               {/* Right Bottom Twin Cards */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 flex-grow">
                 {/* Card 3: Sustainable Logistics */}
-                <div className="relative rounded-2xl overflow-hidden border border-slate-700/50 shadow-lg group min-h-[180px] flex flex-col items-center justify-center p-6 text-center">
+                <div className="reveal-stagger-item hover-lift relative rounded-2xl overflow-hidden border border-slate-700/50 shadow-lg group min-h-[180px] flex flex-col items-center justify-center p-6 text-center">
                   {/* Background Image */}
                   <img 
                     src="/images/sustainable_logistics.png" 
@@ -257,7 +257,7 @@ export default function IndustriesPage() {
                 </div>
 
                 {/* Card 4: Risk Mitigation */}
-                <div className="relative rounded-2xl overflow-hidden border border-slate-700/50 shadow-lg group min-h-[180px] flex flex-col items-center justify-center p-6 text-center">
+                <div className="reveal-stagger-item hover-lift relative rounded-2xl overflow-hidden border border-slate-700/50 shadow-lg group min-h-[180px] flex flex-col items-center justify-center p-6 text-center">
                   {/* Background Image */}
                   <img 
                     src="/images/risk_mitigation.png" 
@@ -286,7 +286,7 @@ export default function IndustriesPage() {
         {/* Light grid background accent */}
         <div className="absolute inset-0 opacity-[0.02] bg-[radial-gradient(#002b49_1px,transparent_1px)] [background-size:20px_20px] pointer-events-none" />
 
-        <div className="max-w-4xl mx-auto px-4 text-center relative z-10 space-y-6">
+        <div className="reveal-up max-w-4xl mx-auto px-4 text-center relative z-10 space-y-6">
           <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-primary">
             {cta.title}
           </h2>

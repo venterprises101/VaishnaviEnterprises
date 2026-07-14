@@ -101,16 +101,16 @@ export default function QuotePage() {
     <div className="min-h-screen bg-slate-50 flex flex-col font-sans antialiased text-slate-800">
       
       {/* Top Header Banner Section */}
-      <section className="relative pt-28 pb-20 bg-gradient-to-br from-primary via-[#00223A] to-primary text-white overflow-hidden border-b border-slate-900">
+      <section className="relative pt-36 pb-28 bg-gradient-to-br from-primary via-[#00223A] to-primary text-white overflow-hidden border-b border-slate-900">
         <div className="absolute inset-0 opacity-10 bg-[radial-gradient(#3b82f6_1px,transparent_1px)] [background-size:16px_16px] pointer-events-none" />
         <div className="absolute inset-0 z-0 opacity-15">
           <img 
-            src="/images/why_choose_us.png" 
+            src="/images/loading_docks.png" 
             alt="Warehouse backdrop" 
             className="w-full h-full object-cover"
           />
         </div>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-left">
+        <div className="reveal-up max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-left">
           <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight mb-4 max-w-4xl leading-tight text-white">
             {banner.title}
           </h1>
@@ -129,7 +129,7 @@ export default function QuotePage() {
             <div className="lg:col-span-8 space-y-12">
               
               {/* Why Complete This Form Block */}
-              <div className="bg-white p-6 sm:p-8 rounded-2xl border border-slate-200/80 shadow-sm text-left space-y-3">
+              <div className="reveal-stagger-item hover-lift bg-white p-6 sm:p-8 rounded-2xl border border-slate-200/80 text-left space-y-3">
                 <h2 className="text-xl sm:text-2xl font-bold text-primary">
                   {whyComplete.title}
                 </h2>
@@ -139,7 +139,7 @@ export default function QuotePage() {
               </div>
 
               {/* What You Can Request Block */}
-              <div className="space-y-6 text-left">
+              <div className="reveal-stagger-item space-y-6 text-left">
                 <h2 className="text-xl sm:text-2xl font-bold text-primary">
                   {whatYouCanRequest.title}
                 </h2>
@@ -147,12 +147,12 @@ export default function QuotePage() {
                   {whatYouCanRequest.items.map((item, idx) => (
                     <div 
                       key={idx} 
-                      className="bg-white p-4 rounded-xl border border-slate-200/80 flex items-center gap-3.5 shadow-sm hover:shadow-md transition-shadow"
+                      className="reveal-stagger-item hover-lift bg-white border border-slate-100 hover:border-emerald-200/80 rounded-xl p-4 flex items-center gap-4 text-left group cursor-default border-l-4 border-l-slate-200 hover:border-l-emerald-500"
                     >
-                      <div className="w-9 h-9 rounded-lg bg-blue-50 text-accent flex items-center justify-center shrink-0">
-                        {renderRequestIcon(item.iconName, "text-accent")}
+                      <div className="w-9 h-9 rounded-full bg-emerald-50 text-emerald-500 flex items-center justify-center shrink-0 border border-emerald-100 transition-colors group-hover:bg-emerald-500 group-hover:text-white">
+                        {renderRequestIcon(item.iconName, "transition-transform group-hover:scale-110 text-emerald-500 group-hover:text-white")}
                       </div>
-                      <span className="text-xs sm:text-sm font-semibold text-slate-700 leading-snug">
+                      <span className="text-xs sm:text-sm font-bold text-slate-700 leading-tight transition-colors group-hover:text-primary">
                         {item.label}
                       </span>
                     </div>
@@ -161,7 +161,7 @@ export default function QuotePage() {
               </div>
 
               {/* Project Requirement Form Block */}
-              <div className="bg-white rounded-2xl border border-slate-200/80 shadow-md overflow-hidden text-left">
+              <div className="reveal-stagger-item hover-lift bg-white rounded-2xl border border-slate-200/80 shadow-md overflow-hidden text-left">
                 <div className="bg-primary text-white p-6 sm:p-8">
                   <h2 className="text-xl sm:text-2xl font-bold">Project Requirement Form</h2>
                   <p className="text-slate-200 text-xs sm:text-sm mt-2">
@@ -323,30 +323,42 @@ export default function QuotePage() {
               </div>
 
               {/* Our Process Section */}
-              <div className="space-y-6 text-left">
+              <div className="reveal-stagger-item space-y-6 text-left">
                 <h2 className="text-xl sm:text-2xl font-bold text-primary text-center lg:text-left">
                   {process.title}
                 </h2>
-                <div className="relative pt-6">
-                  {/* Step Connector Line */}
-                  <div className="hidden md:block absolute top-[44px] left-[8%] right-[8%] h-0.5 bg-slate-200 z-0" />
-                  
-                  <div className="grid grid-cols-1 md:grid-cols-5 gap-6 md:gap-4 relative z-10">
+                <div className="relative mt-8">
+                  {/* Horizontal Connector Line (Desktop/Tablet) */}
+                  <div className="hidden md:block absolute top-[28px] left-[10%] right-[10%] h-0.5 bg-slate-200 z-0" />
+
+                  {/* Vertical Connector Line (Mobile) */}
+                  <div className="md:hidden absolute top-[28px] bottom-[28px] left-[20px] w-0.5 bg-slate-200 z-0" />
+
+                  {/* Steps Container */}
+                  <div className="grid grid-cols-1 md:grid-cols-5 gap-8 md:gap-4 relative z-10">
                     {process.steps.map((step, idx) => (
-                      <div key={idx} className="flex flex-row md:flex-col items-center text-left md:text-center group">
-                        <div className="w-12 h-12 rounded-full bg-primary text-white text-base font-bold flex items-center justify-center border-4 border-white shadow-md group-hover:bg-accent group-hover:scale-105 transition-all duration-300 shrink-0 mr-4 md:mr-0 md:mb-3">
-                          {step.number}
+                      <div
+                        key={idx}
+                        className="reveal-stagger-item flex flex-row md:flex-col items-start md:items-center text-left md:text-center group"
+                      >
+                        {/* Node (Number Circle) */}
+                        <div className="flex justify-center shrink-0 mr-4 md:mr-0 md:mb-6">
+                          <div className="w-14 h-14 rounded-full bg-primary text-white text-lg font-bold flex items-center justify-center border-4 border-white shadow-md group-hover:bg-[#001e42]/90 group-hover:scale-110 transition-all duration-300">
+                            {step.number}
+                          </div>
                         </div>
-                        <div className="pt-1 md:pt-0">
-                          <span className="text-xs sm:text-sm font-bold text-primary tracking-tight block md:mx-auto max-w-[120px]">
+
+                        {/* Text Content */}
+                        <div className="space-y-2 pt-1 md:pt-0">
+                          <h3 className="text-xs sm:text-sm font-bold text-primary tracking-tight block md:mx-auto max-w-[120px]">
                             {step.label}
-                          </span>
+                          </h3>
                         </div>
                       </div>
                     ))}
                   </div>
                 </div>
-                <p className="text-[11px] sm:text-xs text-slate-500 text-center leading-relaxed max-w-2xl mx-auto pt-4">
+                <p className="text-[11px] sm:text-xs text-slate-500 text-center leading-relaxed max-w-2xl mx-auto pt-8">
                   {confidentialityNote}
                 </p>
               </div>
@@ -357,7 +369,7 @@ export default function QuotePage() {
             <div className="lg:col-span-4 space-y-8 text-left">
               
               {/* Why Choose Us Sidebar Widget */}
-              <div className="bg-white p-6 sm:p-8 rounded-2xl border border-slate-200/80 shadow-sm space-y-5">
+              <div className="reveal-stagger-item hover-lift bg-white p-6 sm:p-8 rounded-2xl border border-slate-200/80 shadow-sm space-y-5">
                 <h3 className="text-lg font-bold text-primary tracking-tight">
                   Why Choose Us
                 </h3>
@@ -365,12 +377,12 @@ export default function QuotePage() {
                   {sidebar.whyChooseUs.items.map((item, idx) => (
                     <div 
                       key={idx} 
-                      className="bg-white p-4 rounded-xl border border-slate-100 flex items-center gap-3 shadow-sm hover:shadow-md transition-shadow"
+                      className="hover-lift bg-white border border-slate-100 hover:border-emerald-200/80 rounded-xl p-4 flex items-center gap-4 text-left group cursor-default border-l-4 border-l-slate-200 hover:border-l-emerald-500"
                     >
-                      <div className="w-5 h-5 rounded-full border border-blue-200 bg-blue-50/50 text-accent flex items-center justify-center shrink-0">
-                        <Check size={11} className="stroke-[3.5]" />
+                      <div className="w-9 h-9 rounded-full bg-emerald-50 text-emerald-500 flex items-center justify-center shrink-0 border border-emerald-100 transition-colors group-hover:bg-emerald-500 group-hover:text-white">
+                        <CheckCircle2 size={16} className="stroke-[3] transition-transform group-hover:scale-110" />
                       </div>
-                      <span className="text-xs sm:text-sm font-semibold text-slate-700 leading-snug">
+                      <span className="text-xs sm:text-sm font-bold text-slate-700 leading-tight transition-colors group-hover:text-primary">
                         {item}
                       </span>
                     </div>
@@ -379,7 +391,7 @@ export default function QuotePage() {
               </div>
 
               {/* Contact Support Sidebar Widget */}
-              <div className="bg-white p-6 sm:p-8 rounded-2xl border border-slate-200/80 shadow-sm space-y-6 text-center">
+              <div className="reveal-stagger-item hover-lift bg-white p-6 sm:p-8 rounded-2xl border border-slate-200/80 shadow-sm space-y-6 text-center">
                 <div className="flex justify-center">
                   <div className="w-14 h-14 rounded-full bg-slate-50 border border-slate-150 flex items-center justify-center text-primary shadow-inner">
                     {UserCheck ? <UserCheck size={28} /> : <Warehouse size={28} />}
@@ -446,7 +458,7 @@ export default function QuotePage() {
           <div className="absolute left-0 top-0 bottom-0 w-16 sm:w-28 bg-gradient-to-r from-slate-100/90 to-transparent z-10 pointer-events-none" />
           <div className="absolute right-0 top-0 bottom-0 w-16 sm:w-28 bg-gradient-to-l from-slate-100/90 to-transparent z-10 pointer-events-none" />
 
-          <div className="animate-marquee flex items-center gap-16 py-2">
+          <div className="reveal-fade animate-marquee flex items-center gap-16 py-2">
             {/* Copy 1 */}
             <div className="flex gap-20 items-center shrink-0">
               {trustedMarquee.logos.map((logoName, idx) => (

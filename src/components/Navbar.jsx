@@ -65,9 +65,9 @@ export default function Navbar({ onOpenQuoteModal, currentPage }) {
                 <a
                   key={link.id}
                   href={getHref(link)}
-                  className={`text-sm font-semibold transition-colors relative py-1 after:absolute after:bottom-0 after:left-0 after:right-0 after:h-0.5 after:bg-accent after:transition-transform after:duration-300 ${isActive
-                    ? "text-accent after:scale-x-100"
-                    : "text-slate-600 hover:text-accent after:scale-x-0 hover:after:scale-x-100"
+                  className={`text-sm font-semibold transition-colors relative py-1 after:absolute after:bottom-0 after:left-0 after:right-0 after:h-0.5 after:bg-primary after:transition-transform after:duration-300 ${isActive
+                    ? "text-primary after:scale-x-100"
+                    : "text-slate-600 hover:text-primary after:scale-x-0 hover:after:scale-x-100"
                     }`}
                 >
                   {link.label}

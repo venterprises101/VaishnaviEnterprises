@@ -21,7 +21,7 @@ export default function Industries() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* Header Block */}
-        <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
+        <div className="reveal-up text-center max-w-3xl mx-auto mb-16 space-y-4">
           <h2 className="text-3xl sm:text-4xl font-bold tracking-tight">
             {title}
           </h2>
@@ -46,7 +46,7 @@ export default function Industries() {
             return (
             <div 
               key={industry.id} 
-              className="bg-white/[0.04] backdrop-blur-md border border-white/10 hover:border-accent/40 rounded-2xl p-8 hover:bg-white/[0.08] hover:-translate-y-1.5 transform-gpu transition duration-300 flex flex-col h-full group cursor-default"
+              className="reveal-stagger-item hover-lift bg-white/[0.04] backdrop-blur-md border border-white/10 hover:border-accent/40 rounded-2xl p-8 hover:bg-white/[0.08] flex flex-col h-full group cursor-default"
             >
               {/* Header: Icon + Title */}
               <div className="flex items-center gap-4 mb-6">

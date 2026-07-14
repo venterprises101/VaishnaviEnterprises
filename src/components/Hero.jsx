@@ -35,13 +35,13 @@ export default function Hero({ onOpenQuoteModal }) {
           {/* Left Content Column */}
           <div className="lg:col-span-7 space-y-6 text-left">
             {/* Top Badge */}
-            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/10 backdrop-blur-sm border border-white/10 text-xs font-semibold uppercase tracking-wider text-accent-muted">
+            <div className="reveal-hero-badge inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/10 backdrop-blur-sm border border-white/10 text-xs font-semibold uppercase tracking-wider text-accent-muted">
               <span className="w-1.5 h-1.5 rounded-full bg-accent animate-pulse" />
               {topBadge}
             </div>
 
             {/* Title */}
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-tight">
+            <h1 className="reveal-hero-title text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-tight">
               Powering Faster Manufacturing Through{" "}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-300 to-indigo-200">
                 Integrated 3PL & Supply Chain
@@ -50,12 +50,12 @@ export default function Hero({ onOpenQuoteModal }) {
             </h1>
 
             {/* Subtitle */}
-            <p className="text-base sm:text-lg text-slate-300 max-w-xl font-normal leading-relaxed">
+            <p className="reveal-hero-subtitle text-base sm:text-lg text-slate-300 max-w-xl font-normal leading-relaxed">
               {subtitle}
             </p>
 
             {/* CTA Buttons */}
-            <div className="flex flex-col sm:flex-row gap-4 pt-2">
+            <div className="reveal-hero-cta flex flex-col sm:flex-row gap-4 pt-2">
               <Button
                 variant="white-fill"
                 size="lg"
@@ -83,7 +83,7 @@ export default function Hero({ onOpenQuoteModal }) {
           <div className="lg:col-span-5 relative mt-8 lg:mt-0 flex justify-center">
 
             {/* Main Warehouse Image Container */}
-            <div className="relative w-full max-w-md lg:max-w-none aspect-[4/3] rounded-2xl overflow-hidden shadow-2xl border border-white/10">
+            <div className="reveal-hero-img relative w-full max-w-md lg:max-w-none aspect-[4/3] rounded-2xl overflow-hidden shadow-2xl border border-white/10">
               <img
                 src="/images/hero_bg.png"
                 alt="Industrial forklift operating in warehouse"
@@ -93,7 +93,7 @@ export default function Hero({ onOpenQuoteModal }) {
             </div>
 
             {/* Experience Stats Card (Top Right) */}
-            <div className="absolute -top-6 -right-4 md:-right-6 bg-white text-slate-900 p-4 rounded-2xl shadow-xl border border-slate-100 flex items-start gap-3 max-w-[210px] animate-in slide-in-from-top-6 duration-700">
+            <div className="reveal-hero-stat-top absolute -top-6 -right-4 md:-right-6 bg-white text-slate-900 p-4 rounded-2xl shadow-xl border border-slate-100 flex items-start gap-3 max-w-[210px]">
               <div className="p-2 rounded-lg bg-green-50 text-green-600 shrink-0">
                 <Shield size={20} />
               </div>
@@ -108,7 +108,7 @@ export default function Hero({ onOpenQuoteModal }) {
             </div>
 
             {/* Clients Stats Card (Bottom Left) */}
-            <div className="absolute -bottom-6 -left-4 md:-left-6 bg-white text-slate-900 p-4 rounded-2xl shadow-xl border border-slate-100 flex items-start gap-3 max-w-[210px] animate-in slide-in-from-bottom-6 duration-700">
+            <div className="reveal-hero-stat-bottom absolute -bottom-6 -left-4 md:-left-6 bg-white text-slate-900 p-4 rounded-2xl shadow-xl border border-slate-100 flex items-start gap-3 max-w-[210px]">
               <div className="p-2 rounded-lg bg-blue-50 text-accent shrink-0">
                 <Users size={20} />
               </div>

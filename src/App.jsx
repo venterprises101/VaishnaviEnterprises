@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import ScrollReveal from "scrollreveal";
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import Quote from "./components/Quote";
@@ -73,6 +74,114 @@ export default function App() {
     window.addEventListener("hashchange", handleHashChange);
     return () => window.removeEventListener("hashchange", handleHashChange);
   }, []);
+
+  useEffect(() => {
+    const timeoutId = setTimeout(() => {
+      try {
+        const sr = ScrollReveal({
+          origin: "bottom",
+          distance: "40px",
+          duration: 900,
+          delay: 150,
+          easing: "cubic-bezier(0.215, 0.61, 0.355, 1)",
+          opacity: 0,
+          scale: 1,
+          reset: false,
+          viewFactor: 0.15,
+        });
+
+        // 1. Core Reveal Animations
+        sr.reveal(".reveal-fade", {
+          distance: "0px",
+          duration: 800,
+        });
+
+        sr.reveal(".reveal-up", {
+          origin: "bottom",
+          distance: "40px",
+        });
+
+        sr.reveal(".reveal-left", {
+          origin: "left",
+          distance: "50px",
+        });
+
+        sr.reveal(".reveal-right", {
+          origin: "right",
+          distance: "50px",
+        });
+
+        sr.reveal(".reveal-scale", {
+          scale: 0.95,
+          distance: "0px",
+        });
+
+        // Stagger sequence for lists/cards
+        sr.reveal(".reveal-stagger-item", {
+          interval: 80,
+          origin: "bottom",
+          distance: "30px",
+        });
+
+        // 2. Custom Premium Hero Animations
+        sr.reveal(".reveal-hero-badge", {
+          origin: "bottom",
+          distance: "15px",
+          delay: 100,
+          duration: 700,
+        });
+
+        sr.reveal(".reveal-hero-title", {
+          origin: "bottom",
+          distance: "25px",
+          delay: 200,
+          duration: 800,
+        });
+
+        sr.reveal(".reveal-hero-subtitle", {
+          origin: "bottom",
+          distance: "25px",
+          delay: 350,
+          duration: 800,
+        });
+
+        sr.reveal(".reveal-hero-cta", {
+          origin: "bottom",
+          distance: "25px",
+          delay: 500,
+          duration: 800,
+        });
+
+        sr.reveal(".reveal-hero-img", {
+          scale: 0.95,
+          distance: "0px",
+          delay: 350,
+          duration: 1000,
+        });
+
+        sr.reveal(".reveal-hero-stat-top", {
+          origin: "right",
+          distance: "40px",
+          delay: 600,
+          duration: 800,
+        });
+
+        sr.reveal(".reveal-hero-stat-bottom", {
+          origin: "left",
+          distance: "40px",
+          delay: 700,
+          duration: 800,
+        });
+
+      } catch (error) {
+        console.error("ScrollReveal error:", error);
+      }
+    }, 250);
+
+    return () => {
+      clearTimeout(timeoutId);
+    };
+  }, [currentPage]);
 
   return (
     <div className="min-h-screen bg-slate-50 flex flex-col font-sans antialiased text-slate-800">

@@ -12,3 +12,30 @@
 .transition-all-300 {
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
+
+/* ScrollReveal base styles to prevent layout flash */
+html.sr .reveal-fade,
+html.sr .reveal-up,
+html.sr .reveal-left,
+html.sr .reveal-right,
+html.sr .reveal-scale,
+html.sr .reveal-stagger-item,
+html.sr .reveal-hero-badge,
+html.sr .reveal-hero-title,
+html.sr .reveal-hero-subtitle,
+html.sr .reveal-hero-cta,
+html.sr .reveal-hero-img,
+html.sr .reveal-hero-stat-top,
+html.sr .reveal-hero-stat-bottom {
+  visibility: hidden;
+}
+
+/* Premium Hover Lift effect for all cards */
+.hover-lift {
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.4s ease !important;
+}
+
+.hover-lift:hover {
+  transform: translateY(-8px) !important;
+  box-shadow: 0 20px 25px -5px rgba(0, 30, 66, 0.08), 0 10px 10px -6px rgba(0, 30, 66, 0.08) !important;
+}

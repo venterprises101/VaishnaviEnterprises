@@ -62,7 +62,7 @@ export default function ServicesPage({ onOpenQuoteModal }) {
   return (
     <div className="min-h-screen bg-slate-50 flex flex-col font-sans antialiased">
       {/* Banner Header Section */}
-      <section className="relative pt-28 pb-20 bg-gradient-to-br from-primary via-[#00223A] to-primary text-white overflow-hidden border-b border-slate-900">
+      <section className="relative pt-36 pb-28 bg-gradient-to-br from-primary via-[#00223A] to-primary text-white overflow-hidden border-b border-slate-900">
         {/* Decorative Grid Overlay & Light Bleed */}
         <div className="absolute inset-0 opacity-10 bg-[radial-gradient(#3b82f6_1px,transparent_1px)] [background-size:16px_16px] pointer-events-none" />
         <div className="absolute top-1/2 left-1/4 w-96 h-96 bg-accent/20 rounded-full blur-[120px] pointer-events-none -translate-y-1/2" />
@@ -70,13 +70,13 @@ export default function ServicesPage({ onOpenQuoteModal }) {
         {/* Background Image Blend */}
         <div className="absolute inset-0 z-0 opacity-15">
           <img
-            src="/images/why_choose_us.png"
+            src="/images/warehouse_agv.png"
             alt="Industrial backdrop"
             className="w-full h-full object-cover"
           />
         </div>
 
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-left">
+        <div className="reveal-up max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-left">
           {/* Badge */}
           <span className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-white/10 text-[10px] sm:text-xs font-bold tracking-widest text-accent-muted uppercase mb-4 border border-white/10">
             <span className="w-1.5 h-1.5 rounded-full bg-accent animate-pulse" />
@@ -107,7 +107,7 @@ export default function ServicesPage({ onOpenQuoteModal }) {
                 <div className={`grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-start ${isEven ? "" : "lg:flex-row-reverse"}`}>
 
                   {/* Text Column */}
-                  <div className={`lg:col-span-6 space-y-6 text-left ${isEven ? "lg:order-1" : "lg:order-2"}`}>
+                  <div className={`lg:col-span-6 space-y-6 text-left ${isEven ? "lg:order-1 reveal-left" : "lg:order-2 reveal-right"}`}>
 
                     {/* Header: Icon + Title */}
                     <div className="flex items-center gap-4">
@@ -196,7 +196,7 @@ export default function ServicesPage({ onOpenQuoteModal }) {
                   </div>
 
                   {/* Image Column */}
-                  <div className={`lg:col-span-6 flex justify-center self-center ${isEven ? "lg:order-2" : "lg:order-1"}`}>
+                  <div className={`lg:col-span-6 flex justify-center self-center ${isEven ? "lg:order-2 reveal-right" : "lg:order-1 reveal-left"}`}>
                     <div className="w-full max-w-lg lg:max-w-none aspect-[16/10] sm:aspect-[16/9] rounded-2xl overflow-hidden shadow-lg hover:shadow-xl border border-slate-200 transition-all duration-500">
                       <img
                         src={`/images/${service.imageName}`}
@@ -221,7 +221,7 @@ export default function ServicesPage({ onOpenQuoteModal }) {
         
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           {/* Header */}
-          <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
+          <div className="reveal-up text-center max-w-3xl mx-auto mb-16 space-y-4">
             <span className="text-xs font-bold text-accent tracking-widest uppercase bg-blue-50 border border-blue-100/50 px-3 py-1 rounded-full">
               Sectors Covered
             </span>
@@ -239,7 +239,7 @@ export default function ServicesPage({ onOpenQuoteModal }) {
             {industriesSupported.map((industry, idx) => (
               <div 
                 key={idx}
-                className="bg-white border border-slate-100 hover:border-primary/20 rounded-2xl p-6 flex flex-col items-center text-center shadow-xs hover:shadow-lg hover:-translate-y-1.5 transition-all duration-300 group cursor-default relative overflow-hidden"
+                className="reveal-stagger-item hover-lift bg-white border border-slate-100 hover:border-primary/20 rounded-2xl p-6 flex flex-col items-center text-center group cursor-default relative overflow-hidden"
               >
                 {/* Border Hover Accent Line */}
                 <div className="absolute top-0 inset-x-0 h-1 bg-primary scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left" />
@@ -263,7 +263,7 @@ export default function ServicesPage({ onOpenQuoteModal }) {
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           {/* Header */}
-          <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
+          <div className="reveal-up text-center max-w-3xl mx-auto mb-16 space-y-4">
             <span className="text-xs font-bold text-emerald-600 tracking-widest uppercase bg-emerald-50 border border-emerald-100/50 px-3 py-1 rounded-full">
               Value Proposition
             </span>
@@ -281,7 +281,7 @@ export default function ServicesPage({ onOpenQuoteModal }) {
             {whyChooseUs.map((reason, idx) => (
               <div 
                 key={idx}
-                className="bg-white border border-slate-100 hover:border-emerald-200/80 rounded-xl p-5 flex items-center gap-4 shadow-xs hover:shadow-md hover:-translate-y-1 transition-all duration-300 text-left group cursor-default relative overflow-hidden border-l-4 border-l-slate-200 hover:border-l-emerald-500"
+                className="reveal-stagger-item hover-lift bg-white border border-slate-100 hover:border-emerald-200/80 rounded-xl p-5 flex items-center gap-4 text-left group cursor-default relative overflow-hidden border-l-4 border-l-slate-200 hover:border-l-emerald-500"
               >
                 <div className="w-9 h-9 rounded-full bg-emerald-50 text-emerald-500 flex items-center justify-center shrink-0 border border-emerald-100 transition-colors group-hover:bg-emerald-500 group-hover:text-white">
                   <CheckCircle2 size={16} className="stroke-[3] transition-transform group-hover:scale-110" />
@@ -300,7 +300,7 @@ export default function ServicesPage({ onOpenQuoteModal }) {
         {/* Light grid background accent */}
         <div className="absolute inset-0 opacity-[0.02] bg-[radial-gradient(#002b49_1px,transparent_1px)] [background-size:20px_20px] pointer-events-none" />
 
-        <div className="max-w-4xl mx-auto px-4 text-center relative z-10 space-y-6">
+        <div className="reveal-up max-w-4xl mx-auto px-4 text-center relative z-10 space-y-6">
           <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-primary">
             {cta.title}
           </h2>
@@ -314,13 +314,6 @@ export default function ServicesPage({ onOpenQuoteModal }) {
               className="w-full sm:w-auto px-8 py-3 rounded-lg border-2 border-primary font-bold shadow-md hover:shadow-lg transition-all"
             >
               {cta.primaryCta}
-            </Button>
-            <Button
-              variant="white-navy"
-              className="w-full sm:w-auto bg-white border-2 border-primary text-primary px-8 py-3 rounded-lg font-bold shadow-sm hover:shadow-md transition-all"
-              onClick={onOpenQuoteModal}
-            >
-              {cta.secondaryCta}
             </Button>
           </div>
         </div>

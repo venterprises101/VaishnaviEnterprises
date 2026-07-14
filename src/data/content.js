@@ -2,7 +2,6 @@
 
 export const content = {
   navbar: {
-    // logo: "Vaishnavi Enterprises",
     links: [
       { id: "home", label: "Home", href: "#home" },
       { id: "services", label: "Services", href: "#services" },
@@ -241,41 +240,43 @@ export const content = {
     ctaButton: "Contact Our Team"
   },
   footer: {
-    // logo: "Vaishnavi Enterprises",
-    description: "Leading the way in industrial logistics and contract manufacturing solutions since 2009. We drive growth for our clients through precision and reliability.",
+    logo: "Vaishnavi Enterprises",
+    description: "Leading the way in industrial logistics and contract manufacturing solutions. We drive growth for our clients through precision and reliability.",
     quickLinks: {
       title: "QUICK LINKS",
       items: [
         { label: "Home", href: "#home" },
-        { label: "About Company", href: "#why-choose-us" },
-        { label: "Our Services", href: "#services" },
+        { label: "About Company", href: "#about-us" },
+        { label: "Our Services", href: "#services-details" },
         { label: "Infrastructure", href: "#infrastructure" },
-        { label: "Case Studies", href: "#" }
+        { label: "Request Quote", href: "#request-quote" }
       ]
     },
     coreServices: {
       title: "CORE SERVICES",
       items: [
-        { label: "Warehousing Solutions", href: "#services" },
-        { label: "Supply Chain Management", href: "#services" },
-        { label: "Contract Manufacturing", href: "#services" },
-        { label: "Industrial Job Work", href: "#services" },
-        { label: "Inventory Control", href: "#services" }
+        { label: "Warehousing Solutions", href: "#services-details-warehousing-depot-management" },
+        { label: "Supply Chain Management", href: "#services-details-dispatch-logistics-execution" },
+        { label: "Contract Manufacturing", href: "#services-details-contract-manufacturing" },
+        { label: "Industrial Job Work", href: "#services-details-contract-manufacturing" },
+        { label: "Inventory Control", href: "#services-details-inventory-control-traceability" }
       ]
     },
     contactDetails: {
       title: "CONTACT DETAILS",
       address: "Plot No. 42, Industrial Area Phase II, Pune, Maharashtra 411001",
-      emails: ["info@vaishnavient.com", "sales@vaishnavient.com"],
+      emails: [
+        { label: "Head office", value: "adminho@thevaishnavi.com" },
+        { label: "Management", value: "admingujrat@thevaishnavi.com" },
+        { label: "Proprietor", value: "prakashgupta@thevaishnavi.com" },
+        { label: "HR team", value: "hrho@thevaishnavi.com" }
+      ],
       phones: ["+91 98765 43210", "+91 12345 67890"]
     },
     socialLinks: [
-      { name: "Globe", href: "#" },
-      { name: "Mail", href: "#" },
-      { name: "Phone", href: "#" },
-      { name: "Instagram", href: "#" },
-      { name: "Twitter", href: "#" },
-      { name: "Linkedin", href: "#" }
+      { name: "WhatsApp", href: "https://wa.me/919876543210" }, // WhatsApp
+      { name: "Instagram", href: "https://instagram.com" },
+      { name: "Mail", href: "mailto:prakashgupta@thevaishnavi.com" } // Gmail
     ],
     copyright: "© 2024 Vaishnavi Enterprises. All rights reserved.",
     links: [
@@ -628,7 +629,7 @@ export const content = {
         {
           badge: "Inception",
           title: "The Foundation",
-          description: "Vaishnavi Enterprises was established in 2004 with a single warehouse and a vision to redefine B2B logistics in the manufacturing sector.",
+          description: "Vaishnavi Enterprises was established with a single warehouse and a vision to redefine B2B logistics in the manufacturing sector.",
           imageName: "inception.png"
         },
         {
@@ -939,12 +940,13 @@ export const content = {
         id: "email",
         title: "Email Us",
         emails: [
-          "sales@vaishnavi.com",
-          "support@vaishnavi.com",
-          "info@vaishnavi.com"
+          { label: "Head office", value: "adminho@thevaishnavi.com" },
+          { label: "Management", value: "admingujrat@thevaishnavi.com" },
+          { label: "Proprietor", value: "prakashgupta@thevaishnavi.com" },
+          { label: "HR team", value: "hrho@thevaishnavi.com" }
         ],
         buttonText: "Send Email",
-        buttonHref: "mailto:sales@vaishnavi.com",
+        buttonHref: "mailto:prakashgupta@thevaishnavi.com",
         iconName: "Mail"
       },
       {

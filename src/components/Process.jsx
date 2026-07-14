@@ -9,7 +9,7 @@ export default function Process() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
         {/* Header Block */}
-        <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
+        <div className="reveal-up text-center max-w-3xl mx-auto mb-16 space-y-4">
           <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-primary">
             {title}
           </h2>
@@ -33,7 +33,7 @@ export default function Process() {
             {steps.map((step, idx) => (
               <div
                 key={idx}
-                className="flex flex-row md:flex-col items-start md:items-center text-left md:text-center group"
+                className="reveal-stagger-item flex flex-row md:flex-col items-start md:items-center text-left md:text-center group"
               >
                 {/* Node (Number Circle) */}
                 <div className="flex justify-center shrink-0 mr-4 md:mr-0 md:mb-6">

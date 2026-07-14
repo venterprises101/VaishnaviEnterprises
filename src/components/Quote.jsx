@@ -12,7 +12,7 @@ export default function Quote() {
         <QuoteIcon size={400} className="text-primary" />
       </div>
 
-      <div className="max-w-4xl mx-auto px-4 text-center relative z-10 space-y-4">
+      <div className="reveal-up max-w-4xl mx-auto px-4 text-center relative z-10 space-y-4">
         {/* Quote symbol */}
         <div className="inline-flex justify-center text-slate-300">
           <QuoteIcon size={48} className="fill-current text-slate-300/60" />

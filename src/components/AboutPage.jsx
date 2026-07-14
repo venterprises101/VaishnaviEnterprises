@@ -74,19 +74,19 @@ export default function AboutPage() {
     <div className="min-h-screen bg-slate-50 flex flex-col font-sans antialiased text-slate-800">
 
       {/* 1. Header Banner Section */}
-      <section className="relative pt-28 pb-20 bg-gradient-to-br from-primary via-[#00223A] to-primary text-white overflow-hidden border-b border-slate-900">
+      <section className="relative pt-36 pb-28 bg-gradient-to-br from-primary via-[#00223A] to-primary text-white overflow-hidden border-b border-slate-900">
         <div className="absolute inset-0 opacity-10 bg-[radial-gradient(#3b82f6_1px,transparent_1px)] [background-size:16px_16px] pointer-events-none" />
 
         {/* Backdrop image */}
         <div className="absolute inset-0 z-0 opacity-15">
           <img
-            src="/images/why_choose_us.png"
+            src="/images/bangalore_hub.png"
             alt="Logistics warehouse backdrop"
             className="w-full h-full object-cover"
           />
         </div>
 
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-left">
+        <div className="reveal-up max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-left">
           {/* Badge */}
           <span className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-white/10 text-[10px] sm:text-xs font-bold tracking-widest text-accent-muted uppercase mb-4 border border-white/10">
             <span className="w-1.5 h-1.5 rounded-full bg-accent animate-pulse" />
@@ -126,7 +126,7 @@ export default function AboutPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 text-left">
 
             {/* Mission Card (Light background) */}
-            <div className="bg-slate-50/50 p-8 rounded-2xl border border-slate-200/50 shadow-sm flex flex-col space-y-4 hover:shadow-md transition-shadow">
+            <div className="reveal-left hover-lift bg-slate-50/50 p-8 rounded-2xl border border-slate-200/50 flex flex-col space-y-4">
               <div className="w-10 h-10 rounded-xl bg-accent-muted text-accent flex items-center justify-center shadow-sm">
                 {renderIcon(missionVision.mission.iconName, "text-accent")}
               </div>
@@ -139,7 +139,7 @@ export default function AboutPage() {
             </div>
 
             {/* Vision Card (Dark Navy background) */}
-            <div className="bg-primary text-white p-8 rounded-2xl shadow-md flex flex-col space-y-4 hover:shadow-lg transition-shadow">
+            <div className="reveal-right hover-lift bg-primary text-white p-8 rounded-2xl flex flex-col space-y-4">
               <div className="w-10 h-10 rounded-xl bg-white/10 text-accent-muted flex items-center justify-center">
                 {renderIcon(missionVision.vision.iconName, "text-accent-muted")}
               </div>
@@ -163,7 +163,7 @@ export default function AboutPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
             {/* Title / Badge */}
-            <div className="lg:col-span-5 space-y-4">
+            <div className="reveal-left lg:col-span-5 space-y-4">
               <span className="text-xs font-bold text-accent tracking-widest uppercase bg-blue-50 border border-blue-100/50 px-3 py-1 rounded-full">
                 Company Overview
               </span>
@@ -183,7 +183,7 @@ export default function AboutPage() {
             </div>
 
             {/* Paragraphs list */}
-            <div className="lg:col-span-7 space-y-6 text-slate-600 text-sm sm:text-base leading-relaxed font-normal">
+            <div className="reveal-right lg:col-span-7 space-y-6 text-slate-600 text-sm sm:text-base leading-relaxed font-normal">
               {story.map((paragraph, idx) => (
                 <p key={idx}>
                   {paragraph.split("**").map((text, sIdx) =>
@@ -206,7 +206,7 @@ export default function AboutPage() {
               {competencies.cards.map((card, idx) => (
                 <div
                   key={idx}
-                  className={`p-6 rounded-xl border text-left flex flex-col space-y-3 shadow-sm hover:shadow-md transition-all duration-300 ${card.isDark
+                  className={`reveal-stagger-item hover-lift p-6 rounded-xl border text-left flex flex-col space-y-3 ${card.isDark
                     ? "bg-primary text-white border-slate-900"
                     : "bg-white text-slate-800 border-slate-200/80"
                     }`}
@@ -227,7 +227,7 @@ export default function AboutPage() {
             </div>
 
             {/* Core Competencies Text Column (Right 5 Columns on lg) */}
-            <div className="lg:col-span-5 text-left space-y-6 order-1 lg:order-2">
+            <div className="reveal-right lg:col-span-5 text-left space-y-6 order-1 lg:order-2">
               <div className="space-y-2">
                 <span className="text-[10px] sm:text-xs font-bold tracking-widest text-accent uppercase">
                   {competencies.subtitle}
@@ -263,7 +263,7 @@ export default function AboutPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
           {/* Timeline Header */}
-          <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
+          <div className="reveal-up text-center max-w-3xl mx-auto mb-16 space-y-4">
             <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-primary">
               {journey.title}
             </h2>
@@ -287,7 +287,7 @@ export default function AboutPage() {
                 return (
                   <div
                     key={idx}
-                    className={`flex flex-col md:flex-row items-stretch gap-6 md:gap-0 relative ${isEven ? "" : "md:flex-row-reverse"
+                    className={`reveal-stagger-item flex flex-col md:flex-row items-stretch gap-6 md:gap-0 relative ${isEven ? "" : "md:flex-row-reverse"
                       }`}
                   >
 
@@ -343,7 +343,7 @@ export default function AboutPage() {
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           {/* Header */}
-          <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
+          <div className="reveal-up text-center max-w-3xl mx-auto mb-16 space-y-4">
             <span className="text-xs font-bold text-accent tracking-widest uppercase bg-blue-50 border border-blue-100/50 px-3 py-1 rounded-full">
               Our Foundations
             </span>
@@ -361,7 +361,7 @@ export default function AboutPage() {
             {coreValues.map((value, idx) => (
               <div
                 key={idx}
-                className="bg-white p-6 sm:p-8 rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-md hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between text-left space-y-4 group cursor-default h-full"
+                className="reveal-stagger-item hover-lift bg-white p-6 sm:p-8 rounded-2xl border border-slate-200/80 flex flex-col justify-between text-left space-y-4 group cursor-default h-full"
               >
                 <div className="space-y-4">
                   <div className={`w-11 h-11 rounded-xl flex items-center justify-center border shrink-0 transition-transform group-hover:scale-105 ${getValueIconColor(idx)}`}>
@@ -382,7 +382,7 @@ export default function AboutPage() {
 
       {/* 5. The Leadership Team Section (Infinite Scroll Marquee) */}
       <section className="py-20 bg-slate-50 border-b border-slate-100 overflow-hidden relative">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-10 flex flex-col sm:flex-row sm:items-end justify-between gap-4 text-left">
+        <div className="reveal-up max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-10 flex flex-col sm:flex-row sm:items-end justify-between gap-4 text-left">
           <div className="space-y-3 max-w-2xl">
             <h2 className="text-3xl font-extrabold tracking-tight text-primary">
               {leadership.title}
@@ -475,7 +475,7 @@ export default function AboutPage() {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
 
             {/* Left Content Column */}
-            <div className="lg:col-span-7 space-y-6 text-left">
+            <div className="reveal-left lg:col-span-7 space-y-6 text-left">
               <div className="space-y-2">
                 <span className="text-[10px] sm:text-xs font-bold tracking-widest text-slate-400 uppercase">
                   {standards.subtitle}
@@ -510,7 +510,7 @@ export default function AboutPage() {
             </div>
 
             {/* Right Certificate Card Column */}
-            <div className="lg:col-span-5 flex justify-center">
+            <div className="reveal-right lg:col-span-5 flex justify-center">
               <div className="relative w-full max-w-sm aspect-[4/3] rounded-2xl overflow-hidden shadow-lg border border-slate-200 bg-slate-50 group">
                 <img
                   src={`/images/${standards.achievement.imageName}`}
@@ -541,7 +541,7 @@ export default function AboutPage() {
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           {/* Header */}
-          <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
+          <div className="reveal-up text-center max-w-3xl mx-auto mb-16 space-y-4">
             <span className="text-xs font-bold text-emerald-600 tracking-widest uppercase bg-emerald-50 border border-emerald-100/50 px-3 py-1 rounded-full">
               Value Proposition
             </span>
@@ -556,7 +556,7 @@ export default function AboutPage() {
             {whyChooseUs.map((reason, idx) => (
               <div
                 key={idx}
-                className="bg-white border border-slate-100 hover:border-emerald-200/80 rounded-xl p-5 flex items-center gap-4 shadow-sm hover:shadow-md hover:-translate-y-1 transform-gpu transition duration-300 text-left group cursor-default border-l-4 border-l-slate-200 hover:border-l-emerald-500"
+                className="reveal-stagger-item hover-lift bg-white border border-slate-100 hover:border-emerald-200/80 rounded-xl p-5 flex items-center gap-4 text-left group cursor-default border-l-4 border-l-slate-200 hover:border-l-emerald-500"
               >
                 <div className="w-9 h-9 rounded-full bg-emerald-50 text-emerald-500 flex items-center justify-center shrink-0 border border-emerald-100 transition-colors group-hover:bg-emerald-500 group-hover:text-white">
                   <CheckCircle2 size={16} className="stroke-[3] transition-transform group-hover:scale-110" />
@@ -570,7 +570,7 @@ export default function AboutPage() {
 
           {/* Concluding callout block */}
           {closingText && (
-            <div className="bg-[#00223A] text-white p-8 sm:p-10 rounded-2xl border border-white/10 shadow-lg relative overflow-hidden group">
+            <div className="reveal-scale bg-[#00223A] text-white p-8 sm:p-10 rounded-2xl border border-white/10 shadow-lg relative overflow-hidden group">
               <div className="absolute inset-0 opacity-5 bg-[radial-gradient(#3b82f6_1px,transparent_1px)] [background-size:16px_16px] pointer-events-none" />
               <div className="relative z-10 flex flex-col md:flex-row items-center gap-6 md:gap-12">
                 <div className="w-12 h-12 rounded-xl bg-white/10 text-accent-muted flex items-center justify-center shrink-0 border border-white/10">
@@ -592,7 +592,7 @@ export default function AboutPage() {
         <div className="absolute inset-0 opacity-[0.04] bg-[radial-gradient(#ffffff_1px,transparent_1px)] [background-size:20px_20px] pointer-events-none" />
         <div className="absolute top-1/2 left-1/2 w-96 h-96 bg-accent/20 rounded-full blur-[100px] pointer-events-none -translate-x-1/2 -translate-y-1/2" />
 
-        <div className="max-w-4xl mx-auto px-4 relative z-10 space-y-6">
+        <div className="reveal-up max-w-4xl mx-auto px-4 relative z-10 space-y-6">
           <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight">
             Ready to experience industrial excellence?
           </h2>
@@ -603,7 +603,7 @@ export default function AboutPage() {
             <Button
               variant="primary"
               onClick={() => window.location.hash = "#request-quote"}
-              className="w-full sm:w-auto px-8 py-3 rounded-lg font-bold bg-white text-primary hover:bg-slate-50 shadow-md hover:shadow-lg transition-all"
+              className="w-full sm:w-auto px-8 py-3 rounded-lg font-bold bg-white text-primary hover:bg-slate-50 shadow-md hover:shadow-lg transition-all hover:text-white hover:bg-primary"
             >
               Request a Quote
             </Button>

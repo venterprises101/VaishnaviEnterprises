@@ -16,7 +16,7 @@ export default function WhyChooseUs() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Large Banner Image */}
-        <div className="w-full h-64 md:h-[400px] rounded-2xl overflow-hidden shadow-lg border border-slate-200 mb-16 relative">
+        <div className="reveal-scale w-full h-64 md:h-[400px] rounded-2xl overflow-hidden shadow-lg border border-slate-200 mb-16 relative">
           <img
             src="/images/why_choose_us.png"
             alt="Organized aisles inside Vaishnavi warehouse facility"
@@ -26,7 +26,7 @@ export default function WhyChooseUs() {
         </div>
 
         {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
+        <div className="reveal-up text-center max-w-3xl mx-auto mb-16 space-y-4">
           <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-primary">
             {title}
           </h2>
@@ -49,7 +49,7 @@ export default function WhyChooseUs() {
             return (
               <div 
                 key={item.id} 
-                className="bg-white p-6 rounded-xl border border-slate-100 shadow-sm hover:shadow-md hover:-translate-y-1.5 transform-gpu transition duration-300 flex flex-col space-y-4 group cursor-default"
+                className="reveal-stagger-item hover-lift bg-white p-6 rounded-xl border border-slate-100 flex flex-col space-y-4 group cursor-default"
               >
                 {/* Icon & Title row */}
                 <div className="flex items-center gap-3">

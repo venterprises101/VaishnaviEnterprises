@@ -6,9 +6,33 @@ import { content } from "../data/content";
 export default function Footer() {
   const { logo, description, quickLinks, coreServices, contactDetails, socialLinks, copyright, links } = content.footer;
 
-  // Helper to dynamically render social icons
+  // Custom Brand Icons for Instagram and WhatsApp
+  const InstagramIcon = ({ size = 18, className = "" }) => (
+    <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}>
+      <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+      <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+      <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+    </svg>
+  );
+
+  const WhatsAppIcon = ({ size = 18, className = "" }) => (
+    <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}>
+      <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path>
+    </svg>
+  );
+
+  // Helper to safely render icons bypassing aggressive tree-shaking
+  const iconsMap = {
+    Mail,
+    Phone,
+    MapPin,
+    Globe,
+    Instagram: InstagramIcon,
+    WhatsApp: WhatsAppIcon
+  };
+
   const renderSocialIcon = (iconName, className) => {
-    const IconComponent = LucideIcons[iconName];
+    const IconComponent = iconsMap[iconName] || LucideIcons[iconName];
     return IconComponent ? <IconComponent className={className} size={18} /> : null;
   };
 
@@ -21,29 +45,34 @@ export default function Footer() {
           
           {/* Column 1: Brand & Desc (4 cols width on lg) */}
           <div className="lg:col-span-4 space-y-6 text-left">
-            <div className="flex items-center gap-2.5">
+            <a href="#home" className="flex items-center gap-2.5 group">
               <img 
                 src="/logo.png" 
                 alt="Vaishnavi Enterprises Logo" 
-                className="h-16 w-auto object-contain brightness-0 invert" 
+                className="h-16 w-auto object-contain brightness-0 invert transition-transform duration-300 group-hover:scale-105" 
               />
-              <span className="text-xl font-bold tracking-tight text-white">{logo}</span>
-            </div>
+            </a>
             <p className="text-slate-400 text-sm leading-relaxed max-w-sm">
               {description}
             </p>
             {/* Social Icons */}
             <div className="flex flex-wrap gap-3">
-              {socialLinks.map((social, idx) => (
-                <a
-                  key={idx}
-                  href={social.href}
-                  className="w-9 h-9 rounded-full bg-slate-800/40 hover:bg-accent text-slate-400 hover:text-white flex items-center justify-center border border-slate-800 hover:border-accent transition-all duration-300"
-                  aria-label={`Visit our ${social.name}`}
-                >
-                  {renderSocialIcon(social.name)}
-                </a>
-              ))}
+              {socialLinks.map((social, idx) => {
+                const isExternal = social.href.startsWith("http") || social.href.startsWith("mailto:") || social.href.startsWith("tel:");
+                return (
+                  <a
+                    key={idx}
+                    href={social.href}
+                    target={isExternal ? "_blank" : undefined}
+                    rel={isExternal ? "noopener noreferrer" : undefined}
+                    onClick={(e) => social.href === "#" && e.preventDefault()}
+                    className="w-9 h-9 rounded-full bg-slate-800/40 hover:bg-accent text-slate-400 hover:text-white flex items-center justify-center border border-slate-800 hover:border-accent transition-all duration-300"
+                    aria-label={`Visit our ${social.name}`}
+                  >
+                    {renderSocialIcon(social.name)}
+                  </a>
+                );
+              })}
             </div>
           </div>
 
@@ -57,6 +86,7 @@ export default function Footer() {
                 <li key={idx}>
                   <a
                     href={item.href}
+                    onClick={(e) => item.href === "#" && e.preventDefault()}
                     className="text-sm text-slate-400 hover:text-white transition-colors"
                   >
                     {item.label}
@@ -76,6 +106,7 @@ export default function Footer() {
                 <li key={idx}>
                   <a
                     href={item.href}
+                    onClick={(e) => item.href === "#" && e.preventDefault()}
                     className="text-sm text-slate-400 hover:text-white transition-colors"
                   >
                     {item.label}
@@ -102,11 +133,14 @@ export default function Footer() {
               {/* Emails */}
               <li className="flex items-start gap-3">
                 <Mail size={18} className="text-accent shrink-0 mt-0.5" />
-                <div className="flex flex-col text-sm text-slate-400">
-                  {contactDetails.emails.map((email, idx) => (
-                    <a key={idx} href={`mailto:${email}`} className="hover:text-white transition-colors">
-                      {email}
-                    </a>
+                <div className="flex flex-col gap-1.5 text-sm text-slate-400">
+                  {contactDetails.emails.map((item, idx) => (
+                    <div key={idx} className="flex flex-wrap gap-1.5 leading-tight">
+                      <span className="text-slate-500 font-semibold">{item.label}:</span>
+                      <a href={`mailto:${item.value}`} className="hover:text-white transition-colors">
+                        {item.value}
+                      </a>
+                    </div>
                   ))}
                 </div>
               </li>
@@ -137,6 +171,7 @@ export default function Footer() {
               <a
                 key={idx}
                 href={link.href}
+                onClick={(e) => link.href === "#" && e.preventDefault()}
                 className="text-xs text-slate-500 hover:text-white transition-colors"
               >
                 {link.label}

@@ -18,7 +18,7 @@ export default function Services() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Header Block */}
-        <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
+        <div className="reveal-up text-center max-w-3xl mx-auto mb-16 space-y-4">
           <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-primary">
             {title}
           </h2>
@@ -49,7 +49,7 @@ export default function Services() {
             return (
               <Card 
                 key={service.id} 
-                className="border border-slate-100 hover:border-blue-100 hover:shadow-xl hover:-translate-y-1.5 transform-gpu transition duration-300 flex flex-col h-full group cursor-default"
+                className="reveal-stagger-item hover-lift border border-slate-100 hover:border-blue-100 flex flex-col h-full group cursor-default"
               >
                 <CardContent className="p-8 flex flex-col h-full">
                   {/* Icon wrapper */}
