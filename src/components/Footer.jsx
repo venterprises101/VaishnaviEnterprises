@@ -133,10 +133,10 @@ export default function Footer() {
               {/* Emails */}
               <li className="flex items-start gap-3">
                 <Mail size={18} className="text-accent shrink-0 mt-0.5" />
-                <div className="flex flex-col gap-1.5 text-sm text-slate-400">
+                <div className="flex flex-col gap-2.5 text-sm text-slate-400">
                   {contactDetails.emails.map((item, idx) => (
-                    <div key={idx} className="flex flex-wrap gap-1.5 leading-tight">
-                      <span className="text-slate-500 font-semibold">{item.label}:</span>
+                    <div key={idx} className="flex flex-col leading-tight">
+                      <span className="text-slate-500 font-semibold text-[11px] tracking-wider uppercase">{item.label}</span>
                       <a href={`mailto:${item.value}`} className="hover:text-white transition-colors">
                         {item.value}
                       </a>
