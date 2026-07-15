@@ -70,7 +70,7 @@ export default function ServicesPage({ onOpenQuoteModal }) {
         {/* Background Image Blend */}
         <div className="absolute inset-0 z-0 opacity-15">
           <img
-            src="/images/warehouse_agv.png"
+            src="/images/worker.png"
             alt="Industrial backdrop"
             className="w-full h-full object-cover"
           />

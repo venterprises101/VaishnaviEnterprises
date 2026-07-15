@@ -23,7 +23,8 @@ const {
   Info, 
   PhoneCall, 
   MessageSquare,
-  Warehouse
+  Warehouse,
+  ArrowUpRight
 } = LucideIcons;
 
 const iconMap = {
@@ -48,55 +49,21 @@ export default function ContactPage() {
   // FAQ Accordion State
   const [openFaqIndex, setOpenFaqIndex] = useState(null);
 
-  // Form State
-  const [formData, setFormData] = useState({
-    companyName: "",
-    contactPerson: "",
-    designation: "",
-    email: "",
-    phone: "",
-    industry: "",
-    service: "",
-    location: "",
-    volume: "",
-    startDate: "",
-    message: "",
-    agree: false
-  });
+  const [iframeHeight, setIframeHeight] = useState(680);
+  const [loadCount, setLoadCount] = useState(0);
+
+  const handleIframeLoad = () => {
+    setLoadCount((prev) => {
+      const next = prev + 1;
+      if (next > 1) {
+        setIframeHeight(350);
+      }
+      return next;
+    });
+  };
 
   const toggleFaq = (index) => {
     setOpenFaqIndex(openFaqIndex === index ? null : index);
-  };
-
-  const handleInputChange = (e) => {
-    const { name, value, type, checked } = e.target;
-    setFormData(prev => ({
-      ...prev,
-      [name]: type === "checkbox" ? checked : value
-    }));
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    if (!formData.agree) {
-      alert("Please agree to the privacy policy before submitting.");
-      return;
-    }
-    alert(`Thank you ${formData.contactPerson}. Your enquiry for "${formData.companyName}" has been received. Our specialists will contact you within 24-48 hours.`);
-    setFormData({
-      companyName: "",
-      contactPerson: "",
-      designation: "",
-      email: "",
-      phone: "",
-      industry: "",
-      service: "",
-      location: "",
-      volume: "",
-      startDate: "",
-      message: "",
-      agree: false
-    });
   };
 
   const renderIcon = (iconName, className = "text-primary") => {
@@ -140,7 +107,10 @@ export default function ContactPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             
             {/* Card 1: Head Office */}
-            <div className="reveal-stagger-item hover-lift bg-white p-6 rounded-2xl border border-slate-200/80 flex flex-col justify-between text-left space-y-5 group cursor-default h-full">
+            <div 
+              onClick={() => window.open(cards[0].mapUrl || "https://www.google.com/maps?q=30.931992,76.833513", "_blank")}
+              className="reveal-stagger-item hover-lift bg-white p-6 rounded-2xl border border-slate-200/80 flex flex-col justify-between text-left space-y-5 group cursor-pointer hover:shadow-md h-full transition duration-300"
+            >
               <div className="space-y-3">
                 <div className="w-10 h-10 rounded-xl bg-blue-50 text-accent flex items-center justify-center border border-blue-100/50 transition-transform group-hover:scale-105">
                   {renderIcon("MapPin", "text-accent")}
@@ -154,7 +124,10 @@ export default function ContactPage() {
               </div>
               <Button 
                 variant="outline" 
-                onClick={() => window.open("https://maps.google.com", "_blank")}
+                onClick={(e) => {
+                  e.stopPropagation();
+                  window.open(cards[0].mapUrl || "https://www.google.com/maps?q=30.931992,76.833513", "_blank");
+                }}
                 className="w-full bg-white border-slate-300 text-primary hover:bg-primary hover:text-white hover:border-primary text-xs py-2 rounded-lg font-bold hover:-translate-y-0.5 hover:shadow-md transform-gpu transition duration-300"
               >
                 {cards[0].buttonText}
@@ -271,213 +244,21 @@ export default function ContactPage() {
             </div>
 
             {/* Right Form column (7 columns on lg) */}
-            <div className="reveal-right lg:col-span-7 bg-white p-6 sm:p-10 rounded-2xl border border-slate-200/80 shadow-md">
-              <form onSubmit={handleSubmit} className="space-y-6 text-left">
-                
-                {/* 2-column input grid */}
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                  
-                  {/* Company Name */}
-                  <div className="space-y-1.5">
-                    <label className="text-xs font-bold text-slate-500 uppercase tracking-wider">Company Name</label>
-                    <input 
-                      type="text"
-                      name="companyName"
-                      required
-                      value={formData.companyName}
-                      onChange={handleInputChange}
-                      placeholder="Enter company name"
-                      className="w-full border border-slate-200 rounded-lg px-4 py-2.5 text-sm outline-none focus:border-accent bg-slate-50/50 focus:bg-white transition-all font-medium"
-                    />
-                  </div>
-
-                  {/* Contact Person */}
-                  <div className="space-y-1.5">
-                    <label className="text-xs font-bold text-slate-500 uppercase tracking-wider">Contact Person</label>
-                    <input 
-                      type="text"
-                      name="contactPerson"
-                      required
-                      value={formData.contactPerson}
-                      onChange={handleInputChange}
-                      placeholder="Your full name"
-                      className="w-full border border-slate-200 rounded-lg px-4 py-2.5 text-sm outline-none focus:border-accent bg-slate-50/50 focus:bg-white transition-all font-medium"
-                    />
-                  </div>
-
-                  {/* Designation */}
-                  <div className="space-y-1.5">
-                    <label className="text-xs font-bold text-slate-500 uppercase tracking-wider">Designation</label>
-                    <input 
-                      type="text"
-                      name="designation"
-                      required
-                      value={formData.designation}
-                      onChange={handleInputChange}
-                      placeholder="Job title"
-                      className="w-full border border-slate-200 rounded-lg px-4 py-2.5 text-sm outline-none focus:border-accent bg-slate-50/50 focus:bg-white transition-all font-medium"
-                    />
-                  </div>
-
-                  {/* Business Email */}
-                  <div className="space-y-1.5">
-                    <label className="text-xs font-bold text-slate-500 uppercase tracking-wider">Business Email</label>
-                    <input 
-                      type="email"
-                      name="email"
-                      required
-                      value={formData.email}
-                      onChange={handleInputChange}
-                      placeholder="email@company.com"
-                      className="w-full border border-slate-200 rounded-lg px-4 py-2.5 text-sm outline-none focus:border-accent bg-slate-50/50 focus:bg-white transition-all font-medium"
-                    />
-                  </div>
-
-                  {/* Phone Number */}
-                  <div className="space-y-1.5">
-                    <label className="text-xs font-bold text-slate-500 uppercase tracking-wider">Phone Number</label>
-                    <input 
-                      type="tel"
-                      name="phone"
-                      required
-                      value={formData.phone}
-                      onChange={handleInputChange}
-                      placeholder="+1 (000) 000-0000"
-                      className="w-full border border-slate-200 rounded-lg px-4 py-2.5 text-sm outline-none focus:border-accent bg-slate-50/50 focus:bg-white transition-all font-medium"
-                    />
-                  </div>
-
-                  {/* Industry (Dropdown) */}
-                  <div className="space-y-1.5">
-                    <label className="text-xs font-bold text-slate-500 uppercase tracking-wider">Industry</label>
-                    <select 
-                      name="industry"
-                      required
-                      value={formData.industry}
-                      onChange={handleInputChange}
-                      className="w-full border border-slate-200 rounded-lg px-4 py-2.5 text-sm outline-none focus:border-accent bg-slate-50/50 focus:bg-white transition-all font-medium text-slate-600 appearance-none"
-                    >
-                      <option value="">Select Industry</option>
-                      <option value="contract_mfg">Contract Manufacturing & Job Work</option>
-                      <option value="fmcg">FMCG & Retail</option>
-                      <option value="pharma">Pharma & Healthcare</option>
-                      <option value="engineering">Heavy Engineering</option>
-                    </select>
-                  </div>
-
-                  {/* Service Required (Dropdown) */}
-                  <div className="space-y-1.5">
-                    <label className="text-xs font-bold text-slate-500 uppercase tracking-wider">Service Required</label>
-                    <select 
-                      name="service"
-                      required
-                      value={formData.service}
-                      onChange={handleInputChange}
-                      className="w-full border border-slate-200 rounded-lg px-4 py-2.5 text-sm outline-none focus:border-accent bg-slate-50/50 focus:bg-white transition-all font-medium text-slate-600 appearance-none"
-                    >
-                      <option value="">Select Service</option>
-                      <option value="manufacturing">Contract Manufacturing</option>
-                      <option value="warehousing">Warehouse Management</option>
-                      <option value="jobwork">Factory Job Work</option>
-                      <option value="mhe">MHE Solutions</option>
-                      <option value="3pl">End-to-End 3PL</option>
-                    </select>
-                  </div>
-
-                  {/* Project Location */}
-                  <div className="space-y-1.5">
-                    <label className="text-xs font-bold text-slate-500 uppercase tracking-wider">Project Location</label>
-                    <input 
-                      type="text"
-                      name="location"
-                      required
-                      value={formData.location}
-                      onChange={handleInputChange}
-                      placeholder="City/Region"
-                      className="w-full border border-slate-200 rounded-lg px-4 py-2.5 text-sm outline-none focus:border-accent bg-slate-50/50 focus:bg-white transition-all font-medium"
-                    />
-                  </div>
-
-                  {/* Estimated Monthly Volume */}
-                  <div className="space-y-1.5">
-                    <label className="text-xs font-bold text-slate-500 uppercase tracking-wider">Estimated Monthly Volume</label>
-                    <input 
-                      type="text"
-                      name="volume"
-                      required
-                      value={formData.volume}
-                      onChange={handleInputChange}
-                      placeholder="e.g., 50k units/month"
-                      className="w-full border border-slate-200 rounded-lg px-4 py-2.5 text-sm outline-none focus:border-accent bg-slate-50/50 focus:bg-white transition-all font-medium"
-                    />
-                  </div>
-
-                  {/* Preferred Start Date */}
-                  <div className="space-y-1.5">
-                    <label className="text-xs font-bold text-slate-500 uppercase tracking-wider">Preferred Start Date</label>
-                    <input 
-                      type="date"
-                      name="startDate"
-                      required
-                      value={formData.startDate}
-                      onChange={handleInputChange}
-                      className="w-full border border-slate-200 rounded-lg px-4 py-2.5 text-sm outline-none focus:border-accent bg-slate-50/50 focus:bg-white transition-all font-medium text-slate-500"
-                    />
-                  </div>
-
-                </div>
-
-                {/* Full Width Message */}
-                <div className="space-y-1.5">
-                  <label className="text-xs font-bold text-slate-500 uppercase tracking-wider">Message</label>
-                  <textarea 
-                    name="message"
-                    required
-                    value={formData.message}
-                    onChange={handleInputChange}
-                    rows={4}
-                    placeholder="Briefly describe your requirements"
-                    className="w-full border border-slate-200 rounded-lg px-4 py-2.5 text-sm outline-none focus:border-accent bg-slate-50/50 focus:bg-white transition-all font-medium resize-none"
-                  />
-                </div>
-
-                {/* Agreement Checkbox */}
-                <div className="flex items-start gap-2.5 pt-2">
-                  <input 
-                    type="checkbox"
-                    name="agree"
-                    id="agree"
-                    required
-                    checked={formData.agree}
-                    onChange={handleInputChange}
-                    className="mt-1 cursor-pointer w-4 h-4 text-accent border-slate-200 rounded focus:ring-accent accent-accent"
-                  />
-                  <label htmlFor="agree" className="text-xs sm:text-sm font-medium text-slate-500 select-none cursor-pointer">
-                    I agree to the privacy policy and terms of service.
-                  </label>
-                </div>
-
-                {/* Form CTA Buttons */}
-                <div className="flex flex-col sm:flex-row gap-4 pt-4">
-                  <Button 
-                    type="submit" 
-                    className="w-full sm:w-auto px-8 py-3 rounded-lg font-bold bg-primary text-white hover:bg-primary/90 shadow-md hover:shadow-lg hover:-translate-y-0.5 transform-gpu transition duration-300"
-                  >
-                    Send Enquiry
-                  </Button>
-                  <Button 
-                    variant="outline"
-                    type="button"
-                    onClick={() => alert("Redirecting to comprehensive proposal questionnaire...")}
-                    className="w-full sm:w-auto bg-white border-slate-300 text-primary hover:bg-primary hover:text-white hover:border-primary px-8 py-3 rounded-lg font-bold hover:-translate-y-0.5 hover:shadow-md transform-gpu transition duration-300"
-                  >
-                    Request a Proposal
-                  </Button>
-                </div>
-
-              </form>
+             <div id="contact-form-container" className="reveal-right lg:col-span-7 bg-white rounded-2xl border border-slate-200/80 shadow-md overflow-hidden" style={{ minHeight: `${iframeHeight}px` }}>
+              <iframe 
+                src="https://docs.google.com/forms/d/e/1FAIpQLSd3BGzJLpINgRyykldSvPx9nVwtyr8yekWmiCYDiHJEOvW8oQ/viewform?embedded=true" 
+                width="100%" 
+                height={iframeHeight} 
+                onLoad={handleIframeLoad}
+                frameBorder="0" 
+                marginHeight="0" 
+                marginWidth="0"
+                className="w-full border-0"
+                title="Vaishnavi Contact & Enquiry Form"
+              >
+                Loading form…
+              </iframe>
             </div>
-
           </div>
         </div>
       </section>
@@ -581,27 +362,88 @@ export default function ContactPage() {
       {/* 6. Our Strategic Location Map Section */}
       <section className="py-20 bg-white border-b border-slate-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="reveal-scale max-w-4xl mx-auto bg-slate-100 rounded-3xl p-10 border border-slate-200/60 shadow-sm flex flex-col items-center justify-center text-center space-y-4 min-h-[220px]">
-            <Map size={36} className="text-accent" />
-            <div className="space-y-1">
-              <h3 className="text-lg sm:text-xl font-bold text-primary tracking-tight">
-                {mapDetails.title}
-              </h3>
-              <p className="text-slate-500 text-xs sm:text-sm leading-relaxed">
-                {mapDetails.subtitle}
-              </p>
-              <span className="text-[10px] sm:text-xs font-bold text-slate-400 block pt-1 uppercase tracking-wider">
-                {mapDetails.location}
-              </span>
-            </div>
-            <Button 
-              variant="primary" 
-              onClick={() => window.open("https://maps.google.com", "_blank")}
-              className="px-6 py-2.5 rounded-lg text-xs font-bold hover:-translate-y-0.5 hover:shadow-md transform-gpu transition duration-300"
-            >
-              {mapDetails.buttonText}
-            </Button>
+          
+          <div className="reveal-up text-center space-y-3 mb-12">
+            <span className="text-[10px] sm:text-xs font-bold tracking-widest text-accent uppercase">
+              Find Us
+            </span>
+            <h2 className="text-3xl font-extrabold tracking-tight text-primary">
+              {mapDetails.title}
+            </h2>
+            <p className="text-slate-500 text-sm max-w-2xl mx-auto leading-relaxed font-normal">
+              {mapDetails.subtitle}
+            </p>
+            <div className="h-1 w-12 bg-accent mx-auto rounded-full" />
           </div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch max-w-6xl mx-auto">
+            {/* Map Container */}
+            <div className="reveal-left lg:col-span-8 rounded-3xl overflow-hidden border border-slate-200/80 shadow-lg min-h-[380px] sm:min-h-[450px] relative bg-slate-100 group">
+              <iframe
+                title="Vaishnavi Enterprises Location Map"
+                src="https://maps.google.com/maps?q=30.931992,76.833513&z=16&output=embed"
+                className="absolute inset-0 w-full h-full border-0 transition-opacity duration-300 group-hover:opacity-95"
+                allowFullScreen=""
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+              />
+            </div>
+
+            {/* Address & Direction Card */}
+            <div className="reveal-right lg:col-span-4 bg-[#0A2540] text-white rounded-3xl p-8 flex flex-col justify-between border border-slate-800 shadow-xl relative overflow-hidden text-left">
+              <div className="absolute inset-0 opacity-[0.02] bg-[radial-gradient(#ffffff_1px,transparent_1px)] [background-size:16px_16px] pointer-events-none" />
+              
+              <div className="space-y-6 relative z-10">
+                <div className="w-12 h-12 rounded-2xl bg-white/10 text-accent flex items-center justify-center border border-white/10 transition-transform hover:scale-105">
+                  <MapPin size={24} className="text-accent" />
+                </div>
+                
+                <div className="space-y-4">
+                  <div>
+                    <h3 className="text-lg font-bold tracking-tight text-white mb-2">
+                      Head Office
+                    </h3>
+                    <p className="text-slate-300 text-xs sm:text-sm leading-relaxed font-normal">
+                      {mapDetails.location}
+                    </p>
+                  </div>
+                  
+                  <div className="h-[1px] bg-white/10 w-full" />
+                  
+                  <div className="space-y-2.5 text-xs text-slate-400">
+                    <div className="flex justify-between pb-1 border-b border-white/5">
+                      <span>Latitude</span>
+                      <span className="font-mono text-slate-200">30.931992</span>
+                    </div>
+                    <div className="flex justify-between pb-1 border-b border-white/5">
+                      <span>Longitude</span>
+                      <span className="font-mono text-slate-200">76.833513</span>
+                    </div>
+                    <div className="flex justify-between">
+                      <span>Region</span>
+                      <span className="text-slate-200">Baddi Industrial Area</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div className="pt-8 relative z-10 space-y-3">
+                <Button
+                  variant="primary"
+                  onClick={() => window.open("https://www.google.com/maps?q=30.931992,76.833513", "_blank")}
+                  className="w-full bg-accent hover:bg-accent/90 text-white border-0 py-3 rounded-xl font-bold flex items-center justify-center gap-2 hover:-translate-y-0.5 hover:shadow-lg transform-gpu transition duration-300 text-xs"
+                >
+                  <span>Get Directions</span>
+                  {ArrowUpRight && <ArrowUpRight size={16} />}
+                </Button>
+                
+                <p className="text-[10px] text-slate-400/70 text-center font-medium">
+                  Opens in Google Maps app or browser
+                </p>
+              </div>
+            </div>
+          </div>
+
         </div>
       </section>
 
@@ -700,7 +542,7 @@ export default function ContactPage() {
             <Button 
               variant="primary" 
               onClick={() => {
-                const element = document.querySelector("form");
+                const element = document.getElementById("contact-form-container");
                 element?.scrollIntoView({ behavior: "smooth" });
               }}
               className="w-full sm:w-auto px-8 py-3 rounded-lg font-bold shadow-md hover:shadow-lg hover:-translate-y-0.5 transform-gpu transition duration-300"
@@ -718,7 +560,6 @@ export default function ContactPage() {
         </div>
       </section>
 
-      {/* Integrated Page Footer */}
       <Footer />
 
     </div>

@@ -19,13 +19,13 @@ const Button = React.forwardRef(({
           "bg-white border border-slate-200 text-slate-900 hover:bg-slate-50": variant === "outline",
           "bg-transparent text-slate-700 hover:bg-slate-100 hover:text-slate-900": variant === "ghost",
           "bg-accent-muted text-accent hover:bg-blue-100": variant === "secondary",
-          "bg-transparent border border-white text-white hover:bg-white hover:text-primary": variant === "outline-white",
+          "bg-transparent border-2 border-white text-white hover:bg-white hover:text-primary": variant === "outline-white",
           // Global animated variants
-          "bg-white text-[#001e42] border border-white hover:bg-transparent hover:text-white hover:border-white transition-all duration-300": variant === "white-fill",
-          "bg-transparent text-white border border-white hover:bg-white hover:text-[#001e42] hover:border-white transition-all duration-300": variant === "ghost-white",
+          "bg-white text-[#001e42] border-2 border-white hover:bg-transparent hover:text-white hover:border-white transition-all duration-300": variant === "white-fill",
+          "bg-transparent text-white border-2 border-white hover:bg-white hover:text-[#001e42] hover:border-white transition-all duration-300": variant === "ghost-white",
           // Navy ↔ White swap hover variants
-          "bg-[#001e42] text-white border border-[#001e42] hover:bg-white hover:text-[#001e42] hover:border-[#001e42] transition-all duration-300": variant === "navy",
-          "bg-white text-[#001e42] border border-[#001e42] hover:bg-[#001e42] hover:text-white hover:border-[#001e42] transition-all duration-300": variant === "white-navy",
+          "bg-[#001e42] text-white border-2 border-[#001e42] hover:bg-white hover:text-[#001e42] hover:border-[#001e42] transition-all duration-300": variant === "navy",
+          "bg-white text-[#001e42] border-2 border-[#001e42] hover:bg-[#001e42] hover:text-white hover:border-[#001e42] transition-all duration-300": variant === "white-navy",
         },
         {
           // Sizes

@@ -6,7 +6,7 @@ import { content } from "../data/content";
 export default function Infrastructure({ onOpenQuoteModal }) {
   const { title, subtitle, ctaButton, items } = content.infrastructure;
 
-  // items[0] = Bangalore Hub (large), items[1] = Pune Lab (small)
+  // items[0] = Gujarat Hub (large), items[1] = Baddi Lab (small)
   // items[2] = Loading Docks (small), items[3] = Cold Storage (large)
   const [hub, lab, docks, cold] = items;
 

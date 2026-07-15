@@ -47,49 +47,17 @@ export default function QuotePage() {
     trustedMarquee 
   } = content.quotePage;
 
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    phone: "",
-    company: "",
-    selectedServices: [],
-    requirements: ""
-  });
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [isSuccess, setIsSuccess] = useState(false);
+  const [iframeHeight, setIframeHeight] = useState(680);
+  const [loadCount, setLoadCount] = useState(0);
 
-  const handleTextChange = (e) => {
-    const { name, value } = e.target;
-    setFormData((prev) => ({ ...prev, [name]: value }));
-  };
-
-  const handleCheckboxChange = (serviceLabel) => {
-    setFormData((prev) => {
-      const alreadySelected = prev.selectedServices.includes(serviceLabel);
-      return {
-        ...prev,
-        selectedServices: alreadySelected 
-          ? prev.selectedServices.filter(s => s !== serviceLabel)
-          : [...prev.selectedServices, serviceLabel]
-      };
+  const handleIframeLoad = () => {
+    setLoadCount((prev) => {
+      const next = prev + 1;
+      if (next > 1) {
+        setIframeHeight(350);
+      }
+      return next;
     });
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    setIsSubmitting(true);
-    setTimeout(() => {
-      setIsSubmitting(false);
-      setIsSuccess(true);
-      setFormData({
-        name: "",
-        email: "",
-        phone: "",
-        company: "",
-        selectedServices: [],
-        requirements: ""
-      });
-    }, 1500);
   };
 
   const renderRequestIcon = (iconName, className = "text-primary") => {
@@ -105,7 +73,7 @@ export default function QuotePage() {
         <div className="absolute inset-0 opacity-10 bg-[radial-gradient(#3b82f6_1px,transparent_1px)] [background-size:16px_16px] pointer-events-none" />
         <div className="absolute inset-0 z-0 opacity-15">
           <img 
-            src="/images/loading_docks.png" 
+            src="/images/logistic.png" 
             alt="Warehouse backdrop" 
             className="w-full h-full object-cover"
           />
@@ -169,156 +137,20 @@ export default function QuotePage() {
                   </p>
                 </div>
                 
-                <div className="p-6 sm:p-8">
-                  {isSuccess ? (
-                    <div className="py-8 text-center flex flex-col items-center justify-center space-y-4">
-                      <div className="w-16 h-16 bg-green-50 text-green-500 rounded-full flex items-center justify-center animate-bounce">
-                        {CheckCircle2 ? <CheckCircle2 size={36} /> : <Check size={36} />}
-                      </div>
-                      <h3 className="text-xl font-bold text-primary">Thank you for submitting!</h3>
-                      <p className="text-slate-600 text-sm max-w-md">
-                        Your project requirement specifications have been securely transmitted to our engineering team. We will review and reach back to you within 24 hours.
-                      </p>
-                      <Button onClick={() => setIsSuccess(false)} variant="primary" className="rounded-lg px-6 font-bold">
-                        Fill Another Response
-                      </Button>
-                    </div>
-                  ) : (
-                    <form onSubmit={handleSubmit} className="space-y-6">
-                      
-                      {/* Grid Contact Fields */}
-                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                        <div>
-                          <label className="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">
-                            Your Name <span className="text-red-500">*</span>
-                          </label>
-                          <input 
-                            type="text" 
-                            name="name"
-                            required
-                            value={formData.name}
-                            onChange={handleTextChange}
-                            placeholder="John Doe"
-                            className="w-full px-4 py-2.5 border border-slate-200 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent transition-all bg-slate-50/50"
-                          />
-                        </div>
-                        <div>
-                          <label className="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">
-                            Company Email <span className="text-red-500">*</span>
-                          </label>
-                          <input 
-                            type="email" 
-                            name="email"
-                            required
-                            value={formData.email}
-                            onChange={handleTextChange}
-                            placeholder="john@company.com"
-                            className="w-full px-4 py-2.5 border border-slate-200 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent transition-all bg-slate-50/50"
-                          />
-                        </div>
-                      </div>
-
-                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                        <div>
-                          <label className="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">
-                            Phone Number <span className="text-red-500">*</span>
-                          </label>
-                          <input 
-                            type="tel" 
-                            name="phone"
-                            required
-                            value={formData.phone}
-                            onChange={handleTextChange}
-                            placeholder="+91 98765 43210"
-                            className="w-full px-4 py-2.5 border border-slate-200 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent transition-all bg-slate-50/50"
-                          />
-                        </div>
-                        <div>
-                          <label className="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">
-                            Company Name <span className="text-red-500">*</span>
-                          </label>
-                          <input 
-                            type="text" 
-                            name="company"
-                            required
-                            value={formData.company}
-                            onChange={handleTextChange}
-                            placeholder="Enterprise Pvt Ltd"
-                            className="w-full px-4 py-2.5 border border-slate-200 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent transition-all bg-slate-50/50"
-                          />
-                        </div>
-                      </div>
-
-                      {/* Multiselect Checkbox list */}
-                      <div>
-                        <label className="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-3">
-                          Select Services Needed (Select all that apply)
-                        </label>
-                        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3">
-                          {whatYouCanRequest.items.map((item, index) => {
-                            const isChecked = formData.selectedServices.includes(item.label);
-                            return (
-                              <label 
-                                key={index}
-                                className={`flex items-start gap-3 p-3 rounded-lg border cursor-pointer select-none transition-all ${
-                                  isChecked 
-                                    ? "border-accent bg-blue-50/40 text-primary font-semibold" 
-                                    : "border-slate-200 hover:bg-slate-50 text-slate-600"
-                                }`}
-                              >
-                                <input 
-                                  type="checkbox"
-                                  checked={isChecked}
-                                  onChange={() => handleCheckboxChange(item.label)}
-                                  className="mt-0.5 rounded border-slate-300 text-accent focus:ring-accent w-4 h-4 shrink-0"
-                                />
-                                <span className="text-xs leading-normal">{item.label}</span>
-                              </label>
-                            );
-                          })}
-                        </div>
-                      </div>
-
-                      {/* Textarea detail */}
-                      <div>
-                        <label className="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">
-                          Project Description & Specifications <span className="text-red-500">*</span>
-                        </label>
-                        <textarea 
-                          name="requirements"
-                          required
-                          rows={5}
-                          value={formData.requirements}
-                          onChange={handleTextChange}
-                          placeholder="Please provide details about cargo volume, warehousing capacity needed, production throughput rates, or contract manufacturing job details..."
-                          className="w-full px-4 py-3 border border-slate-200 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent resize-none transition-all bg-slate-50/50"
-                        />
-                      </div>
-
-                      {/* Submit */}
-                      <div>
-                        <Button 
-                          type="submit" 
-                          variant="accent" 
-                          className="w-full flex items-center justify-center gap-2 h-11 font-bold rounded-lg shadow-sm"
-                          disabled={isSubmitting}
-                        >
-                          {isSubmitting ? (
-                            <>
-                              <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin" />
-                              <span>Submitting proposal details...</span>
-                            </>
-                          ) : (
-                            <>
-                              <span>Submit Project Specifications</span>
-                              <ArrowRight size={16} />
-                            </>
-                          )}
-                        </Button>
-                      </div>
-
-                    </form>
-                  )}
+                <div className="relative w-full overflow-hidden" style={{ minHeight: `${iframeHeight}px` }}>
+                  <iframe 
+                    src="https://docs.google.com/forms/d/e/1FAIpQLSd3BGzJLpINgRyykldSvPx9nVwtyr8yekWmiCYDiHJEOvW8oQ/viewform?embedded=true" 
+                    width="100%" 
+                    height={iframeHeight} 
+                    onLoad={handleIframeLoad}
+                    frameBorder="0" 
+                    marginHeight="0" 
+                    marginWidth="0"
+                    className="w-full border-0"
+                    title="Vaishnavi Project Requirement Form"
+                  >
+                    Loading form…
+                  </iframe>
                 </div>
               </div>
 
@@ -410,7 +242,7 @@ export default function QuotePage() {
                   {/* Call Button */}
                   <a 
                     href={`tel:${sidebar.contactSupport.phone.replace(/\s+/g, '')}`}
-                    className="w-full flex items-center justify-center gap-2.5 h-11 px-4 text-sm font-bold bg-primary text-white hover:bg-primary-dark rounded-lg shadow-sm transition-all"
+                    className="w-full flex items-center justify-center gap-2.5 h-11 px-4 text-sm font-bold bg-primary border-2 border-primary text-white hover:bg-white hover:text-primary rounded-lg shadow-sm transition-all duration-300"
                   >
                     {Phone ? <Phone size={15} /> : null}
                     <span>Call Us</span>
@@ -419,7 +251,7 @@ export default function QuotePage() {
                   {/* Email Button */}
                   <a 
                     href={`mailto:${sidebar.contactSupport.email}`}
-                    className="w-full flex items-center justify-center gap-2.5 h-11 px-4 text-sm font-bold bg-white border border-slate-200 text-slate-700 hover:bg-slate-50 rounded-lg shadow-sm transition-all"
+                    className="w-full flex items-center justify-center gap-2.5 h-11 px-4 text-sm font-bold bg-white border-2 border-primary text-primary hover:bg-primary hover:text-white rounded-lg shadow-sm transition-all duration-300"
                   >
                     {Mail ? <Mail size={15} /> : null}
                     <span>Email Us</span>
@@ -430,7 +262,7 @@ export default function QuotePage() {
                     href={sidebar.contactSupport.whatsapp}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-full flex items-center justify-center gap-2.5 h-11 px-4 text-sm font-bold bg-emerald-500 hover:bg-emerald-600 text-white rounded-lg shadow-sm transition-all"
+                    className="w-full flex items-center justify-center gap-2.5 h-11 px-4 text-sm font-bold bg-emerald-500 border-2 border-emerald-500 text-white hover:bg-white hover:text-emerald-500 rounded-lg shadow-sm transition-all duration-300"
                   >
                     {MessageSquare ? <MessageSquare size={15} /> : null}
                     <span>WhatsApp</span>
@@ -458,26 +290,68 @@ export default function QuotePage() {
           <div className="absolute left-0 top-0 bottom-0 w-16 sm:w-28 bg-gradient-to-r from-slate-100/90 to-transparent z-10 pointer-events-none" />
           <div className="absolute right-0 top-0 bottom-0 w-16 sm:w-28 bg-gradient-to-l from-slate-100/90 to-transparent z-10 pointer-events-none" />
 
-          <div className="reveal-fade animate-marquee flex items-center gap-16 py-2">
+          <div className="reveal-fade animate-marquee flex items-center py-2">
             {/* Copy 1 */}
-            <div className="flex gap-20 items-center shrink-0">
-              {trustedMarquee.logos.map((logoName, idx) => (
+            <div className="flex items-center shrink-0">
+              {trustedMarquee.logos.map((logo, idx) => (
                 <div 
                   key={idx} 
-                  className="text-lg sm:text-xl font-extrabold text-slate-300 hover:text-accent tracking-wider uppercase transition-colors duration-300 font-sans select-none"
+                  className="mr-24 h-12 flex items-center justify-center shrink-0 select-none grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all duration-300"
                 >
-                  {logoName}
+                  <img 
+                    src={`/images/${logo.image}`} 
+                    alt={logo.name} 
+                    className="h-full object-contain max-w-[150px] sm:max-w-[170px]"
+                    draggable="false"
+                  />
                 </div>
               ))}
             </div>
             {/* Copy 2 */}
-            <div className="flex gap-20 items-center shrink-0">
-              {trustedMarquee.logos.map((logoName, idx) => (
+            <div className="flex items-center shrink-0">
+              {trustedMarquee.logos.map((logo, idx) => (
                 <div 
-                  key={`dup-${idx}`} 
-                  className="text-lg sm:text-xl font-extrabold text-slate-300 hover:text-accent tracking-wider uppercase transition-colors duration-300 font-sans select-none"
+                  key={`dup1-${idx}`} 
+                  className="mr-24 h-12 flex items-center justify-center shrink-0 select-none grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all duration-300"
                 >
-                  {logoName}
+                  <img 
+                    src={`/images/${logo.image}`} 
+                    alt={logo.name} 
+                    className="h-full object-contain max-w-[150px] sm:max-w-[170px]"
+                    draggable="false"
+                  />
+                </div>
+              ))}
+            </div>
+            {/* Copy 3 */}
+            <div className="flex items-center shrink-0">
+              {trustedMarquee.logos.map((logo, idx) => (
+                <div 
+                  key={`dup2-${idx}`} 
+                  className="mr-24 h-12 flex items-center justify-center shrink-0 select-none grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all duration-300"
+                >
+                  <img 
+                    src={`/images/${logo.image}`} 
+                    alt={logo.name} 
+                    className="h-full object-contain max-w-[150px] sm:max-w-[170px]"
+                    draggable="false"
+                  />
+                </div>
+              ))}
+            </div>
+            {/* Copy 4 */}
+            <div className="flex items-center shrink-0">
+              {trustedMarquee.logos.map((logo, idx) => (
+                <div 
+                  key={`dup3-${idx}`} 
+                  className="mr-24 h-12 flex items-center justify-center shrink-0 select-none grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all duration-300"
+                >
+                  <img 
+                    src={`/images/${logo.image}`} 
+                    alt={logo.name} 
+                    className="h-full object-contain max-w-[150px] sm:max-w-[170px]"
+                    draggable="false"
+                  />
                 </div>
               ))}
             </div>

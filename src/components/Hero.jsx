@@ -63,16 +63,16 @@ export default function Hero({ onOpenQuoteModal }) {
                   const element = document.getElementById("services");
                   element?.scrollIntoView({ behavior: "smooth" });
                 }}
-                className="flex items-center justify-center gap-2"
+                className="flex items-center justify-center gap-2 font-bold transition-all duration-300"
               >
                 <span>{primaryCta}</span>
                 <ArrowRight size={18} />
               </Button>
               <Button
-                variant="ghost-white"
+                variant="outline-white"
                 size="lg"
                 onClick={onOpenQuoteModal}
-                className="hover:bg-[#001e42]/90 hover:text-white/80"
+                className="font-bold transition-all duration-300"
               >
                 {secondaryCta}
               </Button>

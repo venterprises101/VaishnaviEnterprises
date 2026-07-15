@@ -240,7 +240,7 @@ export default function IndustriesPage() {
                 <div className="reveal-stagger-item hover-lift relative rounded-2xl overflow-hidden border border-slate-700/50 shadow-lg group min-h-[180px] flex flex-col items-center justify-center p-6 text-center">
                   {/* Background Image */}
                   <img 
-                    src="/images/sustainable_logistics.png" 
+                    src="/images/nation_expectation.png" 
                     alt="Sustainable Logistics" 
                     className="absolute inset-0 w-full h-full object-cover transform group-hover:scale-[1.03] transition-transform duration-700 select-none pointer-events-none"
                   />

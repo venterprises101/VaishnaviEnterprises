@@ -30,7 +30,7 @@ export default function CTA({ onOpenQuoteModal }) {
               variant="white-navy" 
               size="lg"
               onClick={() => window.location.hash = "#request-quote"}
-              className="font-bold px-8 shadow-lg hover:shadow-xl flex items-center justify-center gap-2 hover:border-white"
+              className="font-bold px-8 shadow-lg hover:shadow-xl flex items-center justify-center gap-2 hover:border-white transition-all duration-300"
             >
               <span>{ctaButton}</span>
               <ArrowRight size={18} />

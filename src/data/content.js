@@ -20,13 +20,13 @@ export const content = {
     stats: [
       {
         id: "experience",
-        value: "18+",
+        value: `${new Date().getFullYear() - 2008}+`,
         label: "Years Experience in Industrial Logistics",
         position: "top-right" // visual anchor placement in design
       },
       {
         id: "clients",
-        value: "100+",
+        value: "20+",
         label: "Global Enterprise Clients",
         position: "bottom-left"
       }
@@ -205,26 +205,26 @@ export const content = {
   },
   infrastructure: {
     title: "World-Class Infrastructure",
-    subtitle: "Operating over 2.5 million sq. ft. of state-of-the-art space, including our central logistics hub in Bangalore and an advanced robotics lab in Pune, we set the standard for industrial modernization.",
+    subtitle: "Operating premium industrial facilities including our 2.5 Lakh sq. ft. logistics hub in Gujarat and a state-of-the-art automation facility in Baddi (Himachal Pradesh), we set the benchmark for modern supply chain operations.",
     ctaButton: "View All Facility Details",
     items: [
       {
-        id: "bangalore-hub",
-        title: "Bangalore Central Hub",
-        description: "Our flagship 1.2M sq. ft. facility featuring fully automated sorting and AI-driven inventory management.",
-        imageName: "bangalore_hub.png"
+        id: "gujarat-hub",
+        title: "Gujarat Central Hub",
+        description: "Our 2.5 Lakh sq. ft. facility featuring fully automated sorting and advanced inventory management.",
+        imageName: "infrastructure.png"
       },
       {
-        id: "pune-lab",
-        title: "Pune Robotics Lab",
-        description: "R&D center for industrial automation and precision engineering components.",
-        imageName: "pune_lab.png"
+        id: "baddi-lab",
+        title: "Baddi, Automation Facility",
+        description: "R&D center in Baddi (Himachal Pradesh) for industrial automation and precision expert components.",
+        imageName: "factory.png"
       },
       {
         id: "loading-docks",
         title: "Loading Docks",
-        description: "24 docking stations for rapid turnaround.",
-        imageName: "loading_docks.png"
+        description: "Multiple docking stations for rapid turnaround.",
+        imageName: "logistic.png"
       },
       {
         id: "cold-storage",
@@ -264,17 +264,17 @@ export const content = {
     },
     contactDetails: {
       title: "CONTACT DETAILS",
-      address: "Plot No. 42, Industrial Area Phase II, Pune, Maharashtra 411001",
+      address: "Vaishnavi Enterprises, B48 F, NEAR ROTARY CHOWK BIG -B COMPLEX, BADDI, Solan, Himachal Pradesh, 173205",
       emails: [
         { label: "Head office", value: "adminho@thevaishnavi.com" },
         { label: "Management", value: "admingujrat@thevaishnavi.com" },
         { label: "Proprietor", value: "prakashgupta@thevaishnavi.com" },
         { label: "HR team", value: "hrho@thevaishnavi.com" }
       ],
-      phones: ["+91 98765 43210", "+91 12345 67890"]
+      phones: ["+91 98050 02582", "+91 80913 52798"]
     },
     socialLinks: [
-      { name: "WhatsApp", href: "https://wa.me/919876543210" }, // WhatsApp
+      { name: "WhatsApp", href: "https://wa.me/919805002582" }, // WhatsApp
       { name: "Instagram", href: "https://instagram.com" },
       { name: "Mail", href: "mailto:prakashgupta@thevaishnavi.com" } // Gmail
     ],
@@ -362,7 +362,7 @@ export const content = {
           "Safe material handling"
         ],
         buttonText: "Request Specification",
-        imageName: "pune_lab.png",
+        imageName: "factory.png",
         isDarkButton: false
       },
       {
@@ -413,7 +413,7 @@ export const content = {
           "Reduced inventory errors"
         ],
         buttonText: "Request Specification",
-        imageName: "control_room.png",
+        imageName: "Technology_era.png",
         isDarkButton: false
       },
       {
@@ -443,7 +443,7 @@ export const content = {
           "Skilled manpower availability"
         ],
         buttonText: "Request Specification",
-        imageName: "workforce.png",
+        imageName: "forklift with men.png",
         isDarkButton: true
       },
       {
@@ -469,7 +469,7 @@ export const content = {
           "On-time deliveries"
         ],
         buttonText: "Request Specification",
-        imageName: "loading_docks.png",
+        imageName: "logistic.png",
         isDarkButton: false
       }
     ],
@@ -498,7 +498,7 @@ export const content = {
     ],
     cta: {
       title: "Ready to Optimize Your Operations?",
-      subtitle: "Connect with our engineering and logistics specialists to discuss a tailored solution for your enterprise.",
+      subtitle: "Connect with our logistics and industrial automation experts to discuss a tailored solution for your enterprise.",
       primaryCta: "Talk to an Expert",
       secondaryCta: "Download Capability Deck"
     }
@@ -538,9 +538,9 @@ export const content = {
       },
       contactSupport: {
         title: "Contact Support",
-        phone: "+91 98765 43210",
-        email: "sales@vaishnavient.com",
-        whatsapp: "https://wa.me/919876543210"
+        phone: "+91 98050 02582",
+        email: "prakashgupta@thevaishnavi.com",
+        whatsapp: "https://wa.me/919805002582"
       }
     },
     process: {
@@ -557,12 +557,10 @@ export const content = {
     trustedMarquee: {
       title: "TRUSTED BY GLOBAL LEADERS",
       logos: [
-        "Hindustan Unilever Limited",
-        "Unilever",
-        "A Century of Excellence",
-        "Lotus Herbals",
-        "Kwality Wall's",
-        "Pidilite"
+        { name: "Hindustan Unilever Limited", image: "Brand_Logos/hindustan_uniliver_limited.png" },
+        { name: "Unilever", image: "Brand_Logos/unilever.png" },
+        { name: "Kwality Wall's", image: "Brand_Logos/kwality_walls.png" },
+        { name: "Pidilite", image: "Brand_Logos/pidilite.png" }
       ]
     }
   },
@@ -635,14 +633,14 @@ export const content = {
         {
           badge: "Expansion",
           title: "National Expansion",
-          description: "Expanded operations to 15 major industrial hubs across the country, implementing our first proprietary fleet management system.",
-          imageName: "loading_docks.png"
+          description: "Expanded operations to key industrial hubs across the country, implementing our first proprietary fleet management system.",
+          imageName: "nation_expectation.png"
         },
         {
           badge: "Innovation",
           title: "Technological Era",
-          description: "Today, we manage over 2 million square feet of warehousing space, powered by AI-driven logistics and 100% sustainable energy practices.",
-          imageName: "control_room.png"
+          description: "Today, we manage modern warehousing spaces, powered by advanced logistics and 100% sustainable energy practices.",
+          imageName: "Technology_era.png"
         }
       ]
     },
@@ -651,24 +649,24 @@ export const content = {
       subtitle: "Guided by decades of collective experience in global logistics and industrial engineering.",
       members: [
         {
-          name: "Vikram Singh",
-          role: "Founder & Managing Director",
-          imageName: "leader_vikram.png"
+          name: "Prakash Gupta",
+          role: "Founder & Owner",
+          imageName: "Team/owner.jpeg"
         },
         {
-          name: "Ananya Sharma",
-          role: "Chief Operations Officer",
-          imageName: "leader_ananya.png"
+          name: "Surender Rana",
+          role: "Head of Compliance",
+          imageName: "Team/hr_rana.png"
         },
         {
-          name: "Rajesh Iyer",
-          role: "Chief Technology Officer",
-          imageName: "leader_rajesh.png"
+          name: "Urvashi Thakur",
+          role: "Sales & Administration",
+          imageName: "Team/sales_and_administration.png"
         },
         {
-          name: "Meera Kapoor",
-          role: "Head of Compliance & Quality",
-          imageName: "leader_meera.png"
+          name: "Nilesh Barot",
+          role: "Site Incharge",
+          imageName: "Team/site_Incharge.png"
         }
       ]
     },
@@ -696,63 +694,63 @@ export const content = {
       achievement: {
         score: "99.8%",
         label: "Average annual compliance audit score since 2018.",
-        imageName: "certificate.png"
+        imageName: "checker.png"
       }
     },
     story: [
-        "At **Vaishnavi Enterprises**, we specialize in delivering End-to-End (E2E) Third-Party Logistics (3PL) and manufacturing support solutions that help businesses streamline operations, improve productivity, and maintain complete supply chain visibility.",
-        "We work as an extension of our clients' operations, providing reliable factory job work, in-plant logistics, warehousing, inventory management, depot operations, and dispatch execution. By combining skilled manpower, modern equipment, and technology-driven processes, we enable manufacturers to focus on production while we efficiently manage the movement of materials and finished goods.",
-        "Our expertise spans every stage of the supply chain—from **Semi-Finished Goods (SFG) to Finished Goods (FG) conversion** and **warehouse management** to **barcode-enabled inventory control**, **Material Handling Equipment (MHE) operations**, and **order dispatch**. Every solution is designed to improve operational efficiency, reduce costs, and ensure timely product delivery.",
-        "With a strong commitment to safety, compliance, and operational excellence, we follow standardized processes that deliver consistent quality and complete traceability across manufacturing and logistics operations. Whether supporting production lines inside factories or managing high-volume distribution centers, our experienced team ensures smooth, accurate, and uninterrupted operations.",
-        "We proudly serve industries including **FMCG, Food & Beverage, Consumer Goods, Automotive Components, Electrical & Electronics, Pharmaceuticals, and Retail & Distribution**, providing scalable solutions tailored to each industry's unique operational requirements."
-      ],
-      coreValues: [
-        {
-          title: "Operational Excellence",
-          description: "We focus on efficiency, precision, and continuous improvement in every operation.",
-          iconName: "Award"
-        },
-        {
-          title: "Customer Partnership",
-          description: "We build long-term relationships by understanding our clients' business goals and delivering customized solutions.",
-          iconName: "Users"
-        },
-        {
-          title: "Safety & Compliance",
-          description: "We maintain the highest standards of workplace safety, regulatory compliance, and operational discipline.",
-          iconName: "ShieldCheck"
-        },
-        {
-          title: "Integrity",
-          description: "We conduct every project with honesty, transparency, and accountability.",
-          iconName: "Check"
-        },
-        {
-          title: "Innovation",
-          description: "We embrace technology and process improvements to deliver smarter, faster, and more accurate supply chain solutions.",
-          iconName: "Zap"
-        },
-        {
-          title: "Reliability",
-          description: "We are committed to delivering dependable services that keep our clients' operations running smoothly.",
-          iconName: "Clock"
-        }
-      ],
-      whyChooseUs: [
-        "End-to-End 3PL Supply Chain Solutions",
-        "Specialized Factory Job Work & Contract Manufacturing Support",
-        "Expertise in SFG to FG & SFG to SFG Conversion",
-        "In-Plant Logistics & Material Movement",
-        "Comprehensive Warehouse & Depot Management",
-        "Barcode-Based Inventory Tracking & Traceability",
-        "FEFO/FIFO Compliant Inventory Management",
-        "Material Handling Equipment (MHE) with Certified Operators",
-        "Skilled Workforce & Scalable Operations",
-        "Accurate Documentation, Invoicing & Dispatch Management",
-        "Technology-Driven Processes",
-        "Commitment to Safety, Quality & Customer Satisfaction"
-      ],
-      closingText: "At **Vaishnavi Enterprises**, we don't just provide logistics services—we become your trusted operational partner, ensuring your manufacturing, warehousing, and supply chain processes run efficiently, accurately, and on time."
+      "At **Vaishnavi Enterprises**, we specialize in delivering End-to-End (E2E) Third-Party Logistics (3PL) and manufacturing support solutions that help businesses streamline operations, improve productivity, and maintain complete supply chain visibility.",
+      "We work as an extension of our clients' operations, providing reliable factory job work, in-plant logistics, warehousing, inventory management, depot operations, and dispatch execution. By combining skilled manpower, modern equipment, and technology-driven processes, we enable manufacturers to focus on production while we efficiently manage the movement of materials and finished goods.",
+      "Our expertise spans every stage of the supply chain—from **Semi-Finished Goods (SFG) to Finished Goods (FG) conversion** and **warehouse management** to **barcode-enabled inventory control**, **Material Handling Equipment (MHE) operations**, and **order dispatch**. Every solution is designed to improve operational efficiency, reduce costs, and ensure timely product delivery.",
+      "With a strong commitment to safety, compliance, and operational excellence, we follow standardized processes that deliver consistent quality and complete traceability across manufacturing and logistics operations. Whether supporting production lines inside factories or managing high-volume distribution centers, our experienced team ensures smooth, accurate, and uninterrupted operations.",
+      "We proudly serve industries including **FMCG, Food & Beverage, Consumer Goods, Automotive Components, Electrical & Electronics, Pharmaceuticals, and Retail & Distribution**, providing scalable solutions tailored to each industry's unique operational requirements."
+    ],
+    coreValues: [
+      {
+        title: "Operational Excellence",
+        description: "We focus on efficiency, precision, and continuous improvement in every operation.",
+        iconName: "Award"
+      },
+      {
+        title: "Customer Partnership",
+        description: "We build long-term relationships by understanding our clients' business goals and delivering customized solutions.",
+        iconName: "Users"
+      },
+      {
+        title: "Safety & Compliance",
+        description: "We maintain the highest standards of workplace safety, regulatory compliance, and operational discipline.",
+        iconName: "ShieldCheck"
+      },
+      {
+        title: "Integrity",
+        description: "We conduct every project with honesty, transparency, and accountability.",
+        iconName: "Check"
+      },
+      {
+        title: "Innovation",
+        description: "We embrace technology and process improvements to deliver smarter, faster, and more accurate supply chain solutions.",
+        iconName: "Zap"
+      },
+      {
+        title: "Reliability",
+        description: "We are committed to delivering dependable services that keep our clients' operations running smoothly.",
+        iconName: "Clock"
+      }
+    ],
+    whyChooseUs: [
+      "End-to-End 3PL Supply Chain Solutions",
+      "Specialized Factory Job Work & Contract Manufacturing Support",
+      "Expertise in SFG to FG & SFG to SFG Conversion",
+      "In-Plant Logistics & Material Movement",
+      "Comprehensive Warehouse & Depot Management",
+      "Barcode-Based Inventory Tracking & Traceability",
+      "FEFO/FIFO Compliant Inventory Management",
+      "Material Handling Equipment (MHE) with Certified Operators",
+      "Skilled Workforce & Scalable Operations",
+      "Accurate Documentation, Invoicing & Dispatch Management",
+      "Technology-Driven Processes",
+      "Commitment to Safety, Quality & Customer Satisfaction"
+    ],
+    closingText: "At **Vaishnavi Enterprises**, we don't just provide logistics services—we become your trusted operational partner, ensuring your manufacturing, warehousing, and supply chain processes run efficiently, accurately, and on time."
   },
   industriesPage: {
     banner: {
@@ -890,7 +888,7 @@ export const content = {
           title: "Sustainable Logistics",
           iconName: "Leaf",
           isSmall: true,
-          imageName: "sustainable_logistics.png"
+          imageName: "nation_expectation.png"
         },
         {
           id: "risk",
@@ -918,20 +916,21 @@ export const content = {
       {
         id: "office",
         title: "Head Office",
-        description: "Vaishnavi Enterprises, Corporate HQ, Tech Hub, 500, City, State, ZIP, Country",
+        description: "Vaishnavi Enterprises, B48 F, NEAR ROTARY CHOWK BIG -B COMPLEX, BADDI, Solan, Himachal Pradesh, 173205",
         buttonText: "View on Google Maps",
-        iconName: "MapPin"
+        iconName: "MapPin",
+        mapUrl: "https://www.google.com/maps?q=30.931992,76.833513"
       },
       {
         id: "call",
         title: "Call Us",
         numbers: [
-          { label: "Main", value: "+1 (800) 123-4567" },
-          { label: "Sales", value: "+1 (800) 123-4568" },
+          { label: "Main", value: "+91 9805002582" },
+          { label: "Sales", value: "+91 8091352798" },
           { label: "Support", value: "+1 (800) 123-4569" }
         ],
         buttons: [
-          { label: "Call Sales", href: "tel:+18001234568" },
+          { label: "Call Sales", href: "tel:+918091352798" },
           { label: "Call Support", href: "tel:+18001234569" }
         ],
         iconName: "Phone"
@@ -1016,8 +1015,8 @@ export const content = {
     },
     map: {
       title: "Our Strategic Location",
-      subtitle: "Interactive Map View Protected for Privacy",
-      location: "Location: Tech Hub Business District, Sector 500",
+      subtitle: "Visit our Head Office in Baddi, Solan, Himachal Pradesh",
+      location: "Vaishnavi Enterprises, B48 F, NEAR ROTARY CHOWK BIG -B COMPLEX, BADDI, Solan, Himachal Pradesh, 173205",
       buttonText: "Get Directions"
     },
     faqs: {

@@ -46,12 +46,13 @@ export default function AboutPage() {
     competencies,
     journey,
     leadership,
-    standards,
     story = [],
     coreValues = [],
     whyChooseUs = [],
     closingText = ""
   } = content.aboutPage || {};
+
+  const { trustedMarquee = { title: "TRUSTED BY GLOBAL LEADERS", logos: [] } } = content.quotePage || {};
 
   const renderIcon = (iconName, className = "text-primary") => {
     const IconComponent = iconMap[iconName] || Warehouse;
@@ -80,7 +81,7 @@ export default function AboutPage() {
         {/* Backdrop image */}
         <div className="absolute inset-0 z-0 opacity-15">
           <img
-            src="/images/bangalore_hub.png"
+            src="/images/infrastructure.png"
             alt="Logistics warehouse backdrop"
             className="w-full h-full object-cover"
           />
@@ -103,16 +104,16 @@ export default function AboutPage() {
           {/* Action Buttons */}
           <div className="flex flex-wrap gap-4">
             <Button
-              variant="primary"
+              variant="white-fill"
               onClick={() => window.location.hash = "#services-details"}
-              className="bg-white text-primary hover:bg-slate-50 font-bold px-6 py-2.5 rounded-lg shadow-sm"
+              className="font-bold px-6 py-2.5 rounded-lg transition-all duration-300"
             >
               {banner.primaryCta}
             </Button>
             <Button
               variant="outline-white"
               onClick={() => window.location.hash = "#request-quote"}
-              className="border-white text-white hover:bg-white/10 font-bold px-6 py-2.5 rounded-lg"
+              className="font-bold px-6 py-2.5 rounded-lg transition-all duration-300"
             >
               {banner.secondaryCta}
             </Button>
@@ -380,6 +381,89 @@ export default function AboutPage() {
         </div>
       </section>
 
+      {/* 4.8 Trusted By Global Leaders Section */}
+      <section className="bg-slate-100/50 border-b border-slate-200/50 py-12 overflow-hidden relative">
+        <div className="max-w-7xl mx-auto px-4 mb-6 text-center">
+          <span className="text-[10px] sm:text-xs font-bold tracking-widest text-slate-400 uppercase">
+            {trustedMarquee.title}
+          </span>
+        </div>
+        
+        {/* Infinite Scrolling Loop */}
+        <div className="relative w-full overflow-hidden whitespace-nowrap">
+          {/* Shadow Blurs */}
+          <div className="absolute left-0 top-0 bottom-0 w-16 sm:w-28 bg-gradient-to-r from-slate-100/80 to-transparent z-10 pointer-events-none" />
+          <div className="absolute right-0 top-0 bottom-0 w-16 sm:w-28 bg-gradient-to-l from-slate-100/80 to-transparent z-10 pointer-events-none" />
+
+          <div className="reveal-fade animate-marquee-reverse flex items-center py-2">
+            {/* Copy 1 */}
+            <div className="flex items-center shrink-0">
+              {trustedMarquee.logos.map((logo, idx) => (
+                <div 
+                  key={idx} 
+                  className="mr-24 h-12 flex items-center justify-center shrink-0 select-none grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all duration-300"
+                >
+                  <img 
+                    src={`/images/${logo.image}`} 
+                    alt={logo.name} 
+                    className="h-full object-contain max-w-[150px] sm:max-w-[170px]"
+                    draggable="false"
+                  />
+                </div>
+              ))}
+            </div>
+            {/* Copy 2 */}
+            <div className="flex items-center shrink-0">
+              {trustedMarquee.logos.map((logo, idx) => (
+                <div 
+                  key={`dup1-${idx}`} 
+                  className="mr-24 h-12 flex items-center justify-center shrink-0 select-none grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all duration-300"
+                >
+                  <img 
+                    src={`/images/${logo.image}`} 
+                    alt={logo.name} 
+                    className="h-full object-contain max-w-[150px] sm:max-w-[170px]"
+                    draggable="false"
+                  />
+                </div>
+              ))}
+            </div>
+            {/* Copy 3 */}
+            <div className="flex items-center shrink-0">
+              {trustedMarquee.logos.map((logo, idx) => (
+                <div 
+                  key={`dup2-${idx}`} 
+                  className="mr-24 h-12 flex items-center justify-center shrink-0 select-none grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all duration-300"
+                >
+                  <img 
+                    src={`/images/${logo.image}`} 
+                    alt={logo.name} 
+                    className="h-full object-contain max-w-[150px] sm:max-w-[170px]"
+                    draggable="false"
+                  />
+                </div>
+              ))}
+            </div>
+            {/* Copy 4 */}
+            <div className="flex items-center shrink-0">
+              {trustedMarquee.logos.map((logo, idx) => (
+                <div 
+                  key={`dup3-${idx}`} 
+                  className="mr-24 h-12 flex items-center justify-center shrink-0 select-none grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all duration-300"
+                >
+                  <img 
+                    src={`/images/${logo.image}`} 
+                    alt={logo.name} 
+                    className="h-full object-contain max-w-[150px] sm:max-w-[170px]"
+                    draggable="false"
+                  />
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* 5. The Leadership Team Section (Infinite Scroll Marquee) */}
       <section className="py-20 bg-slate-50 border-b border-slate-100 overflow-hidden relative">
         <div className="reveal-up max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-10 flex flex-col sm:flex-row sm:items-end justify-between gap-4 text-left">
@@ -409,14 +493,14 @@ export default function AboutPage() {
           <div className="absolute left-0 top-0 bottom-0 w-16 sm:w-28 bg-gradient-to-r from-slate-50 to-transparent z-10 pointer-events-none" />
           <div className="absolute right-0 top-0 bottom-0 w-16 sm:w-28 bg-gradient-to-l from-slate-50 to-transparent z-10 pointer-events-none" />
 
-          <div className="animate-marquee flex gap-8 py-4">
+          <div className="animate-marquee flex py-4">
 
             {/* Copy 1 */}
-            <div className="flex gap-8 shrink-0">
+            <div className="flex shrink-0">
               {leadership.members.map((member, idx) => (
                 <div
                   key={idx}
-                  className="w-64 bg-white p-5 rounded-2xl border border-slate-200/80 shadow-sm flex flex-col space-y-4 text-left whitespace-normal select-none shrink-0"
+                  className="w-64 mr-8 bg-white p-5 rounded-2xl border border-slate-200/80 shadow-sm flex flex-col space-y-4 text-left whitespace-normal select-none shrink-0"
                 >
                   <div className="aspect-[4/5] rounded-xl overflow-hidden bg-slate-100 border border-slate-200">
                     <img
@@ -439,11 +523,65 @@ export default function AboutPage() {
             </div>
 
             {/* Copy 2 (Loop duplicate) */}
-            <div className="flex gap-8 shrink-0">
+            <div className="flex shrink-0">
               {leadership.members.map((member, idx) => (
                 <div
-                  key={`dup-${idx}`}
-                  className="w-64 bg-white p-5 rounded-2xl border border-slate-200/80 shadow-sm flex flex-col space-y-4 text-left whitespace-normal select-none shrink-0"
+                  key={`dup1-${idx}`}
+                  className="w-64 mr-8 bg-white p-5 rounded-2xl border border-slate-200/80 shadow-sm flex flex-col space-y-4 text-left whitespace-normal select-none shrink-0"
+                >
+                  <div className="aspect-[4/5] rounded-xl overflow-hidden bg-slate-100 border border-slate-200">
+                    <img
+                      src={`/images/${member.imageName}`}
+                      alt={member.name}
+                      className="w-full h-full object-cover"
+                      draggable="false"
+                    />
+                  </div>
+                  <div className="space-y-1">
+                    <h3 className="text-base font-bold text-primary tracking-tight">
+                      {member.name}
+                    </h3>
+                    <p className="text-xs font-semibold text-slate-500">
+                      {member.role}
+                    </p>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            {/* Copy 3 (Loop duplicate) */}
+            <div className="flex shrink-0">
+              {leadership.members.map((member, idx) => (
+                <div
+                  key={`dup2-${idx}`}
+                  className="w-64 mr-8 bg-white p-5 rounded-2xl border border-slate-200/80 shadow-sm flex flex-col space-y-4 text-left whitespace-normal select-none shrink-0"
+                >
+                  <div className="aspect-[4/5] rounded-xl overflow-hidden bg-slate-100 border border-slate-200">
+                    <img
+                      src={`/images/${member.imageName}`}
+                      alt={member.name}
+                      className="w-full h-full object-cover"
+                      draggable="false"
+                    />
+                  </div>
+                  <div className="space-y-1">
+                    <h3 className="text-base font-bold text-primary tracking-tight">
+                      {member.name}
+                    </h3>
+                    <p className="text-xs font-semibold text-slate-500">
+                      {member.role}
+                    </p>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            {/* Copy 4 (Loop duplicate) */}
+            <div className="flex shrink-0">
+              {leadership.members.map((member, idx) => (
+                <div
+                  key={`dup3-${idx}`}
+                  className="w-64 mr-8 bg-white p-5 rounded-2xl border border-slate-200/80 shadow-sm flex flex-col space-y-4 text-left whitespace-normal select-none shrink-0"
                 >
                   <div className="aspect-[4/5] rounded-xl overflow-hidden bg-slate-100 border border-slate-200">
                     <img
@@ -469,70 +607,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* 6. Standards of Integrity / Quality & Compliance Section */}
-      <section className="py-20 bg-white border-b border-slate-100">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
 
-            {/* Left Content Column */}
-            <div className="reveal-left lg:col-span-7 space-y-6 text-left">
-              <div className="space-y-2">
-                <span className="text-[10px] sm:text-xs font-bold tracking-widest text-slate-400 uppercase">
-                  {standards.subtitle}
-                </span>
-                <h2 className="text-3xl font-extrabold tracking-tight text-primary">
-                  {standards.title}
-                </h2>
-                <div className="h-1 w-12 bg-accent rounded-full" />
-              </div>
-              <p className="text-slate-600 text-sm sm:text-base leading-relaxed">
-                {standards.description}
-              </p>
-
-              {/* Compliance Point list */}
-              <div className="space-y-5 pt-2">
-                {standards.bullets.map((bullet, idx) => (
-                  <div key={idx} className="flex gap-4 items-start">
-                    <div className="w-10 h-10 rounded-xl bg-blue-50 text-accent flex items-center justify-center shrink-0 border border-blue-100/50 shadow-sm">
-                      {renderIcon(bullet.iconName, "text-accent")}
-                    </div>
-                    <div className="space-y-1 text-left">
-                      <h4 className="text-sm sm:text-base font-bold text-primary tracking-tight">
-                        {bullet.title}
-                      </h4>
-                      <p className="text-slate-500 text-xs leading-relaxed max-w-xl">
-                        {bullet.description}
-                      </p>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            {/* Right Certificate Card Column */}
-            <div className="reveal-right lg:col-span-5 flex justify-center">
-              <div className="relative w-full max-w-sm aspect-[4/3] rounded-2xl overflow-hidden shadow-lg border border-slate-200 bg-slate-50 group">
-                <img
-                  src={`/images/${standards.achievement.imageName}`}
-                  alt="Framed ISO Certificate on Wall"
-                  className="w-full h-full object-cover transform group-hover:scale-[1.02] transition-transform duration-700"
-                />
-
-                {/* Floating score badge card */}
-                <div className="absolute bottom-6 left-6 right-6 bg-[#001E35]/95 backdrop-blur-md p-4 rounded-xl border border-white/10 text-left space-y-1 shadow-2xl animate-in slide-in-from-bottom-4 duration-500">
-                  <div className="text-3xl font-black text-white leading-none">
-                    {standards.achievement.score}
-                  </div>
-                  <div className="text-[10px] sm:text-xs font-medium text-slate-300 leading-tight">
-                    {standards.achievement.label}
-                  </div>
-                </div>
-              </div>
-            </div>
-
-          </div>
-        </div>
-      </section>
 
       {/* 6.5 Why Choose Us Section */}
       <section className="py-24 bg-slate-50/50 border-b border-slate-100 text-left relative overflow-hidden">
@@ -601,9 +676,9 @@ export default function AboutPage() {
           </p>
           <div className="flex justify-center pt-4">
             <Button
-              variant="primary"
+              variant="white-navy"
               onClick={() => window.location.hash = "#request-quote"}
-              className="w-full sm:w-auto px-8 py-3 rounded-lg font-bold bg-white text-primary hover:bg-slate-50 shadow-md hover:shadow-lg transition-all hover:text-white hover:bg-primary"
+              className="w-full sm:w-auto px-8 py-3 rounded-lg font-bold hover:shadow-md transition-all duration-300"
             >
               Request a Quote
             </Button>

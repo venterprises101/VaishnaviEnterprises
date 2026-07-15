@@ -78,7 +78,11 @@ export default function Navbar({ onOpenQuoteModal, currentPage }) {
 
           {/* Desktop CTA */}
           <div className="hidden md:block">
-            <Button variant="primary" onClick={() => window.location.hash = "#request-quote"} className="rounded-md">
+            <Button 
+              variant="navy" 
+              onClick={() => window.location.hash = "#request-quote"} 
+              className="rounded-md font-bold transition-all duration-300"
+            >
               {ctaButton}
             </Button>
           </div>
@@ -121,12 +125,12 @@ export default function Navbar({ onOpenQuoteModal, currentPage }) {
           })}
           <div className="pt-2 px-3">
             <Button
-              variant="primary"
+              variant="navy"
               onClick={() => {
                 setIsOpen(false);
                 window.location.hash = "#request-quote";
               }}
-              className="w-full flex items-center justify-center gap-2"
+              className="w-full flex items-center justify-center gap-2 font-bold transition-all duration-300"
             >
               <span>{ctaButton}</span>
               <ArrowRight size={16} />
