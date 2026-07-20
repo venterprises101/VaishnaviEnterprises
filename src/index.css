@@ -3,7 +3,10 @@
 @tailwind utilities;
 
 @layer base {
+  html,
   body {
+    overflow-x: hidden;
+    max-width: 100%;
     @apply bg-neutral-bg text-neutral-dark font-sans antialiased scroll-smooth;
   }
 }

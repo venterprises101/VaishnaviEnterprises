@@ -80,7 +80,7 @@ export default function Hero({ onOpenQuoteModal }) {
           </div>
 
           {/* Right Image/Stats Column */}
-          <div className="lg:col-span-5 relative mt-8 lg:mt-0 flex justify-center">
+          <div className="lg:col-span-5 relative mt-8 lg:mt-0 flex justify-center overflow-hidden">
 
             {/* Main Warehouse Image Container */}
             <div className="reveal-hero-img relative w-full max-w-md lg:max-w-none aspect-[4/3] rounded-2xl overflow-hidden shadow-2xl border border-white/10">
@@ -93,7 +93,7 @@ export default function Hero({ onOpenQuoteModal }) {
             </div>
 
             {/* Experience Stats Card (Top Right) */}
-            <div className="reveal-hero-stat-top absolute -top-6 -right-4 md:-right-6 bg-white text-slate-900 p-4 rounded-2xl shadow-xl border border-slate-100 flex items-start gap-3 max-w-[210px]">
+            <div className="reveal-hero-stat-top absolute -top-6 right-0 md:-right-6 bg-white text-slate-900 p-4 rounded-2xl shadow-xl border border-slate-100 flex items-start gap-3 max-w-[210px]">
               <div className="p-2 rounded-lg bg-green-50 text-green-600 shrink-0">
                 <Shield size={20} />
               </div>
@@ -108,7 +108,7 @@ export default function Hero({ onOpenQuoteModal }) {
             </div>
 
             {/* Clients Stats Card (Bottom Left) */}
-            <div className="reveal-hero-stat-bottom absolute -bottom-6 -left-4 md:-left-6 bg-white text-slate-900 p-4 rounded-2xl shadow-xl border border-slate-100 flex items-start gap-3 max-w-[210px]">
+            <div className="reveal-hero-stat-bottom absolute -bottom-6 left-0 md:-left-6 bg-white text-slate-900 p-4 rounded-2xl shadow-xl border border-slate-100 flex items-start gap-3 max-w-[210px]">
               <div className="p-2 rounded-lg bg-blue-50 text-accent shrink-0">
                 <Users size={20} />
               </div>
