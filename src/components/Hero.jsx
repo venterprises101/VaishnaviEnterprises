@@ -80,7 +80,7 @@ export default function Hero({ onOpenQuoteModal }) {
           </div>
 
           {/* Right Image/Stats Column */}
-          <div className="lg:col-span-5 relative mt-8 lg:mt-0 flex justify-center overflow-hidden">
+          <div className="lg:col-span-5 relative mt-8 lg:mt-0 flex justify-center">
 
             {/* Main Warehouse Image Container */}
             <div className="reveal-hero-img relative w-full max-w-md lg:max-w-none aspect-[4/3] rounded-2xl overflow-hidden shadow-2xl border border-white/10">
