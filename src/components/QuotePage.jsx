@@ -4,21 +4,21 @@ import { Button } from "./ui/button";
 import Footer from "./Footer";
 import { content } from "../data/content";
 
-const { 
-  Factory, 
-  Settings, 
-  Layers, 
-  Warehouse, 
-  ClipboardList, 
-  Barcode, 
-  Box, 
-  Dolly, 
-  Truck, 
-  Phone, 
-  Mail, 
-  MessageSquare, 
-  Check, 
-  CheckCircle2, 
+const {
+  Factory,
+  Settings,
+  Layers,
+  Warehouse,
+  ClipboardList,
+  Barcode,
+  Box,
+  Dolly,
+  Truck,
+  Phone,
+  Mail,
+  MessageSquare,
+  Check,
+  CheckCircle2,
   ArrowRight,
   UserCheck
 } = LucideIcons;
@@ -37,14 +37,14 @@ const resolvedIconMap = {
 };
 
 export default function QuotePage() {
-  const { 
-    banner, 
-    whyComplete, 
-    whatYouCanRequest, 
-    sidebar, 
-    process, 
-    confidentialityNote, 
-    trustedMarquee 
+  const {
+    banner,
+    whyComplete,
+    whatYouCanRequest,
+    sidebar,
+    process,
+    confidentialityNote,
+    trustedMarquee
   } = content.quotePage;
 
   const [iframeHeight, setIframeHeight] = useState(680);
@@ -67,14 +67,14 @@ export default function QuotePage() {
 
   return (
     <div className="min-h-screen bg-slate-50 flex flex-col font-sans antialiased text-slate-800">
-      
+
       {/* Top Header Banner Section */}
       <section className="relative pt-36 pb-28 bg-gradient-to-br from-primary via-[#00223A] to-primary text-white overflow-hidden border-b border-slate-900">
         <div className="absolute inset-0 opacity-10 bg-[radial-gradient(#3b82f6_1px,transparent_1px)] [background-size:16px_16px] pointer-events-none" />
         <div className="absolute inset-0 z-0 opacity-15">
-          <img 
-            src="/images/logistic.png" 
-            alt="Warehouse backdrop" 
+          <img
+            src="/images/logistic.png"
+            alt="Warehouse backdrop"
             className="w-full h-full object-cover"
           />
         </div>
@@ -92,10 +92,10 @@ export default function QuotePage() {
       <section className="py-16 flex-grow">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10">
-            
+
             {/* Left Main Form Column */}
             <div className="lg:col-span-8 space-y-12">
-              
+
               {/* Why Complete This Form Block */}
               <div className="reveal-stagger-item hover-lift bg-white p-6 sm:p-8 rounded-2xl border border-slate-200/80 text-left space-y-3">
                 <h2 className="text-xl sm:text-2xl font-bold text-primary">
@@ -113,8 +113,8 @@ export default function QuotePage() {
                 </h2>
                 <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
                   {whatYouCanRequest.items.map((item, idx) => (
-                    <div 
-                      key={idx} 
+                    <div
+                      key={idx}
                       className="reveal-stagger-item hover-lift bg-white border border-slate-100 hover:border-emerald-200/80 rounded-xl p-4 flex items-center gap-4 text-left group cursor-default border-l-4 border-l-slate-200 hover:border-l-emerald-500"
                     >
                       <div className="w-9 h-9 rounded-full bg-emerald-50 text-emerald-500 flex items-center justify-center shrink-0 border border-emerald-100 transition-colors group-hover:bg-emerald-500 group-hover:text-white">
@@ -136,15 +136,15 @@ export default function QuotePage() {
                     Submit your requirement details below, and our supply chain experts will prepare a customized proposal.
                   </p>
                 </div>
-                
+
                 <div className="relative w-full overflow-hidden" style={{ minHeight: `${iframeHeight}px` }}>
-                  <iframe 
-                    src="https://docs.google.com/forms/d/e/1FAIpQLSd3BGzJLpINgRyykldSvPx9nVwtyr8yekWmiCYDiHJEOvW8oQ/viewform?embedded=true" 
-                    width="100%" 
-                    height={iframeHeight} 
+                  <iframe
+                    src="https://docs.google.com/forms/d/e/1FAIpQLSd3BGzJLpINgRyykldSvPx9nVwtyr8yekWmiCYDiHJEOvW8oQ/viewform?embedded=true"
+                    width="100%"
+                    height={iframeHeight}
                     onLoad={handleIframeLoad}
-                    frameBorder="0" 
-                    marginHeight="0" 
+                    frameBorder="0"
+                    marginHeight="0"
                     marginWidth="0"
                     className="w-full border-0"
                     title="Vaishnavi Project Requirement Form"
@@ -199,7 +199,7 @@ export default function QuotePage() {
 
             {/* Right Column (Sidebar) */}
             <div className="lg:col-span-4 space-y-8 text-left">
-              
+
               {/* Why Choose Us Sidebar Widget */}
               <div className="reveal-stagger-item hover-lift bg-white p-6 sm:p-8 rounded-2xl border border-slate-200/80 shadow-sm space-y-5">
                 <h3 className="text-lg font-bold text-primary tracking-tight">
@@ -207,8 +207,8 @@ export default function QuotePage() {
                 </h3>
                 <div className="space-y-3">
                   {sidebar.whyChooseUs.items.map((item, idx) => (
-                    <div 
-                      key={idx} 
+                    <div
+                      key={idx}
                       className="hover-lift bg-white border border-slate-100 hover:border-emerald-200/80 rounded-xl p-4 flex items-center gap-4 text-left group cursor-default border-l-4 border-l-slate-200 hover:border-l-emerald-500"
                     >
                       <div className="w-9 h-9 rounded-full bg-emerald-50 text-emerald-500 flex items-center justify-center shrink-0 border border-emerald-100 transition-colors group-hover:bg-emerald-500 group-hover:text-white">
@@ -237,19 +237,19 @@ export default function QuotePage() {
                     Connect directly with our solutions managers.
                   </p>
                 </div>
-                
+
                 <div className="space-y-3 pt-2 text-left">
                   {/* Call Button */}
-                  <a 
+                  <a
                     href={`tel:${sidebar.contactSupport.phone.replace(/\s+/g, '')}`}
                     className="w-full flex items-center justify-center gap-2.5 h-11 px-4 text-sm font-bold bg-primary border-2 border-primary text-white hover:bg-white hover:text-primary rounded-lg shadow-sm transition-all duration-300"
                   >
                     {Phone ? <Phone size={15} /> : null}
                     <span>Call Us</span>
                   </a>
-                  
+
                   {/* Email Button */}
-                  <a 
+                  <a
                     href={`mailto:${sidebar.contactSupport.email}`}
                     className="w-full flex items-center justify-center gap-2.5 h-11 px-4 text-sm font-bold bg-white border-2 border-primary text-primary hover:bg-primary hover:text-white rounded-lg shadow-sm transition-all duration-300"
                   >
@@ -258,7 +258,7 @@ export default function QuotePage() {
                   </a>
 
                   {/* WhatsApp Button */}
-                  <a 
+                  <a
                     href={sidebar.contactSupport.whatsapp}
                     target="_blank"
                     rel="noopener noreferrer"
@@ -283,24 +283,24 @@ export default function QuotePage() {
             {trustedMarquee.title}
           </span>
         </div>
-        
+
         {/* Infinite Scrolling Loop */}
         <div className="relative w-full overflow-hidden whitespace-nowrap">
           {/* Shadow Blurs */}
           <div className="absolute left-0 top-0 bottom-0 w-16 sm:w-28 bg-gradient-to-r from-slate-100/90 to-transparent z-10 pointer-events-none" />
           <div className="absolute right-0 top-0 bottom-0 w-16 sm:w-28 bg-gradient-to-l from-slate-100/90 to-transparent z-10 pointer-events-none" />
 
-          <div className="reveal-fade animate-marquee flex items-center py-2">
+          <div className="animate-marquee flex items-center py-2">
             {/* Copy 1 */}
             <div className="flex items-center shrink-0">
               {trustedMarquee.logos.map((logo, idx) => (
-                <div 
-                  key={idx} 
+                <div
+                  key={idx}
                   className="mr-24 h-12 flex items-center justify-center shrink-0 select-none grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all duration-300"
                 >
-                  <img 
-                    src={`/images/${logo.image}`} 
-                    alt={logo.name} 
+                  <img
+                    src={`/images/${logo.image}`}
+                    alt={logo.name}
                     className="h-full object-contain max-w-[150px] sm:max-w-[170px]"
                     draggable="false"
                   />
@@ -310,13 +310,13 @@ export default function QuotePage() {
             {/* Copy 2 */}
             <div className="flex items-center shrink-0">
               {trustedMarquee.logos.map((logo, idx) => (
-                <div 
-                  key={`dup1-${idx}`} 
+                <div
+                  key={`dup1-${idx}`}
                   className="mr-24 h-12 flex items-center justify-center shrink-0 select-none grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all duration-300"
                 >
-                  <img 
-                    src={`/images/${logo.image}`} 
-                    alt={logo.name} 
+                  <img
+                    src={`/images/${logo.image}`}
+                    alt={logo.name}
                     className="h-full object-contain max-w-[150px] sm:max-w-[170px]"
                     draggable="false"
                   />
@@ -326,13 +326,13 @@ export default function QuotePage() {
             {/* Copy 3 */}
             <div className="flex items-center shrink-0">
               {trustedMarquee.logos.map((logo, idx) => (
-                <div 
-                  key={`dup2-${idx}`} 
+                <div
+                  key={`dup2-${idx}`}
                   className="mr-24 h-12 flex items-center justify-center shrink-0 select-none grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all duration-300"
                 >
-                  <img 
-                    src={`/images/${logo.image}`} 
-                    alt={logo.name} 
+                  <img
+                    src={`/images/${logo.image}`}
+                    alt={logo.name}
                     className="h-full object-contain max-w-[150px] sm:max-w-[170px]"
                     draggable="false"
                   />
@@ -342,13 +342,13 @@ export default function QuotePage() {
             {/* Copy 4 */}
             <div className="flex items-center shrink-0">
               {trustedMarquee.logos.map((logo, idx) => (
-                <div 
-                  key={`dup3-${idx}`} 
+                <div
+                  key={`dup3-${idx}`}
                   className="mr-24 h-12 flex items-center justify-center shrink-0 select-none grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all duration-300"
                 >
-                  <img 
-                    src={`/images/${logo.image}`} 
-                    alt={logo.name} 
+                  <img
+                    src={`/images/${logo.image}`}
+                    alt={logo.name}
                     className="h-full object-contain max-w-[150px] sm:max-w-[170px]"
                     draggable="false"
                   />
@@ -361,7 +361,7 @@ export default function QuotePage() {
 
       {/* Page Footer */}
       <Footer />
-      
+
     </div>
   );
 }

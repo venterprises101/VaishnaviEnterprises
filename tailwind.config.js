@@ -8,12 +8,12 @@ export default {
     extend: {
       colors: {
         primary: {
-          DEFAULT: '#001e42', // Brand primary — Vaishnavi Enterprises navy
+          DEFAULT: '#001e42', // Brand primary
           dark: '#001530',
           light: '#F4F7F9',
         },
         accent: {
-          DEFAULT: '#3B82F6', // Vibrant blue for active states/highlights
+          DEFAULT: '#3B82F6',
           hover: '#2563EB',
           muted: '#E6F0FA',
         },

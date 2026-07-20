@@ -395,7 +395,7 @@ export default function AboutPage() {
           <div className="absolute left-0 top-0 bottom-0 w-16 sm:w-28 bg-gradient-to-r from-slate-100/80 to-transparent z-10 pointer-events-none" />
           <div className="absolute right-0 top-0 bottom-0 w-16 sm:w-28 bg-gradient-to-l from-slate-100/80 to-transparent z-10 pointer-events-none" />
 
-          <div className="reveal-fade animate-marquee-reverse flex items-center py-2">
+          <div className="animate-marquee-reverse flex items-center py-2">
             {/* Copy 1 */}
             <div className="flex items-center shrink-0">
               {trustedMarquee.logos.map((logo, idx) => (
@@ -466,24 +466,14 @@ export default function AboutPage() {
 
       {/* 5. The Leadership Team Section (Infinite Scroll Marquee) */}
       <section className="py-20 bg-slate-50 border-b border-slate-100 overflow-hidden relative">
-        <div className="reveal-up max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-10 flex flex-col sm:flex-row sm:items-end justify-between gap-4 text-left">
-          <div className="space-y-3 max-w-2xl">
+        <div className="reveal-up max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-10 text-center flex flex-col items-center justify-center">
+          <div className="space-y-3 max-w-2xl mx-auto">
             <h2 className="text-3xl font-extrabold tracking-tight text-primary">
               {leadership.title}
             </h2>
             <p className="text-slate-600 text-sm sm:text-base">
               {leadership.subtitle}
             </p>
-          </div>
-          <div className="shrink-0">
-            <a
-              href="#contact"
-              onClick={() => window.location.hash = "#request-quote"}
-              className="inline-flex items-center gap-1.5 text-sm font-bold text-accent hover:text-accent-hover transition-colors"
-            >
-              <span>Join Our Team</span>
-              <ArrowRight size={15} />
-            </a>
           </div>
         </div>
 

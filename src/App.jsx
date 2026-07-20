@@ -16,6 +16,9 @@ import QuotePage from "./components/QuotePage";
 import AboutPage from "./components/AboutPage";
 import IndustriesPage from "./components/IndustriesPage";
 import ContactPage from "./components/ContactPage";
+import TermsPage from "./components/TermsPage";
+import PrivacyPage from "./components/PrivacyPage";
+import CookiePage from "./components/CookiePage";
 import "./App.css";
 
 export default function App() {
@@ -40,10 +43,17 @@ export default function App() {
       } else if (hash === "#contact-us" || hash === "#/contact-us" || hash === "#contact") {
         setCurrentPage("contact");
         window.scrollTo(0, 0);
+      } else if (hash === "#terms-of-service" || hash === "#/terms-of-service" || hash === "#terms" || hash === "#/terms") {
+        setCurrentPage("terms");
+        window.scrollTo(0, 0);
+      } else if (hash === "#privacy-policy" || hash === "#/privacy-policy") {
+        setCurrentPage("privacy");
+        window.scrollTo(0, 0);
+      } else if (hash === "#cookie-policy" || hash === "#/cookie-policy") {
+        setCurrentPage("cookie");
+        window.scrollTo(0, 0);
       } else if (hash.startsWith("#services-details") || hash === "#/services") {
         setCurrentPage("services");
-        
-        // Extract exact section target within services page (e.g. #services-details-contract-mfg)
         const targetId = hash.replace("#services-details-", "");
         if (targetId && targetId !== "#services-details" && targetId !== "#/services") {
           setTimeout(() => {
@@ -68,7 +78,6 @@ export default function App() {
       }
     };
 
-    // Run on initial page load/mount
     handleHashChange();
 
     window.addEventListener("hashchange", handleHashChange);
@@ -90,7 +99,6 @@ export default function App() {
           viewFactor: 0.15,
         });
 
-        // 1. Core Reveal Animations
         sr.reveal(".reveal-fade", {
           distance: "0px",
           duration: 800,
@@ -116,14 +124,12 @@ export default function App() {
           distance: "0px",
         });
 
-        // Stagger sequence for lists/cards
         sr.reveal(".reveal-stagger-item", {
           interval: 80,
           origin: "bottom",
           distance: "30px",
         });
 
-        // 2. Custom Premium Hero Animations
         sr.reveal(".reveal-hero-badge", {
           origin: "bottom",
           distance: "15px",
@@ -185,7 +191,7 @@ export default function App() {
 
   return (
     <div className="min-h-screen bg-slate-50 flex flex-col font-sans antialiased text-slate-800">
-      
+
       {/* Navigation Header */}
       <Navbar onOpenQuoteModal={openQuoteModal} currentPage={currentPage} />
 
@@ -198,6 +204,12 @@ export default function App() {
         <IndustriesPage />
       ) : currentPage === "contact" ? (
         <ContactPage />
+      ) : currentPage === "terms" ? (
+        <TermsPage />
+      ) : currentPage === "privacy" ? (
+        <PrivacyPage />
+      ) : currentPage === "cookie" ? (
+        <CookiePage />
       ) : currentPage === "services" ? (
         <ServicesPage onOpenQuoteModal={openQuoteModal} />
       ) : (
@@ -236,7 +248,7 @@ export default function App() {
 
       {/* Reusable Form Modal */}
       <QuoteModal isOpen={isQuoteModalOpen} onClose={closeQuoteModal} />
-      
+
     </div>
   );
 }

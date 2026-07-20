@@ -205,13 +205,13 @@ export const content = {
   },
   infrastructure: {
     title: "World-Class Infrastructure",
-    subtitle: "Operating premium industrial facilities including our 2.5 Lakh sq. ft. logistics hub in Gujarat and a state-of-the-art automation facility in Baddi (Himachal Pradesh), we set the benchmark for modern supply chain operations.",
+    subtitle: "Operating premium industrial facilities including our 1.5 Lakh sq. ft. logistics hub in Gujarat and a state-of-the-art automation facility in Baddi (Himachal Pradesh), we set the benchmark for modern supply chain operations.",
     ctaButton: "View All Facility Details",
     items: [
       {
         id: "gujarat-hub",
         title: "Gujarat Central Hub",
-        description: "Our 2.5 Lakh sq. ft. facility featuring fully automated sorting and advanced inventory management.",
+        description: "Our 1.5 Lakh sq. ft. facility featuring fully automated sorting and advanced inventory management.",
         imageName: "infrastructure.png"
       },
       {
@@ -274,15 +274,15 @@ export const content = {
       phones: ["+91 98050 02582", "+91 80913 52798"]
     },
     socialLinks: [
-      { name: "WhatsApp", href: "https://wa.me/919805002582" }, // WhatsApp
-      { name: "Instagram", href: "https://instagram.com" },
-      { name: "Mail", href: "mailto:prakashgupta@thevaishnavi.com" } // Gmail
+      { name: "WhatsApp", href: "https://wa.me/919805002582" },
+      { name: "Instagram", href: "https://www.instagram.com/v.enterprises101/" },
+      { name: "Mail", href: "mailto:prakashgupta@thevaishnavi.com" }
     ],
     copyright: "© 2024 Vaishnavi Enterprises. All rights reserved.",
     links: [
-      { label: "Privacy Policy", href: "#" },
-      { label: "Terms of Service", href: "#" },
-      { label: "Cookie Policy", href: "#" }
+      { label: "Privacy Policy", href: "#privacy-policy" },
+      { label: "Terms of Service", href: "#terms-of-service" },
+      { label: "Cookie Policy", href: "#cookie-policy" }
     ]
   },
   quoteModal: {
@@ -560,7 +560,9 @@ export const content = {
         { name: "Hindustan Unilever Limited", image: "Brand_Logos/hindustan_uniliver_limited.png" },
         { name: "Unilever", image: "Brand_Logos/unilever.png" },
         { name: "Kwality Wall's", image: "Brand_Logos/kwality_walls.png" },
-        { name: "Pidilite", image: "Brand_Logos/pidilite.png" }
+        { name: "Pidilite", image: "Brand_Logos/pidilite.png" },
+        { name: "Lotus Herbals", image: "Brand_Logos/lotus_herbals.png" },
+        { name: "RM Group", image: "Brand_Logos/RM_Group.png" }
       ]
     }
   },
@@ -927,11 +929,11 @@ export const content = {
         numbers: [
           { label: "Main", value: "+91 9805002582" },
           { label: "Sales", value: "+91 8091352798" },
-          { label: "Support", value: "+1 (800) 123-4569" }
+          { label: "Support", value: "+91 9825219149" }
         ],
         buttons: [
           { label: "Call Sales", href: "tel:+918091352798" },
-          { label: "Call Support", href: "tel:+18001234569" }
+          { label: "Call Support", href: "tel:+919825219149" }
         ],
         iconName: "Phone"
       },
@@ -1052,5 +1054,290 @@ export const content = {
         }
       ]
     }
+  },
+  termsPage: {
+    banner: {
+      badge: "Legal Information",
+      title: "Terms of Service",
+      subtitle: "Last Updated: July 2026",
+    },
+    intro: "By accessing or using this website, you agree to comply with these Terms of Service. If you do not agree with any part of these terms, please do not use this website.",
+    sections: [
+      {
+        id: "acceptance",
+        title: "1. Acceptance of Terms",
+        content: "By accessing or using this website, you agree to comply with these Terms of Service. If you do not agree with any part of these terms, please do not use this website."
+      },
+      {
+        id: "about-services",
+        title: "2. About Our Services",
+        content: "Our company provides End-to-End (E2E) 3PL Supply Chain Solutions including, but not limited to:",
+        list: [
+          "Contract Manufacturing",
+          "Factory Job Work",
+          "SFG to FG Conversion",
+          "SFG to SFG Processing",
+          "Warehouse Management",
+          "Depot Management",
+          "Inventory Control",
+          "Barcode Scanning",
+          "Material Handling Equipment (MHE)",
+          "Skilled Manpower Solutions",
+          "Dispatch & Logistics Support",
+          "Documentation & Invoicing Support"
+        ],
+        footer: "Information provided on this website is for general business purposes only and does not constitute a binding commercial agreement."
+      },
+      {
+        id: "service-enquiries",
+        title: "3. Service Enquiries",
+        content: "Submitting an enquiry, quotation request, or proposal request through our website does not create a contractual relationship.",
+        subContent: "All services are subject to:",
+        list: [
+          "Requirement analysis",
+          "Site evaluation (if applicable)",
+          "Commercial discussions",
+          "Final agreement",
+          "Service availability"
+        ]
+      },
+      {
+        id: "accuracy-info",
+        title: "4. Accuracy of Information",
+        content: "You agree to provide accurate and complete information when submitting:",
+        list: [
+          "Contact Forms",
+          "Google Forms",
+          "Proposal Requests",
+          "Business Enquiries"
+        ],
+        footer: "Providing false or misleading information may result in rejection of your request."
+      },
+      {
+        id: "intellectual-property",
+        title: "5. Intellectual Property",
+        content: "Unless otherwise stated, all website content including:",
+        list: [
+          "Logos",
+          "Graphics",
+          "Icons",
+          "Website design",
+          "Text",
+          "Images created for this website",
+          "Documents"
+        ],
+        footer: "are the intellectual property of the company and may not be copied, reproduced, modified, or distributed without prior written permission."
+      },
+      {
+        id: "website-usage",
+        title: "6. Website Usage",
+        content: "You agree not to:",
+        list: [
+          "Attempt unauthorized access to the website",
+          "Upload malicious software",
+          "Disrupt website functionality",
+          "Copy website content for commercial purposes",
+          "Misuse contact forms",
+          "Submit spam or fraudulent enquiries"
+        ]
+      },
+      {
+        id: "third-party",
+        title: "7. Third-Party Services",
+        content: "This website may use third-party services such as:",
+        list: [
+          "Google Maps",
+          "Google Forms",
+          "Google Analytics",
+          "Email Services"
+        ],
+        footer: "These services operate under their own terms and privacy policies."
+      },
+      {
+        id: "pricing-quotations",
+        title: "8. Pricing & Quotations",
+        content: "Any pricing, estimates, or quotations shared through this website are indicative only and may change based on:",
+        list: [
+          "Project scope",
+          "Operational requirements",
+          "Location",
+          "Workforce requirements",
+          "Equipment requirements",
+          "Contract duration"
+        ],
+        footer: "Final pricing will be confirmed through a formal commercial proposal."
+      },
+      {
+        id: "limitation-liability",
+        title: "9. Limitation of Liability",
+        content: "While we strive to keep all information accurate and up to date, we do not guarantee:",
+        list: [
+          "Continuous website availability",
+          "Error-free content",
+          "Uninterrupted access"
+        ],
+        footer: "We shall not be liable for any indirect, incidental, or consequential damages arising from the use of this website."
+      },
+      {
+        id: "confidentiality",
+        title: "10. Confidentiality",
+        content: "Business information shared through our website is treated as confidential and used only for evaluating your enquiry and preparing proposals."
+      },
+      {
+        id: "external-links",
+        title: "11. External Links",
+        content: "Our website may contain links to external websites. We are not responsible for the content or policies of third-party websites."
+      },
+      {
+        id: "changes-terms",
+        title: "12. Changes to Terms",
+        content: "We reserve the right to update these Terms of Service at any time. Updated versions will be published on this page with the revised effective date."
+      },
+      {
+        id: "governing-law",
+        title: "13. Governing Law",
+        content: "These Terms of Service shall be governed by and interpreted in accordance with the laws of India.",
+        footer: "Any disputes shall be subject to the jurisdiction of the competent courts where the company is registered."
+      },
+      {
+        id: "contact-info",
+        title: "14. Contact Information",
+        content: "For any questions regarding these Terms of Service, please contact us.",
+        details: {
+          companyName: "Vaishnavi Enterprises",
+          email: "adminho@thevaishnavi.com",
+          phones: ["+91 98050 02582", "+91 80913 52798", "+91 98252 19149"],
+          address: "Vaishnavi Enterprises, B48 F, NEAR ROTARY CHOWK BIG -B COMPLEX, BADDI, Solan, Himachal Pradesh, 173205"
+        }
+      }
+    ]
+  },
+  privacyPage: {
+    banner: {
+      badge: "Privacy First",
+      title: "Privacy Policy",
+      subtitle: "Last Updated: July 2026",
+    },
+    intro: "Vaishnavi Enterprises respects your privacy and is committed to protecting your personal data. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website.",
+    sections: [
+      {
+        id: "info-collection",
+        title: "1. Information We Collect",
+        content: "We collect information that you voluntarily provide to us when you fill out contact forms, request quotations, or submit business inquiries on our website. This may include:",
+        list: [
+          "Personal Identifiers: Full name, business title, or designation.",
+          "Contact Information: Email address, phone number, and physical office address.",
+          "Business Details: Company name, industry type, volume estimates, and operational requirements.",
+          "Technical Data: IP address, browser type, operating system, and usage patterns collected automatically via cookies or Google Analytics."
+        ]
+      },
+      {
+        id: "how-we-use",
+        title: "2. How We Use Your Information",
+        content: "We use the collected information for specific commercial and administrative purposes, including:",
+        list: [
+          "Evaluating your logistics or contract manufacturing requirements.",
+          "Preparing custom commercial proposals and service quotes.",
+          "Communicating with you regarding your service enquiries.",
+          "Improving website functionality, performance, and user experience.",
+          "Complying with applicable laws, government regulations, or legal processes in India."
+        ],
+        footer: "We do not sell, rent, or trade your personal or business data to third-party marketers."
+      },
+      {
+        id: "data-sharing",
+        title: "3. Data Sharing and Disclosure",
+        content: "We share your information only under the following limited circumstances:",
+        list: [
+          "With Consent: If you explicitly authorize us to share details with specific vendors or partners.",
+          "Service Providers: With trusted third-party providers who manage website analytics, hosting, or email delivery.",
+          "Legal Obligations: If required by law, regulatory authorities, court orders, or to protect the safety and rights of Vaishnavi Enterprises."
+        ]
+      },
+      {
+        id: "data-security",
+        title: "4. Data Security",
+        content: "We implement industry-standard administrative, technical, and physical security measures to protect your commercial inquiries and personal information. However, please note that no data transmission over the internet can be guaranteed to be 100% secure. While we strive to protect your data, you transmit it at your own risk."
+      },
+      {
+        id: "data-retention",
+        title: "5. Data Retention",
+        content: "We retain business inquiries and contact details only as long as necessary to fulfill the purposes outlined in this policy, evaluate business needs, or comply with statutory record-keeping regulations under Indian law."
+      },
+      {
+        id: "user-rights",
+        title: "6. Your Privacy Rights",
+        content: "Under the Digital Personal Data Protection Act (DPDPA), 2023 of India, you hold the following rights regarding your personal data:",
+        list: [
+          "Right to access the summary of personal data processed by us.",
+          "Right to correct, update, or erase inaccurate or outdated contact information.",
+          "Right to withdraw consent at any time for data processing.",
+          "Right to nominate another individual to exercise these rights in the event of death or incapacity."
+        ],
+        footer: "To exercise any of these rights, please contact our privacy compliance representative at the details below."
+      },
+      {
+        id: "contact-privacy",
+        title: "7. Contact Privacy Officer",
+        content: "For questions, clarifications, or requests concerning this Privacy Policy, please contact our compliance desk:",
+        details: {
+          companyName: "Vaishnavi Enterprises",
+          email: "adminho@thevaishnavi.com",
+          phones: ["+91 98050 02582", "+91 80913 52798"],
+          address: "Vaishnavi Enterprises, B48 F, NEAR ROTARY CHOWK BIG -B COMPLEX, BADDI, Solan, Himachal Pradesh, 173205"
+        }
+      }
+    ]
+  },
+  cookiePage: {
+    banner: {
+      badge: "Transparency",
+      title: "Cookie Policy",
+      subtitle: "Last Updated: July 2026",
+    },
+    intro: "This Cookie Policy explains how Vaishnavi Enterprises uses cookies and similar tracking technologies on our website. It explains what these technologies are, why we use them, and your rights to control their use.",
+    sections: [
+      {
+        id: "what-are-cookies",
+        title: "1. What Are Cookies?",
+        content: "Cookies are small text files that are stored on your computer or mobile device when you visit a website. They are widely used by website owners to make websites work, work more efficiently, and provide reporting information."
+      },
+      {
+        id: "why-use-cookies",
+        title: "2. How We Use Cookies",
+        content: "We use first-party and third-party cookies for several reasons. Some cookies are required for technical reasons for our website to operate (we refer to these as 'essential' or 'strictly necessary' cookies). Other cookies enable us to track and target the interests of our users to enhance their experience.",
+        list: [
+          "Essential Cookies: Necessary for basic website navigation and form submissions.",
+          "Analytical Cookies: Like Google Analytics, which help us measure visitor traffic, popular pages, and referral sources.",
+          "Functional Cookies: Used to render elements like interactive Google Maps for locating our depots and head office."
+        ]
+      },
+      {
+        id: "managing-cookies",
+        title: "3. How You Can Control Cookies",
+        content: "You have the right to decide whether to accept or reject cookies. You can set or amend your web browser controls to accept or refuse cookies. If you choose to reject cookies, you may still use our website, though your access to some features and areas may be restricted.",
+        list: [
+          "Google Chrome: Go to Settings > Privacy and Security > Cookies and other site data.",
+          "Mozilla Firefox: Go to Options > Privacy & Security > Enhanced Tracking Protection.",
+          "Microsoft Edge: Go to Settings > Cookies and site permissions > Manage and delete cookies.",
+          "Apple Safari: Go to Preferences > Privacy > Block all cookies."
+        ]
+      },
+      {
+        id: "changes-cookie-policy",
+        title: "4. Updates to This Policy",
+        content: "We may update this Cookie Policy from time to time to reflect changes in the cookies we use or for other operational, legal, or regulatory reasons. Please revisit this page regularly to stay informed."
+      },
+      {
+        id: "contact-cookies",
+        title: "5. Contact Us",
+        content: "If you have any questions about our use of cookies or other technologies, please contact us at:",
+        details: {
+          companyName: "Vaishnavi Enterprises",
+          email: "adminho@thevaishnavi.com",
+          address: "Vaishnavi Enterprises, B48 F, NEAR ROTARY CHOWK BIG -B COMPLEX, BADDI, Solan, Himachal Pradesh, 173205"
+        }
+      }
+    ]
   }
 };
