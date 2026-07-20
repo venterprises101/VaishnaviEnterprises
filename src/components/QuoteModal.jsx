@@ -5,10 +5,13 @@ import { content } from "../data/content";
 export default function QuoteModal({ isOpen, onClose }) {
   useEffect(() => {
     if (isOpen) {
+      // Lock both html and body to prevent any background scroll
       document.body.style.overflow = "hidden";
+      document.documentElement.style.overflow = "hidden";
     }
     return () => {
       document.body.style.overflow = "";
+      document.documentElement.style.overflow = "";
     };
   }, [isOpen]);
 

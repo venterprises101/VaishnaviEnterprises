@@ -77,9 +77,11 @@ export default function TermsPage() {
           <h1 className="text-4xl sm:text-5xl font-extrabold tracking-tight text-white mb-4">
             {banner.title}
           </h1>
-          <p className="text-slate-300 text-sm max-w-xl mx-auto font-medium">
-            {banner.subtitle}
-          </p>
+          {banner.subtitle && (
+            <p className="text-slate-300 text-sm max-w-xl mx-auto font-medium">
+              {banner.subtitle}
+            </p>
+          )}
         </div>
       </section>
 
@@ -131,15 +133,17 @@ export default function TermsPage() {
           {/* Document Content */}
           <main className="lg:col-span-8 xl:col-span-9 space-y-12">
             
-            {/* Introduction Card */}
-            <div className="bg-white rounded-xl p-6 md:p-8 border border-slate-200/80 shadow-sm leading-relaxed text-slate-600">
-              <div className="flex gap-3.5 items-start">
-                <Info className="w-5.5 h-5.5 text-accent shrink-0 mt-1" />
-                <p className="text-base text-slate-700 font-medium">
-                  {intro}
-                </p>
+            {/* Introduction Card - only show when intro has content */}
+            {intro && (
+              <div className="bg-white rounded-xl p-6 md:p-8 border border-slate-200/80 shadow-sm leading-relaxed text-slate-600">
+                <div className="flex gap-3.5 items-start">
+                  <Info className="w-5.5 h-5.5 text-accent shrink-0 mt-1" />
+                  <p className="text-base text-slate-700 font-medium">
+                    {intro}
+                  </p>
+                </div>
               </div>
-            </div>
+            )}
 
             {/* Sections */}
             <div className="space-y-10">

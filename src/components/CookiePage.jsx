@@ -76,9 +76,11 @@ export default function CookiePage() {
           <h1 className="text-4xl sm:text-5xl font-extrabold tracking-tight text-white mb-4">
             {banner.title}
           </h1>
-          <p className="text-slate-300 text-sm max-w-xl mx-auto font-medium">
-            {banner.subtitle}
-          </p>
+          {banner.subtitle && (
+            <p className="text-slate-300 text-sm max-w-xl mx-auto font-medium">
+              {banner.subtitle}
+            </p>
+          )}
         </div>
       </section>
 

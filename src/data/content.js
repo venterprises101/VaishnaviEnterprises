@@ -1059,9 +1059,8 @@ export const content = {
     banner: {
       badge: "Legal Information",
       title: "Terms of Service",
-      subtitle: "Last Updated: July 2026",
     },
-    intro: "By accessing or using this website, you agree to comply with these Terms of Service. If you do not agree with any part of these terms, please do not use this website.",
+    intro: "",
     sections: [
       {
         id: "acceptance",
@@ -1216,7 +1215,6 @@ export const content = {
     banner: {
       badge: "Privacy First",
       title: "Privacy Policy",
-      subtitle: "Last Updated: July 2026",
     },
     intro: "Vaishnavi Enterprises respects your privacy and is committed to protecting your personal data. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website.",
     sections: [
@@ -1293,7 +1291,6 @@ export const content = {
     banner: {
       badge: "Transparency",
       title: "Cookie Policy",
-      subtitle: "Last Updated: July 2026",
     },
     intro: "This Cookie Policy explains how Vaishnavi Enterprises uses cookies and similar tracking technologies on our website. It explains what these technologies are, why we use them, and your rights to control their use.",
     sections: [
